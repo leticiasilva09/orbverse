@@ -16,7 +16,7 @@ import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParamList } from "../navigation/StackNavigator";
 
-// TIPO DA NAVEGAÇÃO PARA ESTA TELA
+// TIPO DA NAVEGAÇÃO PRA ESSA TELA
 type HomeNavigationProp = NativeStackNavigationProp<RootStackParamList, "Home">;
 
 const Home: React.FC = () => {
