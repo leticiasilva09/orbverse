@@ -70,8 +70,7 @@ const Home: React.FC = () => {
                 </Text>
 
                 <TouchableOpacity style={styles.cardButton}>
-                  <Ionicons name="play" size={16} color="#fff" style={{ marginRight: 6 }} />
-                  <Text style={styles.buttonText}>Jogar Grátis</Text>
+                  <Text style={styles.buttonText}>Baixar Grátis</Text>
                 </TouchableOpacity>
               </View>
             </ImageBackground>

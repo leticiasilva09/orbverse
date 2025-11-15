@@ -72,7 +72,7 @@ export default function Perfil() {
         <Text style={styles.sectionTitle}>Atividade Recente</Text>
 
         <View style={styles.activityCard}>
-          <Text style={styles.activityTitle}>GTA VI</Text>
+          <Text style={styles.activityTitle}>Dave the Diver</Text>
           <Text style={styles.activityDesc}>Jogou por 3h</Text>
           <Text style={styles.activityTime}>Há 2 dias</Text>
         </View>
@@ -84,7 +84,7 @@ export default function Perfil() {
         </View>
 
         <View style={styles.activityCard}>
-          <Text style={styles.activityTitle}>Overcooked! 2</Text>
+          <Text style={styles.activityTitle}>Battlefield 4</Text>
           <Text style={styles.activityDesc}>Comprou o jogo</Text>
           <Text style={styles.activityTime}>Ontem</Text>
         </View>
