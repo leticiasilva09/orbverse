@@ -10,7 +10,7 @@ export default function Login() {
     <View style={styles.container}>
 
       <View style={styles.loginBox}>
-        <Text style={styles.title}>Login</Text>
+        <Text style={styles.title}>Bem-vindo!</Text>
         <Text style={styles.p}>Entre e continue sua aventura.</Text>
 
         <View style={styles.inputContainer}>

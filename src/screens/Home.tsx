@@ -11,7 +11,19 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 
+// IMPORTS PARA TIPAR A NAVEGAÇÃO
+import { useNavigation } from "@react-navigation/native";
+import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import type { RootStackParamList } from "../navigation/StackNavigator";
+
+// TIPO DA NAVEGAÇÃO PARA ESTA TELA
+type HomeNavigationProp = NativeStackNavigationProp<RootStackParamList, "Home">;
+
 const Home: React.FC = () => {
+
+  // NAVEGAÇÃO TIPADA
+  const navigation = useNavigation<HomeNavigationProp>();
+
   return (
     <View style={styles.container}>
 
@@ -218,28 +230,45 @@ const Home: React.FC = () => {
       <SafeAreaView style={styles.bottomSafeArea}>
         <View style={styles.bottomBar}>
 
-          <TouchableOpacity style={styles.tabItem} activeOpacity={0.8}>
+          <TouchableOpacity 
+            style={styles.tabItem} 
+            activeOpacity={0.8}
+            onPress={() => navigation.navigate("Home")}
+          >
             <Ionicons name="home-outline" size={28} color="#b400ff" />
             <Text style={[styles.tabLabel, styles.activeLabel]}>Início</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.tabItem} activeOpacity={0.8}>
+          <TouchableOpacity 
+            style={styles.tabItem} 
+            activeOpacity={0.8}
+            onPress={() => navigation.navigate("Loja")}
+          >
             <Ionicons name="storefront-outline" size={26} color="#8a8a8a" />
             <Text style={styles.tabLabel}>Loja</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.tabItem} activeOpacity={0.8}>
+          <TouchableOpacity 
+            style={styles.tabItem} 
+            activeOpacity={0.8}
+            onPress={() => navigation.navigate("Biblioteca")}
+          >
             <Ionicons name="library-outline" size={26} color="#8a8a8a" />
             <Text style={styles.tabLabel}>Biblioteca</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.tabItem} activeOpacity={0.8}>
+          <TouchableOpacity 
+            style={styles.tabItem} 
+            activeOpacity={0.8}
+            onPress={() => navigation.navigate("Perfil")}
+          >
             <Ionicons name="person-circle-outline" size={28} color="#8a8a8a" />
             <Text style={styles.tabLabel}>Perfil</Text>
           </TouchableOpacity>
 
         </View>
       </SafeAreaView>
+
     </View>
   );
 };
@@ -257,7 +286,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 18,
-    paddingTop: 40,
+    paddingTop: 10,
     paddingBottom: 12,
     justifyContent: 'space-between',
   },
