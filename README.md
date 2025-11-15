@@ -88,6 +88,6 @@ Siga os passos abaixo para rodar o Orbverse localmente:
 | Nome | GitHub |
 | :--- | :--- |
 | Leticia Silva | [@leticiasilva09](https://github.com/leticiasilva09) |
-| Kaique Vale | [@KaiqueVale](https://github.com/KaiqueVale) |
+| Kaique do Vale | [@KaiqueVale](https://github.com/KaiqueVale) |
 
 ---
