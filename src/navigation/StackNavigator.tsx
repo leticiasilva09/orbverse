@@ -7,6 +7,7 @@ import Home from "../screens/Home";
 import Loja from "../screens/Loja";
 import Biblioteca from "../screens/Biblioteca";
 import Perfil from "../screens/Perfil";
+import Config from "../screens/Config";
 
 // Tipagem das rotas do stack
 export type RootStackParamList = {
@@ -16,9 +17,9 @@ export type RootStackParamList = {
   Loja: undefined;
   Biblioteca: undefined;
   Perfil: undefined;
+  Config: undefined;
 };
 
-// Tipamos o createNativeStackNavigator com nosso RootStackParamList
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function StackNavigator() {
@@ -28,9 +29,9 @@ export default function StackNavigator() {
         initialRouteName="Login"
         screenOptions={{
           headerStyle: {
-            backgroundColor: "#000", // fundo preto
+            backgroundColor: "#000",
           },
-          headerTintColor: "#fff",    // textos e ícones brancos
+          headerTintColor: "#fff",
         }}
       >
 
@@ -68,6 +69,12 @@ export default function StackNavigator() {
           name="Perfil"
           component={Perfil}
           options={{ title: "Perfil" }}
+        />
+
+        <Stack.Screen
+          name="Config"
+          component={Config}
+          options={{ title: "Configurações" }}
         />
 
       </Stack.Navigator>

@@ -21,13 +21,12 @@ type HomeNavigationProp = NativeStackNavigationProp<RootStackParamList, "Home">;
 
 const Home: React.FC = () => {
 
-  // NAVEGAÇÃO TIPADA
   const navigation = useNavigation<HomeNavigationProp>();
 
   return (
     <View style={styles.container}>
 
-      {/* Barra superior */}
+      {/* BARRA SUPERIOR */}
       <View style={styles.topBar}>
         <View style={styles.searchContainer}>
           <Ionicons name="search" size={18} color="#888" style={styles.searchIcon} />
@@ -43,18 +42,12 @@ const Home: React.FC = () => {
         </TouchableOpacity>
       </View>
 
-      {/* CONTEÚDO SCROLLÁVEL */}
       <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
 
-        {/* Título da seção */}
+        {/* SEÇÃO EM DESTAQUE */}
         <Text style={styles.sectionTitle}>Em Destaque</Text>
 
-        {/* Lista horizontal */}
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          style={styles.horizontalScroll}
-        >
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.horizontalScroll}>
 
           {/* CARD 1 */}
           <View style={styles.card}>
@@ -73,6 +66,7 @@ const Home: React.FC = () => {
                   <Text style={styles.buttonText}>Baixar Grátis</Text>
                 </TouchableOpacity>
               </View>
+
             </ImageBackground>
           </View>
 
@@ -100,6 +94,27 @@ const Home: React.FC = () => {
           {/* CARD 3 */}
           <View style={styles.card}>
             <ImageBackground
+              source={require('../../assets/the-sims.jpg')}
+              imageStyle={styles.cardImage}
+              style={styles.cardBg}
+            >
+              <View style={styles.cardContent}>
+                <Text style={styles.cardTitle}>The Sims™ 4</Text>
+                <Text style={styles.cardDescription}>
+                  Crie e controle pessoas num mundo virtual onde não há regras
+                </Text>
+
+                <TouchableOpacity style={styles.cardButton}>
+                  <Text style={styles.buttonText}>Baixar Grátis</Text>
+                </TouchableOpacity>
+              </View>
+
+            </ImageBackground>
+          </View>
+
+          {/* CARD 4 */}
+          <View style={styles.card}>
+            <ImageBackground
               source={require('../../assets/ea-sports.webp')}
               imageStyle={styles.cardImage}
               style={styles.cardBg}
@@ -115,12 +130,34 @@ const Home: React.FC = () => {
                   <Text style={styles.buttonText}>R$ 299,00</Text>
                 </TouchableOpacity>
               </View>
+              
+            </ImageBackground>
+          </View>
+
+          {/* CARD 5 */}
+          <View style={styles.card}>
+            <ImageBackground
+              source={require('../../assets/project-zomboid.webp')}
+              imageStyle={styles.cardImage}
+              style={styles.cardBg}
+            >
+              <View style={styles.cardContent}>
+                <Text style={styles.cardTitle}>Project Zomboid</Text>
+                <Text style={styles.cardDescription}>
+                  Project Zomboid é o jogo definitivo de sobrevivência zumbi
+                </Text>
+
+                <TouchableOpacity style={[styles.cardButton, { backgroundColor: '#6200ff' }]}>
+                  <Ionicons name="cart" size={16} color="#fff" style={{ marginRight: 6 }} />
+                  <Text style={styles.buttonText}>R$ 59,99</Text>
+                </TouchableOpacity>
+              </View>
             </ImageBackground>
           </View>
 
         </ScrollView>
 
-        {/* --------------------- SESSÃO LANÇAMENTOS --------------------- */}
+        {/* SEÇÃO DE LANÇAMENTOS */}
         <Text style={[styles.sectionTitle, { marginTop: 10 }]}>Lançamentos</Text>
 
         <View style={styles.grid}>
@@ -134,9 +171,17 @@ const Home: React.FC = () => {
             >
               <View style={styles.verticalCardContent}>
                 <Text style={styles.verticalCardTitle}>ARC Raiders</Text>
-                <Text style={styles.verticalCardPrice}>R$ 89,90</Text>
+
                 <Text style={styles.verticalCardOldPrice}>R$ 149,90</Text>
-                <Text style={styles.verticalCardDiscount}>-60%</Text>
+
+                <View style={styles.priceRow}>
+                  <TouchableOpacity style={styles.buyButton}>
+                    <Ionicons name="cart" size={14} color="#fff" style={{ marginRight: 6 }} />
+                    <Text style={styles.buyButtonText}>R$ 89,90</Text>
+                  </TouchableOpacity>
+
+                  <Text style={styles.verticalCardDiscount}>-60%</Text>
+                </View>
               </View>
             </ImageBackground>
           </View>
@@ -150,7 +195,11 @@ const Home: React.FC = () => {
             >
               <View style={styles.verticalCardContent}>
                 <Text style={styles.verticalCardTitle}>Grand Theft Auto VI</Text>
-                <Text style={styles.verticalCardPrice}>R$ 599,90</Text>
+
+                <TouchableOpacity style={styles.buyButton}>
+                  <Ionicons name="cart" size={14} color="#fff" style={{ marginRight: 6 }} />
+                  <Text style={styles.buyButtonText}>R$ 599,90</Text>
+                </TouchableOpacity>
               </View>
             </ImageBackground>
           </View>
@@ -164,9 +213,17 @@ const Home: React.FC = () => {
             >
               <View style={styles.verticalCardContent}>
                 <Text style={styles.verticalCardTitle}>Megabonk</Text>
-                <Text style={styles.verticalCardPrice}>R$ 39,90</Text>
+
                 <Text style={styles.verticalCardOldPrice}>R$ 69,90</Text>
-                <Text style={styles.verticalCardDiscount}>-30%</Text>
+
+                <View style={styles.priceRow}>
+                  <TouchableOpacity style={styles.buyButton}>
+                    <Ionicons name="cart" size={14} color="#fff" style={{ marginRight: 6 }} />
+                    <Text style={styles.buyButtonText}>R$ 39,90</Text>
+                  </TouchableOpacity>
+
+                  <Text style={styles.verticalCardDiscount}>-30%</Text>
+                </View>
               </View>
             </ImageBackground>
           </View>
@@ -180,19 +237,64 @@ const Home: React.FC = () => {
             >
               <View style={styles.verticalCardContent}>
                 <Text style={styles.verticalCardTitle}>Battlefield Redsec</Text>
-                <Text style={[styles.verticalCardPrice, { color: '#9d4dff' }]}>Grátis</Text>
+
+                <TouchableOpacity style={styles.freeButton}>
+                  <Text style={styles.freeButtonText}>Baixar Grátis</Text>
+                </TouchableOpacity>
               </View>
             </ImageBackground>
           </View>
 
         </View>
 
-        {/* --------------------- SESSÃO POPULARES --------------------- */}
+        {/* SEÇÃO DE POPULARES */}
         <Text style={[styles.sectionTitle, { marginTop: -10 }]}>Populares</Text>
 
         <View style={styles.grid}>
 
-          {/* Hollow Knight */}
+          {/* CARD 1 */}
+          <View style={styles.verticalCard}>
+            <ImageBackground
+              source={require('../../assets/dbd.jpg')}
+              imageStyle={styles.verticalCardImage}
+              style={styles.verticalCardBg}
+            >
+              <View style={styles.verticalCardContent}>
+                <Text style={styles.verticalCardTitle}>Dead by Daylight</Text>
+
+                <TouchableOpacity style={styles.buyButton}>
+                  <Ionicons name="cart" size={14} color="#fff" style={{ marginRight: 6 }} />
+                  <Text style={styles.buyButtonText}>R$ R$ 62,90</Text>
+                </TouchableOpacity>
+              </View>
+            </ImageBackground>
+          </View>
+
+          {/* CARD 2 */}
+          <View style={styles.verticalCard}>
+            <ImageBackground
+              source={require('../../assets/sof.jpg')}
+              imageStyle={styles.verticalCardImage}
+              style={styles.verticalCardBg}
+            >
+              <View style={styles.verticalCardContent}>
+                <Text style={styles.verticalCardTitle}>Sons of the Forest</Text>
+
+                <Text style={styles.verticalCardOldPrice}>R$ 139,90</Text>
+
+                <View style={styles.priceRow}>
+                  <TouchableOpacity style={styles.buyButton}>
+                    <Ionicons name="cart" size={14} color="#fff" style={{ marginRight: 6 }} />
+                    <Text style={styles.buyButtonText}>R$ 99,90</Text>
+                  </TouchableOpacity>
+
+                  <Text style={styles.verticalCardDiscount}>-40%</Text>
+                </View>
+              </View>
+            </ImageBackground>
+          </View>
+
+          {/* CARD 3 */}
           <View style={styles.verticalCard}>
             <ImageBackground
               source={require('../../assets/hollow-knight.webp')}
@@ -201,22 +303,29 @@ const Home: React.FC = () => {
             >
               <View style={styles.verticalCardContent}>
                 <Text style={styles.verticalCardTitle}>Hollow Knight</Text>
-                <Text style={styles.verticalCardPrice}>R$ 49,90</Text>
+
+                <TouchableOpacity style={styles.buyButton}>
+                  <Ionicons name="cart" size={14} color="#fff" style={{ marginRight: 6 }} />
+                  <Text style={styles.buyButtonText}>R$ 46,90</Text>
+                </TouchableOpacity>
               </View>
             </ImageBackground>
           </View>
 
-          {/* Sons of The Forest */}
+          {/* CARD 4 */}
           <View style={styles.verticalCard}>
             <ImageBackground
-              source={require('../../assets/sof.jpg')}
+              source={require('../../assets/portal2.jpg')}
               imageStyle={styles.verticalCardImage}
-              style={styles.verticalCardBg}>
+              style={styles.verticalCardBg}
+            >
               <View style={styles.verticalCardContent}>
-                <Text style={styles.verticalCardTitle}>Sons of the Forest</Text>
-                <Text style={styles.verticalCardPrice}>R$ 99,90</Text>
-                <Text style={styles.verticalCardOldPrice}>R$ 139,90</Text>
-                <Text style={styles.verticalCardDiscount}>-40%</Text>
+                <Text style={styles.verticalCardTitle}>Portal 2</Text>
+
+                <TouchableOpacity style={styles.buyButton}>
+                  <Ionicons name="cart" size={14} color="#fff" style={{ marginRight: 6 }} />
+                  <Text style={styles.buyButtonText}>R$ 32,99</Text>
+                </TouchableOpacity>
               </View>
             </ImageBackground>
           </View>
@@ -225,12 +334,12 @@ const Home: React.FC = () => {
 
       </ScrollView>
 
-      {/* Barra inferior fixa */}
+      {/* BARRA INFERIOR */}
       <SafeAreaView style={styles.bottomSafeArea}>
         <View style={styles.bottomBar}>
 
           <TouchableOpacity 
-            style={styles.tabItem} 
+            style={styles.tabItem}
             activeOpacity={0.8}
             onPress={() => navigation.navigate("Home")}
           >
@@ -239,7 +348,7 @@ const Home: React.FC = () => {
           </TouchableOpacity>
 
           <TouchableOpacity 
-            style={styles.tabItem} 
+            style={styles.tabItem}
             activeOpacity={0.8}
             onPress={() => navigation.navigate("Loja")}
           >
@@ -248,7 +357,7 @@ const Home: React.FC = () => {
           </TouchableOpacity>
 
           <TouchableOpacity 
-            style={styles.tabItem} 
+            style={styles.tabItem}
             activeOpacity={0.8}
             onPress={() => navigation.navigate("Biblioteca")}
           >
@@ -257,7 +366,7 @@ const Home: React.FC = () => {
           </TouchableOpacity>
 
           <TouchableOpacity 
-            style={styles.tabItem} 
+            style={styles.tabItem}
             activeOpacity={0.8}
             onPress={() => navigation.navigate("Perfil")}
           >
@@ -274,7 +383,7 @@ const Home: React.FC = () => {
 
 export default Home;
 
-/* ------------------ ESTILOS ------------------ */
+/* ESTILOS */
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -422,7 +531,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
 
-  /* ------------------ ESTILOS DE LANÇAMENTOS E POPULARES ------------------ */
+  /* SEÇÃO DE LANÇAMENTOS E POPULARES */
 
   grid: {
     flexDirection: 'row',
@@ -433,7 +542,7 @@ const styles = StyleSheet.create({
 
   verticalCard: {
     width: '48%',
-    height: 230,
+    height: 260,
     borderRadius: 18,
     backgroundColor: '#111',
     overflow: 'hidden',
@@ -449,24 +558,19 @@ const styles = StyleSheet.create({
     borderRadius: 18,
   },
 
-  verticalCardContent: {
-    padding: 8,
-    backgroundColor: 'rgba(0, 0, 0, 0.55)',
-    borderBottomLeftRadius: 18,
-    borderBottomRightRadius: 18,
-     height: 100,
-     justifyContent: 'center',
-  },
+verticalCardContent: {
+  padding: 8,
+  backgroundColor: 'rgba(0, 0, 0, 0.55)',
+  borderBottomLeftRadius: 18,
+  borderBottomRightRadius: 18,
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+  height: 100,
+},
 
   verticalCardTitle: {
     color: '#fff',
     fontSize: 15,
-    fontWeight: '700',
-  },
-
-  verticalCardPrice: {
-    color: '#ff4ddd',
-    fontSize: 14,
     fontWeight: '700',
   },
 
@@ -479,7 +583,45 @@ const styles = StyleSheet.create({
 
   verticalCardDiscount: {
     color: '#ff4040',
-    fontSize: 12,
+    fontSize: 13,
+    fontWeight: '900',
+    marginLeft: 6,
+  },
+
+  priceRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 4,
+  },
+
+  buyButton: {
+    backgroundColor: '#6200ff',
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    borderRadius: 12,
+    flexDirection: 'row',
+    alignItems: 'center',
+    alignSelf: 'flex-start',
+  },
+
+  buyButtonText: {
+    color: '#fff',
     fontWeight: '700',
+    fontSize: 13,
+  },
+
+  freeButton: {
+    backgroundColor: '#b400ff',
+    paddingVertical: 8,
+    paddingHorizontal: 14,
+    borderRadius: 12,
+    alignSelf: 'flex-start',
+    marginTop: 4,
+  },
+
+  freeButtonText: {
+    color: '#fff',
+    fontWeight: '700',
+    fontSize: 13,
   },
 });

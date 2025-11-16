@@ -30,11 +30,11 @@ export default function Perfil() {
         {/* CARD DO PERFIL */}
         <View style={styles.profileCard}>
           <View style={styles.avatar}>
-            <Text style={styles.avatarText}>GA</Text>
+            <Text style={styles.avatarText}>KA</Text>
           </View>
 
           <View>
-            <Text style={styles.profileName}>GamerPro2024</Text>
+            <Text style={styles.profileName}>KaiqueVale08</Text>
             <Text style={styles.profileLevel}>Nível 42</Text>
             <Text style={styles.profileXP}>XP</Text>
 
@@ -47,11 +47,11 @@ export default function Perfil() {
           </View>
         </View>
 
-        {/* ESTATÍSTICAS */}
+        {/* SEÇÃO DE ESTATÍSTICAS */}
         <View style={styles.statsRow}>
           <View style={styles.statItem}>
             <Ionicons name="game-controller-outline" size={28} color="#b400ff" />
-            <Text style={styles.statNumber}>24</Text>
+            <Text style={styles.statNumber}>12</Text>
             <Text style={styles.statLabel}>Jogos</Text>
           </View>
 
@@ -68,7 +68,7 @@ export default function Perfil() {
           </View>
         </View>
 
-        {/* ATIVIDADE RECENTE */}
+        {/* SEÇÃO DE ATIVIDADE RECENTE */}
         <Text style={styles.sectionTitle}>Atividade Recente</Text>
 
         <View style={styles.activityCard}>
@@ -89,11 +89,11 @@ export default function Perfil() {
           <Text style={styles.activityTime}>Ontem</Text>
         </View>
 
-        {/* --- BOTÕES --- */}
+        {/* BOTÕES */}
         <TouchableOpacity
           style={styles.settingsButton}
           activeOpacity={0.8}
-          onPress={() => navigation.navigate("Login")}
+          onPress={() => navigation.navigate("Config")}
         >
           <Ionicons name="settings-outline" size={22} color="#fff" />
           <Text style={styles.settingsText}>Configurações da Conta</Text>
@@ -234,7 +234,7 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
 
-  /* ESTATÍSTICAS */
+  /* SEÇÃO DE ESTATÍSTICAS */
   statsRow: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -262,7 +262,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
 
-  /* ATIVIDADE RECENTE */
+  /* SEÇÃO DE ATIVIDADE RECENTE */
   sectionTitle: {
     color: "#fff",
     fontSize: 20,
@@ -295,7 +295,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
 
-    /* BOTÃO CONFIGURAÇÕES */
+    /* BOTÃO DE CONFIGURAÇÕES */
   settingsButton: {
     backgroundColor: "#0f0f0f",
     padding: 16,
@@ -311,7 +311,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 
-  /* BOTÃO SAIR */
+  /* BOTÃO DE SAIR */
   logoutButton: {
     backgroundColor: "#0f0f0f",
     padding: 16,
