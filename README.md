@@ -78,7 +78,7 @@ Siga os passos abaixo para rodar o Orbverse localmente:
 ## 📌 Status do Projeto
 
 * **Status:** 🚧 **Em desenvolvimento**
-* **Páginas Concluídas:** 3 de 10
+* **Páginas Concluídas:** 6 de 10
 * **Foco Atual:** Desenvolvimento das telas Loja, Biblioteca e Perfil.
 
 ---
