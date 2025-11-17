@@ -40,7 +40,7 @@ Atualmente, o aplicativo conta com as seguintes funcionalidades e estrutura:
 * **Listagem de jogos** na tela de início
 * **Estrutura base** pronta para o desenvolvimento de novas páginas.
 
-### 📄 Páginas Implementadas (6 de 10)
+### 📄 Páginas Implementadas (7 de 10)
 | Status | Página |
 | :--- | :--- |
 | **✔️** | Login |
@@ -49,6 +49,7 @@ Atualmente, o aplicativo conta com as seguintes funcionalidades e estrutura:
 | **✔️** | Loja |
 | **✔️** | Biblioteca |
 | **✔️** | Perfil |
+| **✔️** | Configurações |
 
 ---
 
@@ -78,8 +79,8 @@ Siga os passos abaixo para rodar o Orbverse localmente:
 ## 📌 Status do Projeto
 
 * **Status:** 🚧 **Em desenvolvimento**
-* **Páginas Concluídas:** 3 de 10
-* **Foco Atual:** Desenvolvimento das telas Loja, Biblioteca e Perfil.
+* **Páginas Concluídas:** 6 de 10
+* **Foco Atual:** Desenvolvimento das telas restantes.
 
 ---
 
