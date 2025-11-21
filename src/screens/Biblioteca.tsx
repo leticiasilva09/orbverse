@@ -61,8 +61,8 @@ export default function Biblioteca() {
               <View style={styles.cardFooter}>
                 <Text style={styles.gameName}>Battlefield 4</Text>
                 <TouchableOpacity style={styles.playButton}>
-                  <Ionicons name="play" size={16} color="#fff" style={{ marginRight: 6 }} />
-                  <Text style={styles.installText}>Jogar Agora</Text>
+                  <Ionicons name="checkmark-circle-outline" size={16} color="#fff" style={{ marginRight: 6 }} />
+                  <Text style={styles.installText}>Instalado</Text>
                 </TouchableOpacity>
               </View>
             </ImageBackground>
@@ -78,8 +78,8 @@ export default function Biblioteca() {
               <View style={styles.cardFooter}>
                 <Text style={styles.gameName}>Mortal Kombat X</Text>
                 <TouchableOpacity style={styles.playButton}>
-                  <Ionicons name="play" size={16} color="#fff" style={{ marginRight: 6 }} />
-                  <Text style={styles.installText}>Jogar Agora</Text>
+                  <Ionicons name="checkmark-circle-outline" size={16} color="#fff" style={{ marginRight: 6 }} />
+                  <Text style={styles.installText}>Instalado</Text>
                 </TouchableOpacity>
               </View>
             </ImageBackground>
@@ -95,12 +95,13 @@ export default function Biblioteca() {
               <View style={styles.cardFooter}>
                 <Text style={styles.gameName}>Counter-Strike 2</Text>
                 <TouchableOpacity style={styles.playButton}>
-                  <Ionicons name="play" size={16} color="#fff" style={{ marginRight: 6 }} />
-                  <Text style={styles.installText}>Jogar Agora</Text>
+                  <Ionicons name="checkmark-circle-outline" size={16} color="#fff" style={{ marginRight: 6 }} />
+                  <Text style={styles.installText}>Instalado</Text>
                 </TouchableOpacity>
               </View>
             </ImageBackground>
           </View>
+          
           {/* CARD 4 */}
           <View style={styles.verticalCard}>
             <ImageBackground
@@ -111,8 +112,8 @@ export default function Biblioteca() {
               <View style={styles.cardFooter}>
                 <Text style={styles.gameName}>Dave the Diver</Text>
                 <TouchableOpacity style={styles.playButton}>
-                  <Ionicons name="play" size={16} color="#fff" style={{ marginRight: 6 }} />
-                  <Text style={styles.installText}>Jogar Agora</Text>
+                  <Ionicons name="checkmark-circle-outline" size={16} color="#fff" style={{ marginRight: 6 }} />
+                  <Text style={styles.installText}>Instalado</Text>
                 </TouchableOpacity>
               </View>
             </ImageBackground>
@@ -121,13 +122,18 @@ export default function Biblioteca() {
           {/* CARD 5 */}
           <View style={styles.verticalCard}>
             <ImageBackground
-              source={require("../../assets/elden-ring.jpg")}
+              source={require("../../assets/gta-vi.jpg")}
               style={styles.verticalCardBg}
               imageStyle={styles.verticalImage}
             >
               <View style={styles.cardFooter}>
-                <Text style={styles.gameName}>Elden Ring</Text>
-                <TouchableOpacity style={styles.installButton}>
+                <Text style={styles.gameName}>GTA VI</Text>
+
+                <TouchableOpacity
+                  style={styles.installButton}
+                  activeOpacity={0.8}
+                  onPress={() => navigation.navigate("Instalacao")}
+                >
                   <Ionicons name="download-outline" size={16} color="#fff" />
                   <Text style={styles.installText}>Instalar</Text>
                 </TouchableOpacity>
@@ -138,12 +144,12 @@ export default function Biblioteca() {
           {/* CARD 6 */}
           <View style={styles.verticalCard}>
             <ImageBackground
-              source={require("../../assets/terraria.png")}
+              source={require("../../assets/elden-ring.jpg")}
               style={styles.verticalCardBg}
               imageStyle={styles.verticalImage}
             >
               <View style={styles.cardFooter}>
-                <Text style={styles.gameName}>Terraria</Text>
+                <Text style={styles.gameName}>Elden Ring</Text>
                 <TouchableOpacity style={styles.installButton}>
                   <Ionicons name="download-outline" size={16} color="#fff" />
                   <Text style={styles.installText}>Instalar</Text>

@@ -32,6 +32,23 @@ export default function Login() {
           />
         </View>
 
+        <View style={styles.inputContainer}>
+          <Ionicons name="lock-closed-outline" size={20} color="#ccc" style={styles.icon} />
+          <TextInput
+            placeholder="Senha"
+            placeholderTextColor="#aaa"
+            secureTextEntry
+            style={styles.input}
+          />
+        </View>
+
+        <Text
+          style={styles.forgotPassword}
+          onPress={() => navigation.navigate('Senha' as never)}
+        >
+          Esqueceu sua senha?
+        </Text>
+
         <TouchableOpacity
           style={styles.button}
           onPress={() => navigation.navigate('Home' as never)}
@@ -98,6 +115,15 @@ const styles = StyleSheet.create({
     color: '#fff',
     height: 45,
   },
+
+  forgotPassword: {
+    color: '#ccc',
+    textAlign: 'right',
+    marginBottom: 15,
+    marginRight: 4,
+    fontWeight: 'bold',
+  },
+
   button: {
     backgroundColor: '#AD00FF',
     paddingVertical: 12,
