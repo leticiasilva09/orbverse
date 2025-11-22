@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
@@ -10,6 +10,13 @@ export default function Login() {
     <View style={styles.container}>
 
       <View style={styles.loginBox}>
+
+        {/* LOGO */}
+        <Image
+          source={require('../../assets/logo-icone.png')}
+          style={styles.logo}
+        />
+
         <Text style={styles.title}>Bem-vindo!</Text>
         <Text style={styles.p}>Entre e continue sua aventura.</Text>
 
@@ -18,16 +25,6 @@ export default function Login() {
           <TextInput
             placeholder="Usuário"
             placeholderTextColor="#aaa"
-            style={styles.input}
-          />
-        </View>
-
-        <View style={styles.inputContainer}>
-          <Ionicons name="lock-closed-outline" size={20} color="#ccc" style={styles.icon} />
-          <TextInput
-            placeholder="Senha"
-            placeholderTextColor="#aaa"
-            secureTextEntry
             style={styles.input}
           />
         </View>
@@ -74,11 +71,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#000',
+    justifyContent: 'center',
   },
   loginBox: {
-    flex: 1,
     backgroundColor: '#000',
     margin: 20,
+    marginTop: -70,
     borderRadius: 12,
     padding: 20,
     justifyContent: 'center',
@@ -86,6 +84,14 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.3,
     shadowRadius: 5,
   },
+
+  logo: {
+    width: 110,
+    height: 110,
+    alignSelf: 'center',
+    marginBottom: 20,
+  },
+
   title: {
     color: '#fff',
     fontSize: 22,

@@ -15,10 +15,7 @@ import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParamList } from "../navigation/StackNavigator";
 
-type ConfigNavigationProp = NativeStackNavigationProp<
-  RootStackParamList,
-  "Config"
->;
+type ConfigNavigationProp = NativeStackNavigationProp<RootStackParamList, "Config">;
 
 export default function Config() {
   const navigation = useNavigation<ConfigNavigationProp>();
@@ -85,7 +82,7 @@ export default function Config() {
             <Switch
               value={promocoesOfertas}
               onValueChange={setPromocoesOfertas}
-              thumbColor="#b400ff"
+              thumbColor="#fff"
             />
           </View>
         </View>

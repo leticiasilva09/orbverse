@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
@@ -9,6 +9,13 @@ export default function Cadastro() {
   return (
     <View style={styles.container}>
       <View style={styles.box}>
+
+        {/* LOGO */}
+        <Image
+          source={require('../../assets/logo-icone.png')}
+          style={styles.logo}
+        />
+
         <Text style={styles.title}>Cadastro</Text>
         <Text style={styles.subtitle}>Crie sua conta e inicie sua jornada.</Text>
 
@@ -78,6 +85,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#000',
     justifyContent: 'center',
   },
+
   box: {
     backgroundColor: '#000',
     margin: 20,
@@ -87,7 +95,16 @@ const styles = StyleSheet.create({
     shadowColor: '#000',
     shadowOpacity: 0.3,
     shadowRadius: 5,
+    marginTop: -50,
   },
+
+  logo: {
+    width: 110,
+    height: 110,
+    alignSelf: 'center',
+    marginBottom: 20,
+  },
+
   title: {
     color: '#fff',
     fontSize: 22,
@@ -95,12 +112,14 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 8,
   },
+
   subtitle: {
     color: '#fff',
     fontSize: 15,
     textAlign: 'center',
     marginBottom: 25,
   },
+
   inputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -109,31 +128,37 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     marginBottom: 15,
   },
+
   icon: {
     marginRight: 8,
   },
+
   input: {
     flex: 1,
     color: '#fff',
     height: 45,
   },
+
   button: {
     backgroundColor: '#AD00FF',
     paddingVertical: 12,
     borderRadius: 8,
     marginTop: 10,
   },
+
   buttonText: {
     color: '#fff',
     fontWeight: 'bold',
     textAlign: 'center',
     fontSize: 16,
   },
+
   loginText: {
     color: '#ccc',
     textAlign: 'center',
     marginTop: 15,
   },
+
   linkText: {
     color: '#AD00FF',
     fontWeight: 'bold',

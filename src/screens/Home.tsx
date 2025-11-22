@@ -1,4 +1,5 @@
 import React from 'react';
+import { Image } from 'react-native';
 import {
   View,
   Text,
@@ -27,20 +28,31 @@ const Home: React.FC = () => {
     <View style={styles.container}>
 
       {/* BARRA SUPERIOR */}
-      <View style={styles.topBar}>
-        <View style={styles.searchContainer}>
-          <Ionicons name="search" size={18} color="#888" style={styles.searchIcon} />
-          <TextInput
-            placeholder="Pesquisar..."
-            placeholderTextColor="#666"
-            style={styles.searchInput}
-          />
-        </View>
+    <View style={styles.topBar}>
+      
+      {/* LOGO */}
+      <Image
+        source={require('../../assets/logo.png')}
+        style={styles.logo}
+        resizeMode="contain"
+      />
 
-        <TouchableOpacity style={styles.bellButton} activeOpacity={0.7}>
-          <Ionicons name="notifications-outline" size={22} color="#fff" />
-        </TouchableOpacity>
+      {/* BARRA DE PESQUISA */}
+      <View style={styles.searchContainer}>
+        <Ionicons name="search" size={18} color="#888" style={styles.searchIcon} />
+        <TextInput
+          placeholder="Pesquisar..."
+          placeholderTextColor="#666"
+          style={styles.searchInput}
+        />
       </View>
+
+      {/* SINO */}
+      <TouchableOpacity style={styles.bellButton} activeOpacity={0.7}>
+        <Ionicons name="notifications-outline" size={22} color="#fff" />
+      </TouchableOpacity>
+
+    </View>
 
       <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
 
@@ -390,13 +402,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#000',
   },
 
+  logo: {
+    width: 100,
+    height: 100,
+    marginRight: 12,
+  },
   topBar: {
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 18,
-    paddingTop: 10,
-    paddingBottom: 12,
-    justifyContent: 'space-between',
   },
 
   searchContainer: {
@@ -437,7 +451,6 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: '#fff',
     marginBottom: 16,
-    marginTop: 10,
   },
 
   horizontalScroll: {
