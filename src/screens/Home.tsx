@@ -199,7 +199,11 @@ const Home: React.FC = () => {
           </View>
 
           {/* CARD 2 */}
-          <View style={styles.verticalCard}>
+          <TouchableOpacity 
+            style={styles.verticalCard}
+            onPress={() => navigation.navigate("Informacoes")}
+            activeOpacity={0.8} // deixa mais bonito quando clica
+          >
             <ImageBackground
               source={require('../../assets/gta-vi.jpg')}
               imageStyle={styles.verticalCardImage}
@@ -214,7 +218,7 @@ const Home: React.FC = () => {
                 </TouchableOpacity>
               </View>
             </ImageBackground>
-          </View>
+          </TouchableOpacity>
 
           {/* CARD 3 */}
           <View style={styles.verticalCard}>

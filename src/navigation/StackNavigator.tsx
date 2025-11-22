@@ -10,6 +10,7 @@ import Perfil from "../screens/Perfil";
 import Config from "../screens/Config";
 import Instalacao from "../screens/Instalacao";
 import Senha from "../screens/Senha";
+import Informacoes from "../screens/Informacoes";
 
 // Tipagem das rotas do stack
 export type RootStackParamList = {
@@ -22,6 +23,7 @@ export type RootStackParamList = {
   Config: undefined;
   Instalacao: undefined;
   Senha: undefined;
+  Informacoes: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -91,6 +93,12 @@ export default function StackNavigator() {
           name="Senha"
           component={Senha}
           options={{ title: "Redefinir Senha" }}
+        />
+
+        <Stack.Screen
+          name="Informacoes"
+          component={Informacoes}
+          options={{ title: "Mais Informações" }}
         />
 
       </Stack.Navigator>
