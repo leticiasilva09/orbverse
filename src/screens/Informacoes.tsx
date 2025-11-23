@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import {
   View,
   Text,
@@ -10,9 +11,36 @@ import {
 import { Ionicons } from "@expo/vector-icons";
 
 export default function Informacoes() {
+
+  const insets = useSafeAreaInsets();
+
+  // Array com as imagens do carrossel
+  const images = [
+    require("../../assets/gtavi-foto1.png"),
+    require("../../assets/gtavi-foto2.png"),
+    require("../../assets/gtavi-foto3.jpg"),
+    require("../../assets/gtavi-foto4.webp"),
+    require("../../assets/gtavi-foto5.png"),
+  ];
+
+  // Estado atual
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Função para a próxima imagem
+  const nextImage = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  };
+
+  // Função para a imagem anterior
+  const prevImage = () => {
+    setCurrentIndex((prev) =>
+      prev === 0 ? images.length - 1 : prev - 1
+    );
+  };
+
   return (
     <View style={styles.container}>
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 200 }}>
 
         {/* ---------- TOP BAR ---------- */}
         <View style={styles.topBar}>
@@ -35,17 +63,17 @@ export default function Informacoes() {
         {/* ---------- CARROSSEL ---------- */}
         <View style={styles.carouselContainer}>
           <Image
-            source={require("../../assets/gta-vi.jpg")}
+            source={images[currentIndex]}
             style={styles.carouselImage}
             resizeMode="cover"
           />
 
           {/* Setas */}
-          <TouchableOpacity style={styles.leftArrow}>
+          <TouchableOpacity style={styles.leftArrow} onPress={prevImage}>
             <Ionicons name="chevron-back" size={28} color="#fff" />
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.rightArrow}>
+          <TouchableOpacity style={styles.rightArrow} onPress={nextImage}>
             <Ionicons name="chevron-forward" size={28} color="#fff" />
           </TouchableOpacity>
         </View>
@@ -64,7 +92,7 @@ export default function Informacoes() {
           <View style={styles.tagsRow}>
             <Text style={styles.tag}>Ação</Text>
             <Text style={styles.tag}>Mundo Aberto</Text>
-            <Text style={styles.tag}>Exploração</Text>
+            <Text style={styles.tag}>Aventura</Text>
           </View>
         </View>
 
@@ -73,7 +101,7 @@ export default function Informacoes() {
           <Text style={styles.sectionTitle}>Sobre o jogo</Text>
           <Text style={styles.sectionText}>
             Grand Theft Auto VI é um jogo de ação em mundo aberto da Rockstar
-            Games que marca o retorno à icônica Vice City — agora reinventada
+            Games que marca o retorno à icônica Vice City, agora reinventada
             com gráficos, IA e tecnologias de nova geração. Explore um mapa vivo,
             repleto de eventos, atividades, missões e uma narrativa criminal
             que evolui a cada passo.
@@ -85,35 +113,36 @@ export default function Informacoes() {
           <Text style={styles.sectionTitle}>Requisitos do sistema</Text>
 
           <Text style={styles.subTitle}>Mínimos:</Text>
-          <Text style={styles.reqText}>• Processador: Ryzen 5 3600</Text>
-          <Text style={styles.reqText}>
-            • Placa de vídeo: GTX 1660 Super / RX 5600 XT
-          </Text>
-          <Text style={styles.reqText}>• Memória: 16 GB RAM</Text>
-          <Text style={styles.reqText}>
-            • Armazenamento: 160 GB de espaço disponível
-          </Text>
+          <Text style={styles.reqText}>PROCESSADOR: Intel Core i5-9600K | AMD Ryzen 5 3600</Text>
+          <Text style={styles.reqText}>PLACA DE VÍDEO: NVIDIA GeForce GTX 1660 Super | AMD Radeon RX 5600 XT</Text>
+          <Text style={styles.reqText}>ARMAZENAMENTO: 150–180 GB de espaço disponível (SSD obrigatório)</Text>
+          <Text style={styles.reqText}>SO: Windows 10 64-bit (última atualização)</Text>
+          <Text style={styles.reqText}>Memória: 16 GB RAM</Text>
+          <Text style={styles.reqText}>DIRECTX: Versão 12</Text>
 
-          <Text style={[styles.subTitle, { marginTop: 14 }]}>
-            Recomendados:
-          </Text>
-          <Text style={styles.reqText}>• Processador: Ryzen 7 5800X</Text>
-          <Text style={styles.reqText}>
-            • Placa de vídeo: RTX 3070 / RX 6700 XT
-          </Text>
-          <Text style={styles.reqText}>• Memória: 32 GB RAM</Text>
-          <Text style={styles.reqText}>
-            • Armazenamento: SSD NVMe de alta velocidade
-          </Text>
+          <Text style={[styles.subTitle, { marginTop: 14 }]}>Recomendados:</Text>
+          <Text style={styles.reqText}>PROCESSADOR: Intel Core i7-12700K | AMD Ryzen 7 5800X</Text>
+          <Text style={styles.reqText}>PLACA DE VÍDEO: NVIDIA GeForce RTX 3070 | 4060 Ti ou AMD Radeon RX 6800 XT</Text>
+          <Text style={styles.reqText}>180 GB de espaço disponível (SSD NVMe recomendado)</Text>
+          <Text style={styles.reqText}>SO: Windows 11 64-bit (última atualização)</Text>
+          <Text style={styles.reqText}>Memória: 32 GB RAM</Text>
+          <Text style={styles.reqText}>DIRECTX: Versão 12</Text>
         </View>
 
         {/* ---------- AVALIAÇÕES ---------- */}
         <View style={styles.section}>
+
+        <View style={styles.sectionHeader}>
           <Text style={styles.sectionTitle}>Avaliações</Text>
+
+          <TouchableOpacity>
+            <Text style={styles.viewAllText}>Ver todas</Text>
+          </TouchableOpacity>
+        </View>
 
           {/* 1 */}
           <View style={styles.reviewBox}>
-            <Text style={styles.reviewUser}>GamerPro2025</Text>
+            <Text style={styles.reviewUser}>enzogamer2010</Text>
             <View style={styles.starsRow}>
               <Ionicons name="star" size={14} color="#d400ff" />
               <Ionicons name="star" size={14} color="#d400ff" />
@@ -122,14 +151,15 @@ export default function Informacoes() {
               <Ionicons name="star" size={14} color="#d400ff" />
             </View>
             <Text style={styles.reviewText}>
-              A melhor experiência da Rockstar até hoje. Impressionante.
+              A melhor narrativa que a Rockstar já fez, simplesmente absurdo.
             </Text>
           </View>
 
           {/* 2 */}
           <View style={styles.reviewBox}>
-            <Text style={styles.reviewUser}>LuciaFan</Text>
+            <Text style={styles.reviewUser}>luis_0311</Text>
             <View style={styles.starsRow}>
+              <Ionicons name="star" size={14} color="#d400ff" />
               <Ionicons name="star" size={14} color="#d400ff" />
               <Ionicons name="star" size={14} color="#d400ff" />
               <Ionicons name="star" size={14} color="#d400ff" />
@@ -143,28 +173,30 @@ export default function Informacoes() {
 
           {/* 3 */}
           <View style={styles.reviewBox}>
-            <Text style={styles.reviewUser}>TechReviewer</Text>
+            <Text style={styles.reviewUser}>joao0710</Text>
             <View style={styles.starsRow}>
+              <Ionicons name="star" size={14} color="#d400ff" />
               <Ionicons name="star" size={14} color="#d400ff" />
               <Ionicons name="star" size={14} color="#d400ff" />
               <Ionicons name="star" size={14} color="#d400ff" />
             </View>
             <Text style={styles.reviewText}>
-              Otimização melhor do que eu esperava para um jogo tão grande.
+              Otimização está ok, mas precisa de uma máquina top pra rodar.
             </Text>
           </View>
         </View>
 
-        {/* ---------- PREÇO + BOTÃO ---------- */}
-        <View style={styles.footer}>
-          <Text style={styles.price}>R$ 599,90</Text>
-
-          <TouchableOpacity style={styles.buyButton}>
-            <Text style={styles.buyText}>Comprar Agora</Text>
-          </TouchableOpacity>
-        </View>
-
       </ScrollView>
+
+      {/* ---------- PREÇO + BOTÃO ---------- */}
+      <View style={[styles.footerFixed, { paddingBottom: insets.bottom + 10 }]}>
+        <Text style={styles.price}>R$ 599,90</Text>
+
+        <TouchableOpacity style={styles.buyButton}>
+          <Text style={styles.buyText}>Comprar Agora</Text>
+        </TouchableOpacity>
+      </View>
+
     </View>
   );
 }
@@ -307,6 +339,19 @@ const styles = StyleSheet.create({
   },
 
   /* AVALIAÇÕES */
+  sectionHeader: {
+  flexDirection: "row",
+  justifyContent: "space-between",
+  alignItems: "center",
+  marginBottom: 8,
+},
+
+viewAllText: {
+  color: "#d400ff",
+  fontSize: 13,
+  fontWeight: "600",
+},
+
   reviewBox: {
     backgroundColor: "#111",
     padding: 14,
@@ -331,13 +376,17 @@ const styles = StyleSheet.create({
   },
 
   /* FOOTER */
-  footer: {
-    paddingHorizontal: 14,
-    paddingVertical: 20,
-    borderTopWidth: 1,
-    borderColor: "#111",
-    marginTop: 20,
-  },
+footerFixed: {
+  position: "absolute",
+  bottom: 0,
+  left: 0,
+  right: 0,
+  paddingHorizontal: 14,
+  paddingVertical: 20,
+  borderTopWidth: 1,
+  borderColor: "#111",
+  backgroundColor: "#000",
+},
 
   price: {
     color: "#fff",

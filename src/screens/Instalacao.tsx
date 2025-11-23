@@ -177,7 +177,7 @@ storageValue: {
   gameDescription: {
     marginTop: 20,
     color: "#ccc",
-    textAlign: "left",
+    textAlign: "center",
     paddingHorizontal: 6,
     lineHeight: 20,
     fontSize: 14,

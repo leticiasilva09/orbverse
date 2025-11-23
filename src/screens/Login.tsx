@@ -1,14 +1,45 @@
-import React from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import React, { useState } from 'react';
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  StyleSheet,
+  Image,
+  KeyboardAvoidingView,
+  Platform
+} from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
 export default function Login() {
   const navigation = useNavigation();
 
-  return (
-    <View style={styles.container}>
+  const [usuario, setUsuario] = useState('');
+  const [senha, setSenha] = useState('');
+  const [erro, setErro] = useState('');
 
+  const handleLogin = () => {
+
+    if (usuario.trim() === '' || senha.trim() === '') {
+      setErro('Digite seu nome de usuário e senha');
+      return;
+    }
+
+    if (usuario === 'KaiqueVale08' && senha === 'kaique123') {
+      setErro('');
+      navigation.navigate('Home' as never);
+    } else {
+      setErro('Nome de usuário ou senha incorretos');
+    }
+  };
+
+  return (
+    <KeyboardAvoidingView
+      style={styles.container}
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      keyboardVerticalOffset={Platform.OS === 'ios' ? 80 : 0}
+    >
       <View style={styles.loginBox}>
 
         {/* LOGO */}
@@ -26,6 +57,8 @@ export default function Login() {
             placeholder="Usuário"
             placeholderTextColor="#aaa"
             style={styles.input}
+            value={usuario}
+            onChangeText={setUsuario}
           />
         </View>
 
@@ -36,8 +69,13 @@ export default function Login() {
             placeholderTextColor="#aaa"
             secureTextEntry
             style={styles.input}
+            value={senha}
+            onChangeText={setSenha}
           />
         </View>
+
+        {/* MENSAGEM DE ERRO */}
+        {erro ? <Text style={styles.errorText}>{erro}</Text> : null}
 
         <Text
           style={styles.forgotPassword}
@@ -48,13 +86,13 @@ export default function Login() {
 
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate('Home' as never)}
+          onPress={handleLogin}
         >
           <Text style={styles.buttonText}>Entrar</Text>
         </TouchableOpacity>
 
         <Text style={styles.registerText}>
-          Não tem conta?{' '}
+          Não possui uma conta?{' '}
           <Text
             style={styles.linkText}
             onPress={() => navigation.navigate('Cadastro' as never)}
@@ -62,8 +100,9 @@ export default function Login() {
             Cadastre-se
           </Text>
         </Text>
+
       </View>
-    </View>
+    </KeyboardAvoidingView>
   );
 }
 
@@ -80,9 +119,6 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     padding: 20,
     justifyContent: 'center',
-    shadowColor: '#000',
-    shadowOpacity: 0.3,
-    shadowRadius: 5,
   },
 
   logo: {
@@ -122,11 +158,17 @@ const styles = StyleSheet.create({
     height: 45,
   },
 
+  errorText: {
+    color: '#ff4444',
+    textAlign: 'center',
+    marginBottom: 10,
+    fontWeight: 'bold',
+  },
+
   forgotPassword: {
     color: '#ccc',
     textAlign: 'right',
     marginBottom: 15,
-    marginRight: 4,
     fontWeight: 'bold',
   },
 

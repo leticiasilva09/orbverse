@@ -6,6 +6,8 @@ import {
   TouchableOpacity,
   StyleSheet,
   Image,
+  KeyboardAvoidingView,
+  Platform
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
@@ -14,7 +16,11 @@ export default function Senha() {
   const navigation = useNavigation();
 
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView
+      style={styles.container}
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      keyboardVerticalOffset={Platform.OS === "ios" ? 80 : 0}
+    >
 
       <View style={styles.box}>
 
@@ -53,8 +59,9 @@ export default function Senha() {
         >
           <Text style={styles.buttonText}>Enviar código</Text>
         </TouchableOpacity>
+        
       </View>
-    </View>
+    </KeyboardAvoidingView>
   );
 }
 

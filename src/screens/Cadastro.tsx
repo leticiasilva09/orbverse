@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, KeyboardAvoidingView, Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
@@ -7,7 +7,12 @@ export default function Cadastro() {
   const navigation = useNavigation();
 
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView
+      style={styles.container}
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      keyboardVerticalOffset={Platform.OS === 'ios' ? 80 : 0}
+    >
+
       <View style={styles.box}>
 
         {/* LOGO */}
@@ -75,7 +80,7 @@ export default function Cadastro() {
           </Text>
         </Text>
       </View>
-    </View>
+    </KeyboardAvoidingView>
   );
 }
 
