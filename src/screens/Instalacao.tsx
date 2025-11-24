@@ -1,21 +1,11 @@
 import React from "react";
-import { 
-  View, 
-  Text, 
-  Image, 
-  StyleSheet, 
-  TouchableOpacity, 
-  ScrollView 
-} from "react-native";
+import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParamList } from "../navigation/StackNavigator";
 
-type InstalacaoNavigation = NativeStackNavigationProp<
-  RootStackParamList,
-  "Instalacao"
->;
+type InstalacaoNavigation = NativeStackNavigationProp<RootStackParamList,"Instalacao">;
 
 export default function Instalacao() {
   const navigation = useNavigation<InstalacaoNavigation>();
@@ -82,16 +72,16 @@ export default function Instalacao() {
 }
 
 
-/* ----------------------- ESTILOS ----------------------- */
+/* ESTILOS */
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#000",
-    paddingHorizontal: 16,
-  },
+container: {
+  flex: 1,
+  backgroundColor: "#000",
+  paddingHorizontal: 16,
+},
 
- pcBox: {
+pcBox: {
   backgroundColor: "#0c0c0c",
   borderRadius: 14,
   padding: 12,
@@ -115,8 +105,8 @@ lastUpdate: {
 },
 
  onlineTag: {
-    flexDirection: "row",
-    alignItems: "center",
+  flexDirection: "row",
+  alignItems: "center",
   },
 
 greenDot: {
@@ -149,53 +139,53 @@ storageValue: {
   fontSize: 12,
 },
 
-  /* CONTEÚDO DO JOGO */
-  gameContainer: {
-    alignItems: "center",
-    marginTop: 30,
-  },
+/* CONTEÚDO DO JOGO */
+gameContainer: {
+  alignItems: "center",
+  marginTop: 30,
+},
 
-  gameImage: {
-    width: 200,
-    height: 260,
-    borderRadius: 14,
-    marginBottom: 14,
-  },
+gameImage: {
+  width: 200,
+  height: 260,
+  borderRadius: 14,
+  marginBottom: 14,
+},
 
-  gameTitle: {
-    fontSize: 22,
-    fontWeight: "800",
-    color: "#fff",
-    marginTop: 6,
-  },
+gameTitle: {
+  fontSize: 22,
+  fontWeight: "800",
+  color: "#fff",
+  marginTop: 6,
+},
 
-  gameInfo: {
-    color: "#bbb",
-    marginTop: 4,
-  },
+gameInfo: {
+  color: "#bbb",
+  marginTop: 4,
+},
 
-  gameDescription: {
-    marginTop: 20,
-    color: "#ccc",
-    textAlign: "center",
-    paddingHorizontal: 6,
-    lineHeight: 20,
-    fontSize: 14,
-  },
+gameDescription: {
+  marginTop: 20,
+  color: "#ccc",
+  textAlign: "center",
+  paddingHorizontal: 6,
+  lineHeight: 20,
+  fontSize: 14,
+},
 
-  /* BOTÃO INSTALAR */
-  installButton: {
-    backgroundColor: "#b400ff",
-    paddingVertical: 14,
-    borderRadius: 14,
-    marginTop: 24,
-    marginBottom: 50,
-    alignItems: "center",
-  },
+/* BOTÃO INSTALAR */
+installButton: {
+  backgroundColor: "#b400ff",
+  paddingVertical: 14,
+  borderRadius: 14,
+  marginTop: 24,
+  marginBottom: 50,
+  alignItems: "center",
+},
 
-  installButtonText: {
-    color: "#fff",
-    fontWeight: "700",
-    fontSize: 16,
-  },
+installButtonText: {
+  color: "#fff",
+  fontWeight: "700",
+  fontSize: 16,
+},
 });
