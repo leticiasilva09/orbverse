@@ -16,10 +16,7 @@ export default function Cadastro() {
       <View style={styles.box}>
 
         {/* LOGO */}
-        <Image
-          source={require('../../assets/logo-icone.png')}
-          style={styles.logo}
-        />
+        <Image source={require('../../assets/logo-icone.png')} style={styles.logo} />
 
         <Text style={styles.title}>Cadastro</Text>
         <Text style={styles.subtitle}>Crie sua conta e inicie sua jornada.</Text>
@@ -85,87 +82,87 @@ export default function Cadastro() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#000',
-    justifyContent: 'center',
-  },
+container: {
+  flex: 1,
+  backgroundColor: '#000',
+  justifyContent: 'center',
+},
 
-  box: {
-    backgroundColor: '#000',
-    margin: 20,
-    borderRadius: 12,
-    padding: 20,
-    justifyContent: 'center',
-    shadowColor: '#000',
-    shadowOpacity: 0.3,
-    shadowRadius: 5,
-    marginTop: -50,
-  },
+box: {
+  backgroundColor: '#000',
+  margin: 20,
+  borderRadius: 12,
+  padding: 20,
+  justifyContent: 'center',
+  shadowColor: '#000',
+  shadowOpacity: 0.3,
+  shadowRadius: 5,
+  marginTop: -50,
+},
 
-  logo: {
-    width: 110,
-    height: 110,
-    alignSelf: 'center',
-    marginBottom: 20,
-  },
+logo: {
+  width: 110,
+  height: 110,
+  alignSelf: 'center',
+  marginBottom: 20,
+},
 
-  title: {
-    color: '#fff',
-    fontSize: 22,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    marginBottom: 8,
-  },
+title: {
+  color: '#fff',
+  fontSize: 22,
+  fontWeight: 'bold',
+  textAlign: 'center',
+  marginBottom: 8,
+},
 
-  subtitle: {
-    color: '#fff',
-    fontSize: 15,
-    textAlign: 'center',
-    marginBottom: 25,
-  },
+subtitle: {
+  color: '#fff',
+  fontSize: 15,
+  textAlign: 'center',
+  marginBottom: 25,
+},
 
-  inputContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#1a1a1a',
-    borderRadius: 8,
-    paddingHorizontal: 10,
-    marginBottom: 15,
-  },
+inputContainer: {
+  flexDirection: 'row',
+  alignItems: 'center',
+  backgroundColor: '#1a1a1a',
+  borderRadius: 8,
+  paddingHorizontal: 10,
+  marginBottom: 15,
+},
 
-  icon: {
-    marginRight: 8,
-  },
+icon: {
+  marginRight: 8,
+},
 
-  input: {
-    flex: 1,
-    color: '#fff',
-    height: 45,
-  },
+input: {
+  flex: 1,
+  color: '#fff',
+  height: 45,
+},
 
-  button: {
-    backgroundColor: '#AD00FF',
-    paddingVertical: 12,
-    borderRadius: 8,
-    marginTop: 10,
-  },
+button: {
+  backgroundColor: '#AD00FF',
+  paddingVertical: 12,
+  borderRadius: 8,
+  marginTop: 10,
+},
 
-  buttonText: {
-    color: '#fff',
-    fontWeight: 'bold',
-    textAlign: 'center',
-    fontSize: 16,
-  },
+buttonText: {
+  color: '#fff',
+  fontWeight: 'bold',
+  textAlign: 'center',
+  fontSize: 16,
+},
 
-  loginText: {
-    color: '#ccc',
-    textAlign: 'center',
-    marginTop: 15,
-  },
+loginText: {
+  color: '#ccc',
+  textAlign: 'center',
+  marginTop: 15,
+},
 
-  linkText: {
-    color: '#AD00FF',
-    fontWeight: 'bold',
-  },
+linkText: {
+  color: '#AD00FF',
+  fontWeight: 'bold',
+},
 });
