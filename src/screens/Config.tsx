@@ -1,12 +1,5 @@
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  ScrollView,
-  TouchableOpacity,
-  Switch,
-} from "react-native";
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Switch, } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -157,49 +150,47 @@ export default function Config() {
 
 /* ESTILOS */
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#000",
-  },
+container: {
+  flex: 1,
+  backgroundColor: "#000",
+},
 
-  content: {
-    paddingHorizontal: 16,
-    marginTop: 10,
-  },
+content: {
+  paddingHorizontal: 16,
+  marginTop: 10,
+},
 
-  /* SEÇÃO */
-  section: {
-    marginBottom: 22,
-  },
+section: {
+  marginBottom: 22,
+},
 
-  sectionTitle: {
-    color: "#fff",
-    fontSize: 18,
-    fontWeight: "700",
-    marginBottom: 12,
-  },
+sectionTitle: {
+  color: "#fff",
+  fontSize: 18,
+  fontWeight: "700",
+   marginBottom: 12,
+},
 
-  /* ITEM */
-  item: {
-    backgroundColor: "#0f0f0f",
-    padding: 16,
-    borderRadius: 14,
-    marginBottom: 10,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
+item: {
+  backgroundColor: "#0f0f0f",
+  padding: 16,
+  borderRadius: 14,
+  marginBottom: 10,
+  flexDirection: "row",
+  alignItems: "center",
+  justifyContent: "space-between",
+},
 
-  itemText: {
-    color: "#fff",
-    fontSize: 16,
-    flex: 1,
-    marginLeft: 12,
-  },
+itemText: {
+  color: "#fff",
+  fontSize: 16,
+  flex: 1,
+  marginLeft: 12,
+},
 
-  optionText: {
-    color: "#aaa",
-    fontSize: 14,
-    marginRight: 6,
-  },
+optionText: {
+  color: "#aaa",
+  fontSize: 14,
+  marginRight: 6,
+},
 });
