@@ -1,14 +1,6 @@
 import React from 'react';
 import { Image } from 'react-native';
-import {
-  View,
-  Text,
-  TextInput,
-  StyleSheet,
-  TouchableOpacity,
-  ScrollView,
-  ImageBackground,
-} from 'react-native';
+import {View, Text, TextInput, StyleSheet, TouchableOpacity, ScrollView, ImageBackground,} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -401,179 +393,180 @@ export default Home;
 
 /* ESTILOS */
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#000',
-  },
+container: {
+  flex: 1,
+  backgroundColor: '#000',
+},
 
-  logo: {
-    width: 100,
-    height: 100,
-    marginRight: 12,
-  },
-  topBar: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 18,
-  },
+logo: {
+  width: 100,
+  height: 100,
+  marginRight: 12,
+},
 
-  searchContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#0f0f0f',
-    borderRadius: 22,
-    paddingHorizontal: 12,
-    height: 38,
-    flex: 1,
-    marginRight: 12,
-    borderWidth: 1,
-    borderColor: '#222',
-  },
+topBar: {
+  flexDirection: 'row',
+  alignItems: 'center',
+  paddingHorizontal: 18,
+},
 
-  searchIcon: {
-    marginRight: 6,
-  },
+searchContainer: {
+  flexDirection: 'row',
+  alignItems: 'center',
+  backgroundColor: '#0f0f0f',
+  borderRadius: 22,
+  paddingHorizontal: 12,
+  height: 38,
+  flex: 1,
+  marginRight: 12,
+  borderWidth: 1,
+  borderColor: '#222',
+},
 
-  searchInput: {
-    color: '#fff',
-    fontSize: 14,
-    flex: 1,
-    paddingVertical: 0,
-  },
+searchIcon: {
+  marginRight: 6,
+},
 
-  bellButton: {
-    padding: 6,
-  },
+searchInput: {
+  color: '#fff',
+  fontSize: 14,
+  flex: 1,
+  paddingVertical: 0,
+},
 
-  content: {
-    flex: 1,
-    paddingHorizontal: 16,
-  },
+bellButton: {
+  padding: 6,
+},
 
-  sectionTitle: {
-    fontSize: 22,
-    fontWeight: '700',
-    color: '#fff',
-    marginBottom: 16,
-  },
+content: {
+  flex: 1,
+  paddingHorizontal: 16,
+},
 
-  horizontalScroll: {
-    marginBottom: 30,
-  },
+sectionTitle: {
+  fontSize: 22,
+  fontWeight: '700',
+  color: '#fff',
+  marginBottom: 16,
+},
 
-  card: {
-    width: 300,
-    height: 170,
-    borderRadius: 20,
-    overflow: 'hidden',
-    backgroundColor: '#111',
-    marginRight: 16,
-  },
+horizontalScroll: {
+  marginBottom: 30,
+},
 
-  cardBg: {
-    flex: 1,
-    justifyContent: 'flex-end',
-  },
+card: {
+  width: 300,
+  height: 170,
+  borderRadius: 20,
+  overflow: 'hidden',
+  backgroundColor: '#111',
+  marginRight: 16,
+},
 
-  cardImage: {
-    borderRadius: 20,
-  },
+cardBg: {
+  flex: 1,
+  justifyContent: 'flex-end',
+},
 
-  cardContent: {
-    padding: 14,
-    backgroundColor: 'rgba(0,0,0,0.45)',
-    borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20,
-  },
+cardImage: {
+  borderRadius: 20,
+},
 
-  cardTitle: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: '700',
-  },
+cardContent: {
+  padding: 14,
+  backgroundColor: 'rgba(0,0,0,0.45)',
+  borderBottomLeftRadius: 20,
+  borderBottomRightRadius: 20,
+},
 
-  cardDescription: {
-    marginTop: 4,
-    color: '#ddd',
-    fontSize: 12,
-  },
+cardTitle: {
+  color: '#fff',
+  fontSize: 16,
+  fontWeight: '700',
+},
 
-  cardButton: {
-    marginTop: 10,
-    backgroundColor: '#b400ff',
-    paddingVertical: 8,
-    paddingHorizontal: 14,
-    borderRadius: 14,
-    flexDirection: 'row',
-    alignItems: 'center',
-    alignSelf: 'flex-start',
-  },
+cardDescription: {
+  marginTop: 4,
+  color: '#ddd',
+  fontSize: 12,
+},
 
-  buttonText: {
-    color: '#fff',
-    fontWeight: '600',
-    fontSize: 13,
-  },
+cardButton: {
+  marginTop: 10,
+  backgroundColor: '#b400ff',
+  paddingVertical: 8,
+  paddingHorizontal: 14,
+  borderRadius: 14,
+  flexDirection: 'row',
+  alignItems: 'center',
+  alignSelf: 'flex-start',
+},
 
-  bottomSafeArea: {
-    backgroundColor: 'transparent',
-  },
+buttonText: {
+  color: '#fff',
+  fontWeight: '600',
+  fontSize: 13,
+},
 
-  bottomBar: {
-    height: 70,
-    borderTopWidth: 1,
-    borderTopColor: '#222',
-    backgroundColor: '#000',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    paddingBottom: 8,
-    paddingTop: 6,
-  },
+bottomSafeArea: {
+  backgroundColor: 'transparent',
+},
 
-  tabItem: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+bottomBar: {
+  height: 70,
+  borderTopWidth: 1,
+  borderTopColor: '#222',
+  backgroundColor: '#000',
+  flexDirection: 'row',
+  justifyContent: 'space-around',
+  alignItems: 'center',
+  paddingBottom: 8,
+  paddingTop: 6,
+},
 
-  tabLabel: {
-    fontSize: 12,
-    marginTop: 4,
-    color: '#8a8a8a',
-  },
+tabItem: {
+  flex: 1,
+  alignItems: 'center',
+  justifyContent: 'center',
+},
 
-  activeLabel: {
-    color: '#b400ff',
-    fontWeight: '600',
-  },
+tabLabel: {
+  fontSize: 12,
+  marginTop: 4,
+  color: '#8a8a8a',
+},
+
+activeLabel: {
+  color: '#b400ff',
+  fontWeight: '600',
+},
 
   /* SEÇÃO DE LANÇAMENTOS E POPULARES */
 
-  grid: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-    marginBottom: 40,
-  },
+grid: {
+  flexDirection: 'row',
+  flexWrap: 'wrap',
+  justifyContent: 'space-between',
+  marginBottom: 40,
+},
 
-  verticalCard: {
-    width: '48%',
-    height: 260,
-    borderRadius: 18,
-    backgroundColor: '#111',
-    overflow: 'hidden',
-    marginBottom: 18,
-  },
+verticalCard: {
+  width: '48%',
+  height: 260,
+  borderRadius: 18,
+  backgroundColor: '#111',
+  overflow: 'hidden',
+  marginBottom: 18,
+},
 
-  verticalCardBg: {
-    flex: 1,
-    justifyContent: 'flex-end',
-  },
+verticalCardBg: {
+  flex: 1,
+  justifyContent: 'flex-end',
+},
 
-  verticalCardImage: {
-    borderRadius: 18,
-  },
+verticalCardImage: {
+  borderRadius: 18,
+},
 
 verticalCardContent: {
   padding: 8,
@@ -585,60 +578,60 @@ verticalCardContent: {
   height: 100,
 },
 
-  verticalCardTitle: {
-    color: '#fff',
-    fontSize: 15,
-    fontWeight: '700',
-  },
+verticalCardTitle: {
+  color: '#fff',
+  fontSize: 15,
+  fontWeight: '700',
+},
 
-  verticalCardOldPrice: {
-    color: '#bbb',
-    fontSize: 12,
-    textDecorationLine: 'line-through',
-    marginTop: -2,
-  },
+verticalCardOldPrice: {
+  color: '#bbb',
+  fontSize: 12,
+  textDecorationLine: 'line-through',
+  marginTop: -2,
+},
 
-  verticalCardDiscount: {
-    color: '#ff4040',
-    fontSize: 13,
-    fontWeight: '900',
-    marginLeft: 6,
-  },
+verticalCardDiscount: {
+  color: '#ff4040',
+  fontSize: 13,
+  fontWeight: '900',
+  marginLeft: 6,
+},
 
-  priceRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: 4,
-  },
+priceRow: {
+  flexDirection: 'row',
+  alignItems: 'center',
+  marginTop: 4,
+},
 
-  buyButton: {
-    backgroundColor: '#6200ff',
-    paddingVertical: 8,
-    paddingHorizontal: 12,
-    borderRadius: 12,
-    flexDirection: 'row',
-    alignItems: 'center',
-    alignSelf: 'flex-start',
-  },
+buyButton: {
+  backgroundColor: '#6200ff',
+  paddingVertical: 8,
+  paddingHorizontal: 12,
+  borderRadius: 12,
+  flexDirection: 'row',
+  alignItems: 'center',
+  alignSelf: 'flex-start',
+},
 
-  buyButtonText: {
-    color: '#fff',
-    fontWeight: '700',
-    fontSize: 13,
-  },
+buyButtonText: {
+  color: '#fff',
+  fontWeight: '700',
+  fontSize: 13,
+},
 
-  freeButton: {
-    backgroundColor: '#b400ff',
-    paddingVertical: 8,
-    paddingHorizontal: 14,
-    borderRadius: 12,
-    alignSelf: 'flex-start',
-    marginTop: 4,
-  },
+freeButton: {
+  backgroundColor: '#b400ff',
+  paddingVertical: 8,
+  paddingHorizontal: 14,
+  borderRadius: 12,
+  alignSelf: 'flex-start',
+  marginTop: 4,
+},
 
-  freeButtonText: {
-    color: '#fff',
-    fontWeight: '700',
-    fontSize: 13,
+freeButtonText: {
+  color: '#fff',
+  fontWeight: '700',
+  fontSize: 13,
   },
 });
