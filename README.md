@@ -31,16 +31,7 @@ O projeto é construído com as seguintes tecnologias:
 
 ---
 
-## ✨ Funcionalidades (Parciais)
-
-Atualmente, o aplicativo conta com as seguintes funcionalidades e estrutura:
-
-* **Autenticação de usuário** (Login e Cadastro)
-* **Navegação** entre as telas principais
-* **Listagem de jogos** na tela de início
-* **Estrutura base** pronta para o desenvolvimento de novas páginas.
-
-### 📄 Páginas Implementadas (7 de 10)
+### 📄 Páginas Implementadas (10 de 10)
 | Status | Página |
 | :--- | :--- |
 | **✔️** | Login |
@@ -49,7 +40,10 @@ Atualmente, o aplicativo conta com as seguintes funcionalidades e estrutura:
 | **✔️** | Loja |
 | **✔️** | Biblioteca |
 | **✔️** | Perfil |
+| **✔️** | Informações |
 | **✔️** | Configurações |
+| **✔️** | Senha |
+| **✔️** | Instalação |
 
 ---
 
@@ -79,8 +73,8 @@ Siga os passos abaixo para rodar o Orbverse localmente:
 ## 📌 Status do Projeto
 
 * **Status:** 🚧 **Em desenvolvimento**
-* **Páginas Concluídas:** 6 de 10
-* **Foco Atual:** Desenvolvimento das telas restantes.
+* **Páginas Concluídas:** 10 de 10
+* **Foco Atual:** Organização do código e ajustes finais.
 
 ---
 
