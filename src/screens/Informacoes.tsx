@@ -1,13 +1,6 @@
 import React, { useState } from "react";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  ScrollView,
-  TouchableOpacity,
-} from "react-native";
+import {View, Text, StyleSheet, Image, ScrollView, TouchableOpacity,} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
 export default function Informacoes() {
@@ -201,145 +194,142 @@ export default function Informacoes() {
   );
 }
 
-/* ---------------------- ESTILOS ---------------------- */
+/* ESTILOS */
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#000",
-  },
+container: {
+  flex: 1,
+  backgroundColor: "#000",
+},
 
+topBar: {
+  flexDirection: "row",
+  alignItems: "center",
+  justifyContent: "space-between",
+  paddingHorizontal: 14,
+  paddingTop: 14,
+},
 
+logo: {
+  width: 110,
+  height: 28,
+  resizeMode: "contain",
+},
 
-  /* TOPO */
-  topBar: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    paddingHorizontal: 14,
-    paddingTop: 14,
-  },
+topIcons: {
+  flexDirection: "row",
+  alignItems: "center",
+},
 
-  logo: {
-    width: 110,
-    height: 28,
-    resizeMode: "contain",
-  },
+/* CARROSSEL */
+carouselContainer: {
+  width: "100%",
+  height: 180,
+  marginTop: 12,
+},
 
-  topIcons: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
+carouselImage: {
+  width: "100%",  
+  height: "100%",
+  borderRadius: 12,
+},
 
-  /* CARROSSEL */
-  carouselContainer: {
-    width: "100%",
-    height: 180,
-    marginTop: 12,
-  },
+leftArrow: {
+  position: "absolute",
+  left: 10,
+  top: "45%",
+},
 
-  carouselImage: {
-    width: "100%",
-    height: "100%",
-    borderRadius: 12,
-  },
+rightArrow: {
+  position: "absolute",
+  right: 10,
+  top: "45%",
+},
 
-  leftArrow: {
-    position: "absolute",
-    left: 10,
-    top: "45%",
-  },
+/* TÍTULO */
+titleBox: {
+  paddingHorizontal: 14,
+  marginTop: 16,
+},
 
-  rightArrow: {
-    position: "absolute",
-    right: 10,
-    top: "45%",
-  },
+gameTitle: {
+  color: "#fff",
+  fontSize: 22,
+  fontWeight: "700",
+},
 
-  /* TÍTULO */
-  titleBox: {
-    paddingHorizontal: 14,
-    marginTop: 16,
-  },
+gameStudio: {
+  color: "#ccc",
+  marginTop: 4,
+},
 
-  gameTitle: {
-    color: "#fff",
-    fontSize: 22,
-    fontWeight: "700",
-  },
+ratingRow: {
+  flexDirection: "row",
+  alignItems: "center",
+  marginTop: 8,
+},
 
-  gameStudio: {
-    color: "#ccc",
-    marginTop: 4,
-  },
+ratingText: {
+  color: "#fff",
+  marginLeft: 4,
+  fontSize: 16,
+  fontWeight: "600",
+},
 
-  ratingRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginTop: 8,
-  },
+reviewsCount: {
+  color: "#aaa",
+  marginLeft: 6,
+},
 
-  ratingText: {
-    color: "#fff",
-    marginLeft: 4,
-    fontSize: 16,
-    fontWeight: "600",
-  },
+tagsRow: {
+  flexDirection: "row",
+  marginTop: 10,
+},
 
-  reviewsCount: {
-    color: "#aaa",
-    marginLeft: 6,
-  },
+tag: {
+  backgroundColor: "#1a1a1a",
+  color: "#d400ff",
+  paddingHorizontal: 10,
+  paddingVertical: 4,
+  borderRadius: 6,
+  marginRight: 8,
+  fontSize: 12,
+},
 
-  tagsRow: {
-    flexDirection: "row",
-    marginTop: 10,
-  },
+/* SESSÕES */
+section: {
+  paddingHorizontal: 14,
+  marginTop: 24,
+},
 
-  tag: {
-    backgroundColor: "#1a1a1a",
-    color: "#d400ff",
-    paddingHorizontal: 10,
-    paddingVertical: 4,
-    borderRadius: 6,
-    marginRight: 8,
-    fontSize: 12,
-  },
+sectionTitle: {
+  color: "#fff",
+  fontSize: 18,
+  fontWeight: "700",
+},
 
-  /* SESSÕES */
-  section: {
-    paddingHorizontal: 14,
-    marginTop: 24,
-  },
+sectionText: {
+  color: "#ccc",
+  marginTop: 10,
+  lineHeight: 20,
+  fontSize: 14,
+},
 
-  sectionTitle: {
-    color: "#fff",
-    fontSize: 18,
-    fontWeight: "700",
-  },
+subTitle: {
+  color: "#d400ff",
+  fontWeight: "700",
+  fontSize: 14,
+  marginTop: 10,
+},
 
-  sectionText: {
-    color: "#ccc",
-    marginTop: 10,
-    lineHeight: 20,
-    fontSize: 14,
-  },
+reqText: {
+  color: "#ccc",
+  marginTop: 6,
+  fontSize: 13,
+},
 
-  subTitle: {
-    color: "#d400ff",
-    fontWeight: "700",
-    fontSize: 14,
-    marginTop: 10,
-  },
-
-  reqText: {
-    color: "#ccc",
-    marginTop: 6,
-    fontSize: 13,
-  },
-
-  /* AVALIAÇÕES */
-  sectionHeader: {
+/* AVALIAÇÕES */
+sectionHeader: {
   flexDirection: "row",
   justifyContent: "space-between",
   alignItems: "center",
@@ -352,30 +342,30 @@ viewAllText: {
   fontWeight: "600",
 },
 
-  reviewBox: {
-    backgroundColor: "#111",
-    padding: 14,
-    borderRadius: 10,
-    marginTop: 12,
-  },
+reviewBox: {
+  backgroundColor: "#111",
+  padding: 14,
+  borderRadius: 10,
+  marginTop: 12,
+},
 
-  reviewUser: {
-    color: "#fff",
-    fontWeight: "700",
-  },
+reviewUser: {
+  color: "#fff",
+  fontWeight: "700",
+},
 
-  starsRow: {
-    flexDirection: "row",
-    marginTop: 4,
-  },
+starsRow: {
+  flexDirection: "row",
+  marginTop: 4,
+},
 
-  reviewText: {
-    color: "#ccc",
-    marginTop: 6,
-    fontSize: 13,
-  },
+reviewText: {
+  color: "#ccc",
+  marginTop: 6,
+  fontSize: 13,
+},
 
-  /* FOOTER */
+/* FOOTER */
 footerFixed: {
   position: "absolute",
   bottom: 0,
@@ -388,23 +378,23 @@ footerFixed: {
   backgroundColor: "#000",
 },
 
-  price: {
-    color: "#fff",
-    fontSize: 22,
-    fontWeight: "800",
-    marginBottom: 12,
-  },
+price: {
+  color: "#fff",
+  fontSize: 22,
+  fontWeight: "800",
+  marginBottom: 12,
+},
 
-  buyButton: {
-    backgroundColor: "#b400ff",
-    paddingVertical: 14,
-    borderRadius: 12,
-    alignItems: "center",
-  },
+buyButton: {
+  backgroundColor: "#b400ff",
+  paddingVertical: 14,
+  borderRadius: 12,
+  alignItems: "center",
+},
 
-  buyText: {
-    color: "#fff",
-    fontSize: 16,
-    fontWeight: "700",
-  },
+buyText: {
+  color: "#fff",
+  fontSize: 16,
+  fontWeight: "700",
+},
 });
