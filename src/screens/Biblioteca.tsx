@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  TextInput,
-  ScrollView,
-  ImageBackground,
-  TouchableOpacity,
-} from "react-native";
+import { View, Text, StyleSheet, TextInput, ScrollView, ImageBackground, TouchableOpacity, } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -16,10 +8,7 @@ import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParamList } from "../navigation/StackNavigator";
 
-type BibliotecaNavProp = NativeStackNavigationProp<
-  RootStackParamList,
-  "Biblioteca"
->;
+type BibliotecaNavProp = NativeStackNavigationProp<RootStackParamList,"Biblioteca">;
 
 export default function Biblioteca() {
   const navigation = useNavigation<BibliotecaNavProp>();
@@ -306,152 +295,152 @@ export default function Biblioteca() {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: "#000" },
 
-  topBar: {
-    flexDirection: "row",
-    paddingHorizontal: 18,
-    paddingTop: 10,
-    paddingBottom: 12,
-  },
+topBar: {
+  flexDirection: "row",
+  paddingHorizontal: 18,
+  paddingTop: 10,
+  paddingBottom: 12,
+},
 
-  searchContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    backgroundColor: "#0f0f0f",
-    borderRadius: 22,
-    paddingHorizontal: 12,
-    height: 38,
-    flex: 1,
-    borderWidth: 1,
-    borderColor: "#222",
-  },
+searchContainer: {
+  flexDirection: "row",
+  alignItems: "center",
+  backgroundColor: "#0f0f0f",
+  borderRadius: 22,
+  paddingHorizontal: 12,
+  height: 38,
+  flex: 1,
+  borderWidth: 1,
+  borderColor: "#222",
+},
 
-  searchIcon: { marginRight: 6 },
+searchIcon: { marginRight: 6 },
 
-  searchInput: {
-    color: "#fff",
-    fontSize: 14,
-    flex: 1,
-  },
+searchInput: {
+  color: "#fff",
+  fontSize: 14,
+  flex: 1,
+},
 
-  content: { paddingHorizontal: 16, marginTop: 4 },
+content: { paddingHorizontal: 16, marginTop: 4 },
 
-  sectionTitle: {
-    color: "#fff",
-    fontSize: 22,
-    fontWeight: "700",
-    marginTop: 10,
-  },
+sectionTitle: {
+  color: "#fff",
+  fontSize: 22,
+  fontWeight: "700",
+  marginTop: 10,
+},
 
-  storageLabel: {
-    color: "#ccc",
-    fontSize: 13,
-    marginBottom: 6,
-  },
+storageLabel: {
+  color: "#ccc",
+  fontSize: 13,
+  marginBottom: 6,
+},
 
-  storageBarBg: {
-    width: "100%",
-    height: 10,
-    backgroundColor: "#222",
-    borderRadius: 10,
-    marginBottom: 18,
-  },
+storageBarBg: {
+  width: "100%",
+  height: 10,
+  backgroundColor: "#222",
+  borderRadius: 10,
+  marginBottom: 18,
+},
 
-  storageBarFill: {
-    width: "36%",
-    height: 10,
-    backgroundColor: "#b400ff",
-    borderRadius: 10,
-  },
+storageBarFill: {
+  width: "36%",
+  height: 10,
+  backgroundColor: "#b400ff",
+  borderRadius: 10,
+},
 
-  grid: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "space-between",
-  },
+grid: {
+  flexDirection: "row",
+  flexWrap: "wrap",
+  justifyContent: "space-between",
+},
 
-  verticalCard: {
-    width: "48%",
-    height: 220,
-    borderRadius: 18,
-    backgroundColor: "#111",
-    marginBottom: 18,
-    overflow: "hidden",
-  },
+verticalCard: {
+  width: "48%",
+  height: 220,
+  borderRadius: 18,
+  backgroundColor: "#111",
+  marginBottom: 18,
+  overflow: "hidden",
+},
 
-  verticalCardBg: {
-    flex: 1,
-    justifyContent: "flex-end",
-  },
+verticalCardBg: {
+  flex: 1,
+  justifyContent: "flex-end",
+},
 
-  verticalImage: {
-    borderRadius: 18,
-  },
+verticalImage: {
+  borderRadius: 18,
+},
 
-  cardFooter: {
-    padding: 10,
-    backgroundColor: "rgba(0,0,0,0.45)",
-  },
+cardFooter: {
+  padding: 10,
+  backgroundColor: "rgba(0,0,0,0.45)",
+},
 
-  gameName: {
-    color: "#fff",
-    fontWeight: "700",
-    fontSize: 15,
-    marginBottom: 12,
-  },
+gameName: {
+  color: "#fff",
+  fontWeight: "700",
+  fontSize: 15,
+  marginBottom: 12,
+},
 
-  installButton: {
-    backgroundColor: "#b400ff",
-    borderRadius: 10,
-    paddingHorizontal: 10,
-    paddingVertical: 6,
-    flexDirection: "row",
-    alignItems: "center",
-    alignSelf: "flex-start",
-    gap: 6,
-  },
+installButton: {
+  backgroundColor: "#b400ff",
+  borderRadius: 10,
+  paddingHorizontal: 10,
+  paddingVertical: 6,
+  flexDirection: "row",
+  alignItems: "center",
+  alignSelf: "flex-start",
+  gap: 6,
+},
 
-  playButton: {
-    backgroundColor: "#6200ff",
-    borderRadius: 10,
-    paddingHorizontal: 10,
-    paddingVertical: 6,
-    flexDirection: "row",
-    alignItems: "center",
-    alignSelf: "flex-start",
-    gap: 6,
-  },
+playButton: {
+  backgroundColor: "#6200ff",
+  borderRadius: 10,
+  paddingHorizontal: 10,
+  paddingVertical: 6,
+  flexDirection: "row",
+  alignItems: "center",
+  alignSelf: "flex-start",
+  gap: 6,
+},
 
-  installText: { color: "#fff", fontWeight: "600", fontSize: 12 },
+installText: { color: "#fff", fontWeight: "600", fontSize: 12 },
 
-  priceFree: {
-    color: "#9d4dff",
-    fontWeight: "700",
-    fontSize: 14,
-  },
+priceFree: {
+  color: "#9d4dff",
+  fontWeight: "700",
+  fontSize: 14,
+},
 
-  pricePaid: {
-    color: "#ff4ddd",
-    fontWeight: "700",
-    fontSize: 14,
-  },
+pricePaid: {
+  color: "#ff4ddd",
+  fontWeight: "700",
+  fontSize: 14,
+},
 
-  bottomSafeArea: { backgroundColor: "transparent" },
+bottomSafeArea: { backgroundColor: "transparent" },
 
-  bottomBar: {
-    height: 70,
-    borderTopWidth: 1,
-    borderTopColor: "#222",
-    backgroundColor: "#000",
-    flexDirection: "row",
-    justifyContent: "space-around",
-    alignItems: "center",
-    paddingBottom: 8,
-    paddingTop: 6,
-  },
+bottomBar: {
+  height: 70,
+  borderTopWidth: 1,
+  borderTopColor: "#222",
+  backgroundColor: "#000",
+  flexDirection: "row",
+  justifyContent: "space-around",
+  alignItems: "center",
+  paddingBottom: 8,
+  paddingTop: 6,
+},
 
-  tabItem: { flex: 1, alignItems: "center" },
+tabItem: { flex: 1, alignItems: "center" },
 
-  tabLabel: { fontSize: 12, color: "#8a8a8a", marginTop: 4 },
+tabLabel: { fontSize: 12, color: "#8a8a8a", marginTop: 4 },
 
-  activeLabel: { color: "#b400ff", fontWeight: "600" },
+activeLabel: { color: "#b400ff", fontWeight: "600" },
 });
