@@ -7,7 +7,7 @@ export default function Informacoes() {
 
   const insets = useSafeAreaInsets();
 
-  // Array com as imagens do carrossel
+  // ARRAY COM IMAGENS DO CARROSSEL
   const images = [
     require("../../assets/gtavi-foto1.png"),
     require("../../assets/gtavi-foto2.png"),
@@ -16,15 +16,15 @@ export default function Informacoes() {
     require("../../assets/gtavi-foto5.png"),
   ];
 
-  // Estado atual
+  // EESTADO ATUAL
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Função para a próxima imagem
+  // FUNÇÃO PARA A PRÓXIMA IMAGEM
   const nextImage = () => {
     setCurrentIndex((prev) => (prev + 1) % images.length);
   };
 
-  // Função para a imagem anterior
+  // FUNÇÃO PARA A IMAGEM ANTERIOR
   const prevImage = () => {
     setCurrentIndex((prev) =>
       prev === 0 ? images.length - 1 : prev - 1
@@ -35,7 +35,7 @@ export default function Informacoes() {
     <View style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 200 }}>
 
-        {/* ---------- TOP BAR ---------- */}
+        {/* BARRA SUPERIOR */}
         <View style={styles.topBar}>
           <Image
             source={require("../../assets/logo.png")}
@@ -53,7 +53,7 @@ export default function Informacoes() {
           </View>
         </View>
 
-        {/* ---------- CARROSSEL ---------- */}
+        {/* CARROSSEL*/}
         <View style={styles.carouselContainer}>
           <Image
             source={images[currentIndex]}
@@ -61,7 +61,7 @@ export default function Informacoes() {
             resizeMode="cover"
           />
 
-          {/* Setas */}
+          {/* SETAS*/}
           <TouchableOpacity style={styles.leftArrow} onPress={prevImage}>
             <Ionicons name="chevron-back" size={28} color="#fff" />
           </TouchableOpacity>
@@ -71,7 +71,7 @@ export default function Informacoes() {
           </TouchableOpacity>
         </View>
 
-        {/* ---------- TÍTULO ---------- */}
+        {/* TÍTULO */}
         <View style={styles.titleBox}>
           <Text style={styles.gameTitle}>Grand Theft Auto VI</Text>
           <Text style={styles.gameStudio}>Rockstar Games</Text>
@@ -89,7 +89,7 @@ export default function Informacoes() {
           </View>
         </View>
 
-        {/* ---------- SOBRE O JOGO ---------- */}
+        {/* SOBRE O JOGO */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Sobre o jogo</Text>
           <Text style={styles.sectionText}>
@@ -101,7 +101,7 @@ export default function Informacoes() {
           </Text>
         </View>
 
-        {/* ---------- REQUISITOS ---------- */}
+        {/* REQUISITOS */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Requisitos do sistema</Text>
 
@@ -122,7 +122,7 @@ export default function Informacoes() {
           <Text style={styles.reqText}>DIRECTX: Versão 12</Text>
         </View>
 
-        {/* ---------- AVALIAÇÕES ---------- */}
+        {/* AVALIAÇÕES */}
         <View style={styles.section}>
 
         <View style={styles.sectionHeader}>
@@ -133,7 +133,7 @@ export default function Informacoes() {
           </TouchableOpacity>
         </View>
 
-          {/* 1 */}
+          {/* COMENTÁRIO 1 */}
           <View style={styles.reviewBox}>
             <Text style={styles.reviewUser}>enzogamer2010</Text>
             <View style={styles.starsRow}>
@@ -148,7 +148,7 @@ export default function Informacoes() {
             </Text>
           </View>
 
-          {/* 2 */}
+          {/* COMENTÁRIO 2 */}
           <View style={styles.reviewBox}>
             <Text style={styles.reviewUser}>luis_0311</Text>
             <View style={styles.starsRow}>
@@ -164,7 +164,7 @@ export default function Informacoes() {
             </Text>
           </View>
 
-          {/* 3 */}
+          {/* COMENTÁRIO 3 */}
           <View style={styles.reviewBox}>
             <Text style={styles.reviewUser}>joao0710</Text>
             <View style={styles.starsRow}>
@@ -181,7 +181,7 @@ export default function Informacoes() {
 
       </ScrollView>
 
-      {/* ---------- PREÇO + BOTÃO ---------- */}
+      {/* PREÇO + BOTÃO */}
       <View style={[styles.footerFixed, { paddingBottom: insets.bottom + 10 }]}>
         <Text style={styles.price}>R$ 599,90</Text>
 
@@ -195,7 +195,6 @@ export default function Informacoes() {
 }
 
 /* ESTILOS */
-
 const styles = StyleSheet.create({
 container: {
   flex: 1,

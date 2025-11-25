@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {View,Text,TextInput,TouchableOpacity,StyleSheet,Image,KeyboardAvoidingView,Platform} from 'react-native';
+import { View,Text,TextInput, TouchableOpacity, StyleSheet, Image, KeyboardAvoidingView, Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
@@ -9,9 +9,9 @@ export default function Login() {
   const [usuario, setUsuario] = useState('');
   const [senha, setSenha] = useState('');
   const [erro, setErro] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleLogin = () => {
-
     if (usuario.trim() === '' || senha.trim() === '') {
       setErro('Digite seu nome de usuário e senha');
       return;
@@ -42,6 +42,7 @@ export default function Login() {
         <Text style={styles.title}>Bem-vindo!</Text>
         <Text style={styles.p}>Entre e continue sua aventura.</Text>
 
+        {/* USUÁRIO */}
         <View style={styles.inputContainer}>
           <Ionicons name="person-outline" size={20} color="#ccc" style={styles.icon} />
           <TextInput
@@ -53,16 +54,28 @@ export default function Login() {
           />
         </View>
 
+        {/* SENHA */}
         <View style={styles.inputContainer}>
           <Ionicons name="lock-closed-outline" size={20} color="#ccc" style={styles.icon} />
+
           <TextInput
             placeholder="Senha"
             placeholderTextColor="#aaa"
-            secureTextEntry
+            secureTextEntry={!showPassword} // ⬅ ALTERADO
             style={styles.input}
             value={senha}
             onChangeText={setSenha}
           />
+
+          {/* BOTÃO DE OLHO */}
+          <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
+            <Ionicons
+              name={showPassword ? "eye-outline" : "eye-off-outline"}
+              size={22}
+              color="#ccc"
+            />
+          </TouchableOpacity>
+
         </View>
 
         {/* MENSAGEM DE ERRO */}
