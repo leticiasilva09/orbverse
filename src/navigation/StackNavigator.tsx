@@ -11,7 +11,7 @@ import Config from "../screens/Config";
 import Instalacao from "../screens/Instalacao";
 import Senha from "../screens/Senha";
 import Informacoes from "../screens/Informacoes";
-import Favoritos from "../screens/Favoritos";
+import Lista from "../screens/Lista";
 
 // Tipagem das rotas do stack
 export type RootStackParamList = {
@@ -25,7 +25,7 @@ export type RootStackParamList = {
   Instalacao: undefined;
   Senha: undefined;
   Informacoes: undefined;
-  Favoritos: undefined;
+  Lista: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -104,9 +104,9 @@ export default function StackNavigator() {
         />
 
         <Stack.Screen
-          name="Favoritos"
-          component={Favoritos}
-          options={{ title: "Meus Favoritos" }}
+          name="Lista"
+          component={Lista}
+          options={{ title: "Lista de Desejos" }}
         />
 
       </Stack.Navigator>

@@ -93,10 +93,10 @@ export default function Perfil() {
         <TouchableOpacity
           style={styles.settingsButton}
           activeOpacity={0.8}
-          onPress={() => navigation.navigate("Favoritos")}
+          onPress={() => navigation.navigate("Lista")}
         >
           <Ionicons name="heart-outline" size={22} color="#fff" />
-          <Text style={styles.settingsText}>Meus Favoritos</Text>
+          <Text style={styles.settingsText}>Lista de Desejos</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
