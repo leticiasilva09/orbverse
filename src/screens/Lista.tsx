@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  TouchableOpacity,
-  ScrollView,
-} from "react-native";
+import {View, Text, Image, StyleSheet, TouchableOpacity, ScrollView,} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
 export default function Favoritos() {
@@ -101,82 +94,82 @@ export default function Favoritos() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "#0e0e0e",
-    flex: 1,
-    padding: 20,
-  },
+container: {
+  backgroundColor: "#0e0e0e",
+  flex: 1,
+  padding: 20,
+},
 
-  card: {
-    backgroundColor: "#181818",
-    borderRadius: 12,
-    flexDirection: "row",
-    padding: 12,
-    marginBottom: 20,
-    position: "relative",
-    alignItems: "center",
-  },
+card: {
+  backgroundColor: "#181818",
+  borderRadius: 12,
+  flexDirection: "row",
+  padding: 12,
+  marginBottom: 20,
+  position: "relative",
+  alignItems: "center",
+},
 
-  image: {
-    width: 90,
-    height: 90,
-    borderRadius: 8,
-    marginRight: 12,
-  },
+image: {
+  width: 90,
+  height: 90,
+  borderRadius: 8,
+  marginRight: 12,
+},
 
-  info: {
-    flex: 1,
-  },
+info: {
+  flex: 1,
+},
 
-  gameTitle: {
-    color: "#fff",
-    fontSize: 14,
-    fontWeight: "700",
-  },
+gameTitle: {
+  color: "#fff",
+  fontSize: 14,
+  fontWeight: "700",
+},
 
-  studio: {
-    color: "#9ca3af",
-    fontSize: 12,
-    marginTop: 2,
-  },
+studio: {
+  color: "#9ca3af",
+  fontSize: 12,
+  marginTop: 2,
+},
 
-  ratingRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginTop: 6,
-  },
+ratingRow: {
+  flexDirection: "row",
+  alignItems: "center",
+  marginTop: 6,
+},
 
-  rating: {
-    color: "#fff",
-    marginLeft: 4,
-    fontSize: 12,
-  },
+rating: {
+  color: "#fff",
+  marginLeft: 4,
+  fontSize: 12,
+},
 
-  price: {
-    color: "#fff",
-    fontSize: 14,
-    fontWeight: "700",
-    marginTop: 8,
-  },
+price: {
+  color: "#fff",
+  fontSize: 14,
+  fontWeight: "700",
+  marginTop: 8,
+},
 
-  addButton: {
-    backgroundColor: "#222",
-    borderWidth: 1,
-    borderColor: "#444",
-    paddingVertical: 8,
-    paddingHorizontal: 14,
-    borderRadius: 8,
-    alignSelf: "center",
-  },
+addButton: {
+  backgroundColor: "#222",
+  borderWidth: 1,
+  borderColor: "#444",
+  paddingVertical: 8,
+  paddingHorizontal: 14,
+  borderRadius: 8,
+  alignSelf: "center",
+},
 
-  addText: {
-    color: "#fff",
-    fontSize: 12,
-  },
+addText: {
+  color: "#fff",
+  fontSize: 12,
+},
 
-  heartIcon: {
-    position: "absolute",
-    right: 12,
-    top: 12,
-  },
+heartIcon: {
+  position: "absolute",
+  right: 12,
+  top: 12,
+},
 });
