@@ -1,14 +1,5 @@
 import React from "react";
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  StyleSheet,
-  Image,
-  KeyboardAvoidingView,
-  Platform
-} from "react-native";
+import {View, Text, TextInput, TouchableOpacity, StyleSheet, Image, KeyboardAvoidingView, Platform } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
@@ -67,72 +58,72 @@ export default function Senha() {
 
 /* ESTILOS */
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#000",
-    justifyContent: "center",
-  },
+container: {
+  flex: 1,
+  backgroundColor: "#000",
+  justifyContent: "center",
+},
 
-  box: {
-    marginHorizontal: 20,
-    marginTop: -60,
-    padding: 20,
-    backgroundColor: "#000",
-  },
+box: {
+  marginHorizontal: 20,
+  marginTop: -60,
+  padding: 20,
+  backgroundColor: "#000",
+},
 
-  logo: {
-    width: 110,
-    height: 110,
-    alignSelf: "center",
-    marginBottom: 25,
-  },
+logo: {
+  width: 110,
+  height: 110,
+  alignSelf: "center",
+  marginBottom: 25,
+},
 
-  title: {
-    color: "#fff",
-    fontSize: 22,
-    fontWeight: "bold",
-    textAlign: "center",
-  },
+title: {
+  color: "#fff",
+  fontSize: 22,
+  fontWeight: "bold",
+  textAlign: "center",
+},
 
-  subText: {
-    color: "#ccc",
-    textAlign: "center",
-    marginTop: 6,
-    marginBottom: 25,
-    fontSize: 15,
-  },
+subText: {
+  color: "#ccc",
+  textAlign: "center",
+  marginTop: 6,
+  marginBottom: 25,
+  fontSize: 15,
+},
 
-  inputContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    backgroundColor: "#1a1a1a",
-    borderRadius: 8,
-    paddingHorizontal: 10,
-    marginBottom: 18,
-  },
+inputContainer: {
+  flexDirection: "row",
+  alignItems: "center",
+  backgroundColor: "#1a1a1a",
+  borderRadius: 8,
+  paddingHorizontal: 10,
+  marginBottom: 18,
+},
 
-  icon: {
-    marginRight: 8,
-  },
+icon: {
+  marginRight: 8,
+},
 
-  input: {
-    flex: 1,
-    height: 45,
-    color: "#fff",
-  },
+input: {
+  flex: 1,
+  height: 45,
+  color: "#fff",
+},
 
-  button: {
-    backgroundColor: "#AD00FF",
-    paddingVertical: 12,
-    borderRadius: 8,
-    marginTop: 5,
-  },
+button: {
+  backgroundColor: "#AD00FF",
+  paddingVertical: 12,
+  borderRadius: 8,
+  marginTop: 5,
+},
 
-  buttonText: {
-    color: "#fff",
-    fontWeight: "bold",
-    textAlign: "center",
-    fontSize: 16,
-  },
+buttonText: {
+  color: "#fff",
+  fontWeight: "bold",
+  textAlign: "center",
+  fontSize: 16,
+},
 });
 
