@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  ScrollView,
-  TouchableOpacity,
-} from "react-native";
+import {View, Text, StyleSheet, ScrollView, TouchableOpacity, } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -169,203 +163,203 @@ export default function Perfil() {
 /* ESTILOS */
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#000",
-  },
+  flex: 1,
+  backgroundColor: "#000",
+},
 
-  content: {
-    paddingHorizontal: 16,
-    marginTop: 10,
-  },
+content: {
+  paddingHorizontal: 16,
+  marginTop: 10,
+},
 
-  /* CARD DE PERFIL */
-  profileCard: {
-    backgroundColor: "#0f0f0f",
-    borderRadius: 18,
-    padding: 20,
-    flexDirection: "row",
-    alignItems: "center",
-  },
+/* CARD DE PERFIL */
+profileCard: {
+  backgroundColor: "#0f0f0f",
+  borderRadius: 18,
+  padding: 20,
+  flexDirection: "row",
+  alignItems: "center",
+},
 
-  avatar: {
-    width: 70,
-    height: 70,
-    borderRadius: 50,
-    backgroundColor: "#7b2cff",
-    alignItems: "center",
-    justifyContent: "center",
-    marginRight: 16,
-  },
+avatar: {
+  width: 70,
+  height: 70,
+  borderRadius: 50,
+  backgroundColor: "#7b2cff",
+  alignItems: "center",
+  justifyContent: "center",
+  marginRight: 16,
+},
 
-  avatarText: {
-    color: "#fff",
-    fontSize: 26,
-    fontWeight: "700",
-  },
+avatarText: {
+  color: "#fff",
+  fontSize: 26,
+  fontWeight: "700",
+},
 
-  profileName: {
-    color: "#fff",
-    fontSize: 20,
-    fontWeight: "700",
-  },
+profileName: {
+  color: "#fff",
+  fontSize: 20,
+  fontWeight: "700",
+},
 
-  profileLevel: {
-    color: "#aaa",
-    fontSize: 14,
-    marginTop: 2,
-  },
+profileLevel: {
+  color: "#aaa",
+  fontSize: 14,
+  marginTop: 2,
+},
 
-  profileXP: {
-    color: "#ccc",
-    fontSize: 12,
-    marginTop: 8,
-  },
+profileXP: {
+  color: "#ccc",
+  fontSize: 12,
+  marginTop: 8,
+},
 
-  /* BARRA DE XP */
-  xpBar: {
-    width: 160,
-    height: 10,
-    borderRadius: 10,
-    backgroundColor: "#333",
-    marginTop: 4,
-    overflow: "hidden",
-  },
+/* BARRA DE XP */
+xpBar: {
+  width: 160,
+  height: 10,
+  borderRadius: 10,
+  backgroundColor: "#333",
+  marginTop: 4,
+  overflow: "hidden",
+},
 
-  xpFill: {
-    width: "75%",
-    height: "100%",
-    backgroundColor: "#b400ff",
-  },
+xpFill: {
+  width: "75%",
+  height: "100%",
+  backgroundColor: "#b400ff",
+},
 
-  xpNumbers: {
-    color: "#aaa",
-    fontSize: 12,
-    marginTop: 4,
-  },
+xpNumbers: {
+  color: "#aaa",
+  fontSize: 12,
+  marginTop: 4,
+},
 
-  /* SEÇÃO DE ESTATÍSTICAS */
-  statsRow: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginTop: 20,
-    marginBottom: 10,
-  },
+/* SEÇÃO DE ESTATÍSTICAS */
+statsRow: {
+  flexDirection: "row",
+  justifyContent: "space-between",
+  marginTop: 20,
+  marginBottom: 10,
+},
 
-  statItem: {
-    width: "32%",
-    backgroundColor: "#0f0f0f",
-    borderRadius: 14,
-    alignItems: "center",
-    paddingVertical: 16,
-  },
+statItem: {
+  width: "32%",
+  backgroundColor: "#0f0f0f",
+  borderRadius: 14,
+  alignItems: "center",
+  paddingVertical: 16,
+},
 
-  statNumber: {
-    color: "#fff",
-    fontSize: 20,
-    fontWeight: "700",
-    marginTop: 6,
-  },
+statNumber: {
+  color: "#fff",
+  fontSize: 20,
+  fontWeight: "700",
+  marginTop: 6,
+},
 
-  statLabel: {
-    color: "#aaa",
-    fontSize: 12,
-  },
+statLabel: {
+  color: "#aaa",
+  fontSize: 12,
+},
 
-  /* SEÇÃO DE ATIVIDADE RECENTE */
-  sectionTitle: {
-    color: "#fff",
-    fontSize: 20,
-    fontWeight: "700",
-    marginTop: 16,
-    marginBottom: 12,
-  },
+/* SEÇÃO DE ATIVIDADE RECENTE */
+sectionTitle: {
+  color: "#fff",
+  fontSize: 20,
+  fontWeight: "700",
+  marginTop: 16,
+  marginBottom: 12,
+},
 
-  activityCard: {
-    backgroundColor: "#0f0f0f",
-    padding: 16,
-    borderRadius: 16,
-    marginBottom: 14,
-  },
+activityCard: {
+  backgroundColor: "#0f0f0f",
+  padding: 16,
+  borderRadius: 16,
+  marginBottom: 14,
+},
 
-  activityTitle: {
-    color: "#fff",
-    fontSize: 16,
-    fontWeight: "700",
-  },
+activityTitle: {
+  color: "#fff",
+  fontSize: 16,
+  fontWeight: "700",
+},
 
-  activityDesc: {
-    color: "#ccc",
-    marginTop: 4,
-  },
+activityDesc: {
+  color: "#ccc",
+  marginTop: 4,
+},
 
-  activityTime: {
-    color: "#777",
-    marginTop: 6,
-    fontSize: 12,
-  },
+activityTime: {
+  color: "#777",
+  marginTop: 6,
+  fontSize: 12,
+},
 
-    /* BOTÃO DE CONFIGURAÇÕES */
-  settingsButton: {
-    backgroundColor: "#0f0f0f",
-    padding: 16,
-    borderRadius: 14,
-    marginTop: 10,
-    flexDirection: "row",
-    alignItems: "center",
-  },
+/* BOTÃO DE CONFIGURAÇÕES */
+settingsButton: {
+  backgroundColor: "#0f0f0f",
+  padding: 16,
+  borderRadius: 14,
+  marginTop: 10,
+  flexDirection: "row",
+  alignItems: "center",
+},
 
-  settingsText: {
-    color: "#fff",
-    marginLeft: 10,
-    fontSize: 16,
-  },
+settingsText: {
+  color: "#fff",
+  marginLeft: 10,
+  fontSize: 16,
+},
 
-  /* BOTÃO DE SAIR */
-  logoutButton: {
-    backgroundColor: "#0f0f0f",
-    padding: 16,
-    borderRadius: 14,
-    marginTop: 12,
-    flexDirection: "row",
-    alignItems: "center",
-  },
+/* BOTÃO DE SAIR */
+logoutButton: {
+  backgroundColor: "#0f0f0f",
+  padding: 16,
+  borderRadius: 14,
+  marginTop: 12,
+  flexDirection: "row",
+  alignItems: "center",
+},
 
-  logoutText: {
-    color: "#ff4d4d",
-    marginLeft: 10,
-    fontSize: 16,
-    fontWeight: "600",
-  },
+logoutText: {
+  color: "#ff4d4d",
+  marginLeft: 10,
+  fontSize: 16,
+  fontWeight: "600",
+},
 
-  /* BARRA INFERIOR */
-  bottomSafeArea: {
-    backgroundColor: "transparent",
-  },
+/* BARRA INFERIOR */
+bottomSafeArea: {
+  backgroundColor: "transparent",
+},
 
-  bottomBar: {
-    height: 70,
-    borderTopWidth: 1,
-    borderTopColor: "#222",
-    backgroundColor: "#000",
-    flexDirection: "row",
-    justifyContent: "space-around",
-    alignItems: "center",
-  },
+bottomBar: {
+  height: 70,
+  borderTopWidth: 1,
+  borderTopColor: "#222",
+  backgroundColor: "#000",
+  flexDirection: "row",
+  justifyContent: "space-around",
+  alignItems: "center",
+},
 
-  tabItem: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
+tabItem: {
+  flex: 1,
+  alignItems: "center",
+  justifyContent: "center",
+},
 
-  tabLabel: {
-    fontSize: 12,
-    marginTop: 4,
-    color: "#8a8a8a",
-  },
+tabLabel: {
+  fontSize: 12,
+  marginTop: 4,
+  color: "#8a8a8a",
+},
 
-  activeLabel: {
-    color: "#b400ff",
-    fontWeight: "600",
-  },
+activeLabel: {
+  color: "#b400ff",
+  fontWeight: "600",
+},
 });
