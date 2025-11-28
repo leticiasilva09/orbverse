@@ -31,7 +31,7 @@ O projeto é construído com as seguintes tecnologias:
 
 ---
 
-### 📄 Páginas Implementadas (10 de 10)
+### 📄 Páginas Implementadas (11 de 11)
 | Status | Página |
 | :--- | :--- |
 | **✔️** | Login |
@@ -44,6 +44,7 @@ O projeto é construído com as seguintes tecnologias:
 | **✔️** | Configurações |
 | **✔️** | Senha |
 | **✔️** | Instalação |
+| **✔️** | Lista de desejos |
 
 ---
 
@@ -72,9 +73,9 @@ Siga os passos abaixo para rodar o Orbverse localmente:
 
 ## 📌 Status do Projeto
 
-* **Status:** 🚧 **Em desenvolvimento**
-* **Páginas Concluídas:** 10 de 10
-* **Foco Atual:** Organização do código e ajustes finais.
+* **Status:** 🚧 **Em desenvolviment**
+* **Páginas Concluídas:** 11 de 11
+* **Foco Atual:** Fazer o backend.
 
 ---
 
