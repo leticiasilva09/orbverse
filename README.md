@@ -17,6 +17,7 @@ O objetivo do Orbverse é fornecer uma **experiência completa e moderna** para 
 * **Compra de jogos**
 * **Visualização da Biblioteca**
 * **Gerenciamento do Perfil**
+* **Instalação remota**
 
 ---
 
@@ -73,7 +74,7 @@ Siga os passos abaixo para rodar o Orbverse localmente:
 
 ## 📌 Status do Projeto
 
-* **Status:** 🚧 **Em desenvolviment**
+* **Status:** 🚧 **Em desenvolvimento**
 * **Páginas Concluídas:** 11 de 11
 * **Foco Atual:** Fazer o backend.
 
