@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View,Text,TextInput, TouchableOpacity, StyleSheet, Image, KeyboardAvoidingView, Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Login() {
   const navigation = useNavigation();
@@ -11,17 +12,67 @@ export default function Login() {
   const [erro, setErro] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleLogin = () => {
+  // vai conferir se já existe usuário logado
+  useEffect(() => {
+    async function checkLoggedUser() {
+      try {
+        // busca no AsyncStorage se existe um usuário logado
+        const loggedUser = await AsyncStorage.getItem('@loggedUser');
+
+        if (loggedUser) {
+          // se já existir usuário logado, pula o login
+          navigation.navigate('Home' as never);
+        }
+      } catch (error) {
+        // pra caso ocorra erro ao acessar o AsyncStorage
+        console.log('Erro ao verificar sessão');
+      }
+    }
+
+    // executa a função ao carregar a tela
+    checkLoggedUser();
+  }, []);
+
+  const handleLogin = async () => {
+    // confere se os campos de usuário ou senha estão vazios
     if (usuario.trim() === '' || senha.trim() === '') {
       setErro('Digite seu nome de usuário e senha');
       return;
     }
 
-    if (usuario === 'KaiqueVale08' && senha === 'kaique123') {
-      setErro('');
-      navigation.navigate('Home' as never);
-    } else {
-      setErro('Nome de usuário ou senha incorretos');
+    try {
+      // busca os dados do usuário cadastrado no AsyncStorage
+      const userData = await AsyncStorage.getItem('@user');
+
+      // caso não exista nenhum usuário cadastrado
+      if (!userData) {
+        setErro('Nenhuma conta encontrada. Cadastre-se primeiro.');
+        return;
+      }
+
+      // vai converter os dados salvos de string para objeto
+      const user = JSON.parse(userData);
+
+      // confere se o usuário e a senha digitados são válidos
+      if (usuario === user.username && senha === user.password) {
+        setErro('');
+
+        // salva o usuário como logado no AsyncStorage
+        await AsyncStorage.setItem(
+          '@loggedUser',
+          JSON.stringify(user)
+        );
+
+        // redireciona o usuário para a tela principal
+        navigation.navigate('Home' as never);
+      } else {
+        // caso os dados estejam incorretos
+        setErro('Nome de usuário ou senha incorretos');
+      }
+
+    } catch (error) {
+      // caso ocorra erro durante o processo de login
+      setErro('Erro ao realizar login');
     }
   };
 

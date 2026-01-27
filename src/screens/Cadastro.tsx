@@ -1,10 +1,54 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, KeyboardAvoidingView, Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Cadastro() {
   const navigation = useNavigation();
+
+  const [username, setUsername] = useState(''); 
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [erro, setErro] = useState('');
+
+  const handleRegister = async () => {
+  // confere se algum campo ta vazio
+  if (!username || !email || !password || !confirmPassword) {
+    setErro('Preencha todos os campos');
+    return;
+  }
+
+  // confere se a senha e a confirmação são iguais
+  if (password !== confirmPassword) {
+    setErro('As senhas não coincidem');
+    return;
+  }
+
+  try {
+    // cria um objeto com os dados do usuário
+    const user = {
+      username,
+      email,
+      password,
+    };
+
+    // salva os dados do usuário no AsyncStorage
+    // os dados são convertidos para string usando JSON.stringify
+    await AsyncStorage.setItem('@user', JSON.stringify(user));
+
+    // limpa mensagens de erro, se tiver
+    setErro('');
+
+    // redireciona o usuário para a tela de login depois do cadastro
+    navigation.navigate('Login' as never);
+
+  } catch (error) {
+    // pra caso ocorra algum erro ao salvar os dados
+    setErro('Erro ao cadastrar usuário');
+  }
+};
 
   return (
     <KeyboardAvoidingView
@@ -27,6 +71,8 @@ export default function Cadastro() {
             placeholder="Nome de usuário"
             placeholderTextColor="#aaa"
             style={styles.input}
+            value={username}
+            onChangeText={setUsername}
           />
         </View>
 
@@ -37,6 +83,8 @@ export default function Cadastro() {
             placeholderTextColor="#aaa"
             style={styles.input}
             keyboardType="email-address"
+            value={email}
+            onChangeText={setEmail}
           />
         </View>
 
@@ -47,6 +95,8 @@ export default function Cadastro() {
             placeholderTextColor="#aaa"
             secureTextEntry
             style={styles.input}
+            value={password}
+            onChangeText={setPassword}
           />
         </View>
 
@@ -57,12 +107,21 @@ export default function Cadastro() {
             placeholderTextColor="#aaa"
             secureTextEntry
             style={styles.input}
+            value={confirmPassword}
+            onChangeText={setConfirmPassword}
           />
         </View>
 
+        {/* MENSAGEM DE ERRO */}
+        {erro ? (
+          <Text style={{ color: '#ff4444', textAlign: 'center', marginBottom: 10 }}>
+            {erro}
+          </Text>
+        ) : null}
+
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate('Login' as never)}
+          onPress={handleRegister}
         >
           <Text style={styles.buttonText}>Cadastrar</Text>
         </TouchableOpacity>

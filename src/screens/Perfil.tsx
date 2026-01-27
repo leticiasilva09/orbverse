@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {View, Text, StyleSheet, ScrollView, TouchableOpacity, } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 // IMPORTS PARA TIPAR A NAVEGAÇÃO
 import { useNavigation } from "@react-navigation/native";
@@ -12,7 +13,43 @@ import type { RootStackParamList } from "../navigation/StackNavigator";
 type PerfilNavigationProp = NativeStackNavigationProp<RootStackParamList, "Perfil">;
 
 export default function Perfil() {
+  const [username, setUsername] = useState<string>(''); // cria um estado para armazenar o nome de usuário do usuário logado
+
   const navigation = useNavigation<PerfilNavigationProp>();
+
+  useEffect(() => {
+  const loadUser = async () => {
+    try {
+      const userData = await AsyncStorage.getItem('@loggedUser'); // lê o usuário logado
+
+      if (userData) {
+        const user = JSON.parse(userData);
+        setUsername(user.username);
+      } else {
+        setUsername(''); // garante estado limpo se não estiver logado
+      }
+    } catch (error) {
+      console.log('Erro ao carregar usuário');
+    }
+  };
+
+  loadUser();
+}, []);
+
+const handleLogout = async () => {
+    try {
+      // remove o usuário logado
+      await AsyncStorage.removeItem('@loggedUser');
+
+      // reset para impedir voltar com botão "voltar"
+      navigation.reset({
+        index: 0,
+        routes: [{ name: 'Login' as never }],
+      });
+    } catch (error) {
+      console.log("Erro ao fazer logout");
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -24,11 +61,11 @@ export default function Perfil() {
         {/* CARD DO PERFIL */}
         <View style={styles.profileCard}>
           <View style={styles.avatar}>
-            <Text style={styles.avatarText}>KA</Text>
+            <Text style={styles.avatarText}>{username ? username.substring(0, 2).toUpperCase() : 'US'}</Text>
           </View>
 
           <View>
-            <Text style={styles.profileName}>KaiqueVale08</Text>
+            <Text style={styles.profileName}>{username || 'Usuário'}</Text>
             <Text style={styles.profileLevel}>Nível 42</Text>
             <Text style={styles.profileXP}>XP</Text>
 
@@ -105,7 +142,7 @@ export default function Perfil() {
         <TouchableOpacity
           style={styles.logoutButton}
           activeOpacity={0.8}
-          onPress={() => navigation.navigate("Login")}
+          onPress={handleLogout}
         >
           <Ionicons name="log-out-outline" size={22} color="#ff4d4d" />
           <Text style={styles.logoutText}>Sair</Text>
