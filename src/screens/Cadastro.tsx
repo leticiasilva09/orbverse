@@ -3,52 +3,67 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, KeyboardAvo
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import auth from '@react-native-firebase/auth';
 
 export default function Cadastro() {
   const navigation = useNavigation();
 
-  const [username, setUsername] = useState(''); 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [erro, setErro] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleRegister = async () => {
-  // confere se algum campo ta vazio
-  if (!username || !email || !password || !confirmPassword) {
-    setErro('Preencha todos os campos');
-    return;
-  }
+    // confere se algum campo está vazio
+    if ( !email || !password || !confirmPassword) {
+      setErro('Preencha todos os campos');
+      return;
+    }
 
-  // confere se a senha e a confirmação são iguais
-  if (password !== confirmPassword) {
-    setErro('As senhas não coincidem');
-    return;
-  }
+    // confere se a senha e a confirmação são iguais
+    if (password !== confirmPassword) {
+      setErro('As senhas não coincidem');
+      return;
+    }
 
-  try {
-    // cria um objeto com os dados do usuário
-    const user = {
-      username,
-      email,
-      password,
-    };
+    try {
+      // cria o usuário no Firebase Auth usando email e senha
+      const userCredential = await auth().createUserWithEmailAndPassword(
+        email,
+        password
+      );
 
-    // salva os dados do usuário no AsyncStorage
-    // os dados são convertidos para string usando JSON.stringify
-    await AsyncStorage.setItem('@user', JSON.stringify(user));
+      // salva informações extras localmente (não sensíveis)
+      // o Firebase não possui "username" por padrão
+      await AsyncStorage.setItem(
+        '@userProfile',
+        JSON.stringify({
+          email,
+          uid: userCredential.user.uid,
+        })
+      );
 
-    // limpa mensagens de erro, se tiver
-    setErro('');
+      // limpa mensagem de erro
+      setErro('');
 
-    // redireciona o usuário para a tela de login depois do cadastro
-    navigation.navigate('Login' as never);
+      // redireciona para login após cadastro
+      navigation.navigate('Login' as never);
 
-  } catch (error) {
-    // pra caso ocorra algum erro ao salvar os dados
-    setErro('Erro ao cadastrar usuário');
-  }
-};
+    } catch (error: any) {
+      // trata erros mais comuns do Firebase
+      if (error.code === 'auth/email-already-in-use') {
+        setErro('Este e-mail já está em uso');
+      } else if (error.code === 'auth/invalid-email') {
+        setErro('E-mail inválido');
+      } else if (error.code === 'auth/weak-password') {
+        setErro('A senha deve ter pelo menos 6 caracteres');
+      } else {
+        setErro('Erro ao cadastrar usuário');
+      }
+    }
+  };
+
 
   return (
     <KeyboardAvoidingView
@@ -66,17 +81,6 @@ export default function Cadastro() {
         <Text style={styles.subtitle}>Crie sua conta e inicie sua jornada.</Text>
 
         <View style={styles.inputContainer}>
-          <Ionicons name="person-outline" size={20} color="#ccc" style={styles.icon} />
-          <TextInput
-            placeholder="Nome de usuário"
-            placeholderTextColor="#aaa"
-            style={styles.input}
-            value={username}
-            onChangeText={setUsername}
-          />
-        </View>
-
-        <View style={styles.inputContainer}>
           <Ionicons name="mail-outline" size={20} color="#ccc" style={styles.icon} />
           <TextInput
             placeholder="E-mail"
@@ -90,14 +94,25 @@ export default function Cadastro() {
 
         <View style={styles.inputContainer}>
           <Ionicons name="lock-closed-outline" size={20} color="#ccc" style={styles.icon} />
+
           <TextInput
             placeholder="Senha"
             placeholderTextColor="#aaa"
-            secureTextEntry
+            secureTextEntry={!showPassword}
             style={styles.input}
             value={password}
             onChangeText={setPassword}
           />
+
+          {/* BOTÃO DE OLHO */}
+          <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
+            <Ionicons
+              name={showPassword ? "eye-outline" : "eye-off-outline"}
+              size={22}
+              color="#ccc"
+            />
+          </TouchableOpacity>
+          
         </View>
 
         <View style={styles.inputContainer}>
@@ -105,11 +120,21 @@ export default function Cadastro() {
           <TextInput
             placeholder="Confirmar senha"
             placeholderTextColor="#aaa"
-            secureTextEntry
+            secureTextEntry={!showPassword}
             style={styles.input}
             value={confirmPassword}
             onChangeText={setConfirmPassword}
           />
+
+        {/* BOTÃO DE OLHO */}
+        <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
+          <Ionicons
+            name={showPassword ? "eye-outline" : "eye-off-outline"}
+            size={22}
+            color="#ccc"
+          />
+        </TouchableOpacity>
+
         </View>
 
         {/* MENSAGEM DE ERRO */}

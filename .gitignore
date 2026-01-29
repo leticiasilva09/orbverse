@@ -39,3 +39,14 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+# Firebase
+google-services.json
+GoogleService-Info.plist
+
+# Expo / React Native
+.expo
+node_modules
+
+# Environment
+.env

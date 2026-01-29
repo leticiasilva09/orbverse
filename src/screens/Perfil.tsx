@@ -3,6 +3,7 @@ import {View, Text, StyleSheet, ScrollView, TouchableOpacity, } from "react-nati
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import auth from '@react-native-firebase/auth';
 
 // IMPORTS PARA TIPAR A NAVEGAÇÃO
 import { useNavigation } from "@react-navigation/native";
@@ -13,41 +14,38 @@ import type { RootStackParamList } from "../navigation/StackNavigator";
 type PerfilNavigationProp = NativeStackNavigationProp<RootStackParamList, "Perfil">;
 
 export default function Perfil() {
-  const [username, setUsername] = useState<string>(''); // cria um estado para armazenar o nome de usuário do usuário logado
+  const [email, setEmail] = useState<string>(''); // cria um estado para armazenar o email do usuário logado
 
   const navigation = useNavigation<PerfilNavigationProp>();
 
   useEffect(() => {
-  const loadUser = async () => {
-    try {
-      const userData = await AsyncStorage.getItem('@loggedUser'); // lê o usuário logado
+    // obtém o usuário atualmente autenticado no firebase
+    const currentUser = auth().currentUser;
 
-      if (userData) {
-        const user = JSON.parse(userData);
-        setUsername(user.username);
-      } else {
-        setUsername(''); // garante estado limpo se não estiver logado
-      }
-    } catch (error) {
-      console.log('Erro ao carregar usuário');
+    if (currentUser) {
+      // se existir usuário autenticado, usa o e-mail como identificação
+      setEmail(currentUser.email ?? '');
+    } else {
+      // se não estiver logado, limpa o estado
+      setEmail('');
     }
-  };
+  }, []);
 
-  loadUser();
-}, []);
-
-const handleLogout = async () => {
+  const handleLogout = async () => {
     try {
-      // remove o usuário logado
+      // desloga o usuário do Firebase
+      await auth().signOut();
+
+      // remove dados locais da sessão
       await AsyncStorage.removeItem('@loggedUser');
 
-      // reset para impedir voltar com botão "voltar"
+      // reseta a navegação para evitar voltar
       navigation.reset({
         index: 0,
         routes: [{ name: 'Login' as never }],
       });
     } catch (error) {
-      console.log("Erro ao fazer logout");
+      console.log('Erro ao fazer logout');
     }
   };
 
@@ -61,11 +59,11 @@ const handleLogout = async () => {
         {/* CARD DO PERFIL */}
         <View style={styles.profileCard}>
           <View style={styles.avatar}>
-            <Text style={styles.avatarText}>{username ? username.substring(0, 2).toUpperCase() : 'US'}</Text>
+            <Text style={styles.avatarText}>{email ? email.charAt(0).toUpperCase() : 'U'}</Text>
           </View>
 
           <View>
-            <Text style={styles.profileName}>{username || 'Usuário'}</Text>
+            <Text style={styles.profileName}>{email || 'Email'}</Text>
             <Text style={styles.profileLevel}>Nível 42</Text>
             <Text style={styles.profileXP}>XP</Text>
 
@@ -230,7 +228,7 @@ avatar: {
 
 avatarText: {
   color: "#fff",
-  fontSize: 26,
+  fontSize: 32,
   fontWeight: "700",
 },
 

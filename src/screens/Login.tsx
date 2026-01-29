@@ -3,78 +3,72 @@ import { View,Text,TextInput, TouchableOpacity, StyleSheet, Image, KeyboardAvoid
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import auth from '@react-native-firebase/auth';
 
 export default function Login() {
   const navigation = useNavigation();
 
-  const [usuario, setUsuario] = useState('');
+  const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [erro, setErro] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
   // vai conferir se já existe usuário logado
   useEffect(() => {
-    async function checkLoggedUser() {
-      try {
-        // busca no AsyncStorage se existe um usuário logado
-        const loggedUser = await AsyncStorage.getItem('@loggedUser');
-
-        if (loggedUser) {
-          // se já existir usuário logado, pula o login
-          navigation.navigate('Home' as never);
-        }
-      } catch (error) {
-        // pra caso ocorra erro ao acessar o AsyncStorage
-        console.log('Erro ao verificar sessão');
+    // observa mudanças de autenticação do Firebase
+    const unsubscribe = auth().onAuthStateChanged(user => {
+      if (user) {
+        // se existir usuário autenticado, pula o login
+        navigation.navigate('Home' as never);
       }
-    }
+    });
 
-    // executa a função ao carregar a tela
-    checkLoggedUser();
+    // encerra o listener ao desmontar a tela
+    return unsubscribe;
   }, []);
 
   const handleLogin = async () => {
-    // confere se os campos de usuário ou senha estão vazios
-    if (usuario.trim() === '' || senha.trim() === '') {
-      setErro('Digite seu nome de usuário e senha');
+    // confere se os campos estão vazios
+    if (email.trim() === '' || senha.trim() === '') {
+      setErro('Digite seu e-mail e senha');
       return;
     }
 
     try {
-      // busca os dados do usuário cadastrado no AsyncStorage
-      const userData = await AsyncStorage.getItem('@user');
+      // realiza login no Firebase Auth usando e-mail e senha
+      const userCredential = await auth().signInWithEmailAndPassword(
+        email,
+        senha
+      );
 
-      // caso não exista nenhum usuário cadastrado
-      if (!userData) {
-        setErro('Nenhuma conta encontrada. Cadastre-se primeiro.');
-        return;
-      }
+      // salva apenas informações básicas da sessão localmente
+      await AsyncStorage.setItem(
+        '@loggedUser',
+        JSON.stringify({
+          uid: userCredential.user.uid,
+          email: userCredential.user.email,
+        })
+      );
 
-      // vai converter os dados salvos de string para objeto
-      const user = JSON.parse(userData);
+      setErro('');
 
-      // confere se o usuário e a senha digitados são válidos
-      if (usuario === user.username && senha === user.password) {
-        setErro('');
+      // redireciona para a Home
+      navigation.navigate('Home' as never);
 
-        // salva o usuário como logado no AsyncStorage
-        await AsyncStorage.setItem(
-          '@loggedUser',
-          JSON.stringify(user)
-        );
-
-        // redireciona o usuário para a tela principal
-        navigation.navigate('Home' as never);
+    } catch (error: any) {
+      // trata erros comuns do Firebase
+      if (error.code === 'auth/user-not-found') {
+        setErro('Usuário não encontrado');
+      } else if (error.code === 'auth/wrong-password') {
+        setErro('Senha incorreta');
+      } else if (error.code === 'auth/invalid-email') {
+        setErro('E-mail inválido');
       } else {
-        // caso os dados estejam incorretos
-        setErro('Nome de usuário ou senha incorretos');
+        setErro('Erro ao realizar login');
       }
-
-    } catch (error) {
-      // caso ocorra erro durante o processo de login
-      setErro('Erro ao realizar login');
     }
   };
+
 
   return (
     <KeyboardAvoidingView
@@ -93,15 +87,17 @@ export default function Login() {
         <Text style={styles.title}>Bem-vindo!</Text>
         <Text style={styles.p}>Entre e continue sua aventura.</Text>
 
-        {/* USUÁRIO */}
+        {/* EMAIL */}
         <View style={styles.inputContainer}>
-          <Ionicons name="person-outline" size={20} color="#ccc" style={styles.icon} />
+          <Ionicons name="mail-outline" size={20} color="#ccc" style={styles.icon} />
           <TextInput
-            placeholder="Usuário"
+            placeholder="E-mail"
             placeholderTextColor="#aaa"
             style={styles.input}
-            value={usuario}
-            onChangeText={setUsuario}
+            keyboardType="email-address"
+            autoCapitalize="none"
+            value={email}
+            onChangeText={setEmail}
           />
         </View>
 
@@ -112,7 +108,7 @@ export default function Login() {
           <TextInput
             placeholder="Senha"
             placeholderTextColor="#aaa"
-            secureTextEntry={!showPassword} // ⬅ ALTERADO
+            secureTextEntry={!showPassword}
             style={styles.input}
             value={senha}
             onChangeText={setSenha}
