@@ -64,7 +64,7 @@ export default function Config() {
             <Switch
               value={notificacoesJogos}
               onValueChange={setNotificacoesJogos}
-              thumbColor="#b400ff"
+              thumbColor="#7B2DFF"
             />
           </View>
 
@@ -92,7 +92,7 @@ export default function Config() {
             <Switch
               value={perfilPublico}
               onValueChange={setPerfilPublico}
-              thumbColor="#b400ff"
+              thumbColor="#7B2DFF"
             />
           </View>
 
@@ -152,7 +152,7 @@ export default function Config() {
 const styles = StyleSheet.create({
 container: {
   flex: 1,
-  backgroundColor: "#000",
+  backgroundColor: "#15121C",
 },
 
 content: {
@@ -168,11 +168,11 @@ sectionTitle: {
   color: "#fff",
   fontSize: 18,
   fontWeight: "700",
-   marginBottom: 12,
+  marginBottom: 12,
 },
 
 item: {
-  backgroundColor: "#0f0f0f",
+  backgroundColor: "#1D1A25",
   padding: 16,
   borderRadius: 14,
   marginBottom: 10,

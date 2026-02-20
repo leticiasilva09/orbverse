@@ -18,16 +18,16 @@ const Loja: React.FC = () => {
       {/* BARRA SUPERIOR */}
       <View style={styles.topBar}>
         <View style={styles.searchContainer}>
-          <Ionicons name="search" size={18} color="#888" style={styles.searchIcon} />
+          <Ionicons name="search" size={18} color="#E8DFEF" style={styles.searchIcon} />
           <TextInput
             placeholder="Buscar jogos..."
-            placeholderTextColor="#666"
+            placeholderTextColor="#E8DFEF"
             style={styles.searchInput}
           />
         </View>
 
         <TouchableOpacity style={styles.bellButton} activeOpacity={0.7}>
-          <Ionicons name="filter-outline" size={22} color="#fff" />
+          <Ionicons name="filter-outline" size={22} color="#E8DFEF" />
         </TouchableOpacity>
       </View>
 
@@ -48,7 +48,7 @@ const Loja: React.FC = () => {
             style={[
               styles.categoryButton,
               isSelected && {
-                backgroundColor: "#b400ff",
+                backgroundColor: "#7B2DFF",
               }
             ]}
           >
@@ -375,7 +375,7 @@ const Loja: React.FC = () => {
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.tabItem} activeOpacity={0.8} onPress={() => navigation.navigate("Loja")}>
-            <Ionicons name="storefront-outline" size={26} color="#b400ff" />
+            <Ionicons name="storefront-outline" size={26} color="#7B2DFF" />
             <Text style={[styles.tabLabel, styles.activeLabel]}>Loja</Text>
           </TouchableOpacity>
 
@@ -399,7 +399,7 @@ const Loja: React.FC = () => {
 export default Loja;
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#000' },
+  container: { flex: 1, backgroundColor: '#15121C' },
 
 topBar: {
   flexDirection: 'row',
@@ -413,14 +413,12 @@ topBar: {
 searchContainer: {
   flexDirection: 'row',
   alignItems: 'center',
-  backgroundColor: '#0f0f0f',
+  backgroundColor: '#1D1A25',
   borderRadius: 22,
   paddingHorizontal: 12,
-  height: 38,
+  height: 42,
   flex: 1,
   marginRight: 12,
-  borderWidth: 1,
-  borderColor: '#222',
 },
 
 searchIcon: { marginRight: 6 },
@@ -441,13 +439,11 @@ categoryScroll: {
 },
 
 categoryButton: {
-  backgroundColor: '#111',
+  backgroundColor: '#1D1A25',
   paddingVertical: 6,
   paddingHorizontal: 14,
   borderRadius: 8,
   marginRight: 10,
-  borderWidth: 1,
-  borderColor: '#222',
   height: 32,
   justifyContent: 'center',
 },
@@ -469,7 +465,7 @@ sectionTitle: {
 },
 
 sectionSubtitle: {
-  color: '#bbb',
+  color: '#E8DFEF',
   fontSize: 13,
   marginTop: -6,
   marginBottom: 20,
@@ -540,7 +536,7 @@ verticalCardTitle: {
 },
 
 verticalCardOldPrice: {
-  color: '#bbb',
+  color: '#E8DFEF',
   fontSize: 12,
   textDecorationLine: 'line-through',
   marginTop: -2,
@@ -560,7 +556,7 @@ priceRow: {
 },
 
 buyButton: {
-  backgroundColor: '#6200ff',
+  backgroundColor: '#7B2DFF',
   paddingVertical: 8,
   paddingHorizontal: 12,
   borderRadius: 12,
@@ -580,8 +576,8 @@ bottomSafeArea: { backgroundColor: 'transparent' },
 bottomBar: {
   height: 70,
   borderTopWidth: 1,
-  borderTopColor: '#222',
-  backgroundColor: '#000',
+  borderTopColor: '#4A4456',
+  backgroundColor: '#15121C',
   flexDirection: 'row',
   justifyContent: 'space-around',
   alignItems: 'center',
@@ -593,5 +589,5 @@ tabItem: { flex: 1, alignItems: 'center', justifyContent: 'center' },
 
 tabLabel: { fontSize: 12, marginTop: 4, color: '#8a8a8a' },
 
-activeLabel: { color: '#b400ff', fontWeight: '600' },
+activeLabel: { color: '#7B2DFF', fontWeight: '600' },
 });

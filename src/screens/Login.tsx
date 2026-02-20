@@ -89,10 +89,10 @@ export default function Login() {
 
         {/* EMAIL */}
         <View style={styles.inputContainer}>
-          <Ionicons name="mail-outline" size={20} color="#ccc" style={styles.icon} />
+          <Ionicons name="mail-outline" size={20} color="#E8DFEF" style={styles.icon} />
           <TextInput
             placeholder="E-mail"
-            placeholderTextColor="#aaa"
+            placeholderTextColor="#E8DFEF"
             style={styles.input}
             keyboardType="email-address"
             autoCapitalize="none"
@@ -103,11 +103,11 @@ export default function Login() {
 
         {/* SENHA */}
         <View style={styles.inputContainer}>
-          <Ionicons name="lock-closed-outline" size={20} color="#ccc" style={styles.icon} />
+          <Ionicons name="lock-closed-outline" size={20} color="#E8DFEF" style={styles.icon} />
 
           <TextInput
             placeholder="Senha"
-            placeholderTextColor="#aaa"
+            placeholderTextColor="#E8DFEF"
             secureTextEntry={!showPassword}
             style={styles.input}
             value={senha}
@@ -119,7 +119,7 @@ export default function Login() {
             <Ionicons
               name={showPassword ? "eye-outline" : "eye-off-outline"}
               size={22}
-              color="#ccc"
+              color="#E8DFEF"
             />
           </TouchableOpacity>
 
@@ -160,12 +160,12 @@ export default function Login() {
 const styles = StyleSheet.create({
 container: {
   flex: 1,
-  backgroundColor: '#000',
+  backgroundColor: '#15121C',
   justifyContent: 'center',
 },
 
 loginBox: {
-  backgroundColor: '#000',
+  backgroundColor: '#15121C',
   margin: 20,
   marginTop: -70,
   borderRadius: 12,
@@ -189,7 +189,7 @@ title: {
 },
 
 p: {
-  color: '#fff',
+  color: '#E8DFEF',
   fontSize: 16,
   textAlign: 'center',
   marginBottom: 25,
@@ -198,7 +198,7 @@ p: {
 inputContainer: {
   flexDirection: 'row',
   alignItems: 'center',
-  backgroundColor: '#1a1a1a',
+  backgroundColor: '#1D1A25',
   borderRadius: 8,
   paddingHorizontal: 10,
   marginBottom: 15,
@@ -222,14 +222,14 @@ errorText: {
 },
 
 forgotPassword: {
-  color: '#ccc',
+  color: '#E8DFEF',
   textAlign: 'right',
   marginBottom: 15,
   fontWeight: 'bold',
 },
 
 button: {
-  backgroundColor: '#AD00FF',
+  backgroundColor: '#7B2DFF',
   paddingVertical: 12,
   borderRadius: 8,
   marginTop: 10,
@@ -243,13 +243,13 @@ buttonText: {
 },
 
 registerText: {
-  color: '#ccc',
+  color: '#E8DFEF',
   textAlign: 'center',
   marginTop: 15,
 },
 
 linkText: {
-  color: '#AD00FF',
+  color: '#7B2DFF',
   fontWeight: 'bold',
 },
 });

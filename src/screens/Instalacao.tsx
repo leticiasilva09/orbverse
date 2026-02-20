@@ -77,12 +77,12 @@ export default function Instalacao() {
 const styles = StyleSheet.create({
 container: {
   flex: 1,
-  backgroundColor: "#000",
+  backgroundColor: "#15121C",
   paddingHorizontal: 16,
 },
 
 pcBox: {
-  backgroundColor: "#0c0c0c",
+  backgroundColor: "#1D1A25",
   borderRadius: 14,
   padding: 12,
   marginTop: 12,
@@ -160,13 +160,13 @@ gameTitle: {
 },
 
 gameInfo: {
-  color: "#bbb",
+  color: "#aaa",
   marginTop: 4,
 },
 
 gameDescription: {
   marginTop: 20,
-  color: "#ccc",
+  color: "#E8DFEF",
   textAlign: "center",
   paddingHorizontal: 6,
   lineHeight: 20,
@@ -175,7 +175,7 @@ gameDescription: {
 
 /* BOTÃO INSTALAR */
 installButton: {
-  backgroundColor: "#b400ff",
+  backgroundColor: "#7B2DFF",
   paddingVertical: 14,
   borderRadius: 14,
   marginTop: 24,

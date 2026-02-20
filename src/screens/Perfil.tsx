@@ -79,7 +79,7 @@ export default function Perfil() {
         {/* SEÇÃO DE ESTATÍSTICAS */}
         <View style={styles.statsRow}>
           <View style={styles.statItem}>
-            <Ionicons name="game-controller-outline" size={28} color="#b400ff" />
+            <Ionicons name="game-controller-outline" size={28} color="#7B2DFF" />
             <Text style={styles.statNumber}>12</Text>
             <Text style={styles.statLabel}>Jogos</Text>
           </View>
@@ -185,7 +185,7 @@ export default function Perfil() {
             activeOpacity={0.8}
             onPress={() => navigation.navigate("Perfil")}
           >
-            <Ionicons name="person-circle-outline" size={28} color="#b400ff" />
+            <Ionicons name="person-circle-outline" size={28} color="#7B2DFF" />
             <Text style={[styles.tabLabel, styles.activeLabel]}>Perfil</Text>
           </TouchableOpacity>
 
@@ -199,7 +199,7 @@ export default function Perfil() {
 const styles = StyleSheet.create({
   container: {
   flex: 1,
-  backgroundColor: "#000",
+  backgroundColor: "#15121C",
 },
 
 content: {
@@ -209,7 +209,7 @@ content: {
 
 /* CARD DE PERFIL */
 profileCard: {
-  backgroundColor: "#0f0f0f",
+  backgroundColor: "#1D1A25",
   borderRadius: 18,
   padding: 20,
   flexDirection: "row",
@@ -220,7 +220,7 @@ avatar: {
   width: 70,
   height: 70,
   borderRadius: 50,
-  backgroundColor: "#7b2cff",
+  backgroundColor: "#7B2DFF",
   alignItems: "center",
   justifyContent: "center",
   marginRight: 16,
@@ -239,13 +239,13 @@ profileName: {
 },
 
 profileLevel: {
-  color: "#aaa",
+  color: "#E8DFEF",
   fontSize: 14,
   marginTop: 2,
 },
 
 profileXP: {
-  color: "#ccc",
+  color: "#E8DFEF",
   fontSize: 12,
   marginTop: 8,
 },
@@ -263,11 +263,11 @@ xpBar: {
 xpFill: {
   width: "75%",
   height: "100%",
-  backgroundColor: "#b400ff",
+  backgroundColor: "#BA09A5",
 },
 
 xpNumbers: {
-  color: "#aaa",
+  color: "#E8DFEF",
   fontSize: 12,
   marginTop: 4,
 },
@@ -282,14 +282,14 @@ statsRow: {
 
 statItem: {
   width: "32%",
-  backgroundColor: "#0f0f0f",
+  backgroundColor: "#1D1A25",
   borderRadius: 14,
   alignItems: "center",
   paddingVertical: 16,
 },
 
 statNumber: {
-  color: "#fff",
+  color: "#E8DFEF",
   fontSize: 20,
   fontWeight: "700",
   marginTop: 6,
@@ -310,32 +310,32 @@ sectionTitle: {
 },
 
 activityCard: {
-  backgroundColor: "#0f0f0f",
+  backgroundColor: "#1D1A25",
   padding: 16,
   borderRadius: 16,
   marginBottom: 14,
 },
 
 activityTitle: {
-  color: "#fff",
+  color: "#E8DFEF",
   fontSize: 16,
   fontWeight: "700",
 },
 
 activityDesc: {
-  color: "#ccc",
+  color: "#E8DFEF",
   marginTop: 4,
 },
 
 activityTime: {
-  color: "#777",
+  color: "#aaa",
   marginTop: 6,
   fontSize: 12,
 },
 
 /* BOTÃO DE CONFIGURAÇÕES */
 settingsButton: {
-  backgroundColor: "#0f0f0f",
+  backgroundColor: "#1D1A25",
   padding: 16,
   borderRadius: 14,
   marginTop: 10,
@@ -344,14 +344,14 @@ settingsButton: {
 },
 
 settingsText: {
-  color: "#fff",
+  color: "#E8DFEF",
   marginLeft: 10,
   fontSize: 16,
 },
 
 /* BOTÃO DE SAIR */
 logoutButton: {
-  backgroundColor: "#0f0f0f",
+  backgroundColor: "#1D1A25",
   padding: 16,
   borderRadius: 14,
   marginTop: 12,
@@ -374,8 +374,8 @@ bottomSafeArea: {
 bottomBar: {
   height: 70,
   borderTopWidth: 1,
-  borderTopColor: "#222",
-  backgroundColor: "#000",
+  borderTopColor: "#4A4456",
+  backgroundColor: "#15121C",
   flexDirection: "row",
   justifyContent: "space-around",
   alignItems: "center",
@@ -394,7 +394,7 @@ tabLabel: {
 },
 
 activeLabel: {
-  color: "#b400ff",
+  color: "#7B2DFF",
   fontWeight: "600",
 },
 });

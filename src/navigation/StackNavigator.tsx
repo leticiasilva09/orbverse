@@ -37,7 +37,7 @@ export default function StackNavigator() {
         initialRouteName="Login"
         screenOptions={{
           headerStyle: {
-            backgroundColor: "#000",
+            backgroundColor: "#15121C",
           },
           headerTintColor: "#fff",
         }}

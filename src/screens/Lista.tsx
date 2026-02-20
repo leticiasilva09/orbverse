@@ -18,7 +18,7 @@ export default function Favoritos() {
           <Text style={styles.studio}>Rockstar Games</Text>
 
           <View style={styles.ratingRow}>
-            <Ionicons name="star" size={16} color="#b400ff" />
+            <Ionicons name="star" size={16} color="#7B2DFF" />
             <Text style={styles.rating}>4.9</Text>
           </View>
 
@@ -30,7 +30,7 @@ export default function Favoritos() {
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.heartIcon}>
-          <Ionicons name="heart" size={20} color="#b400ff" />
+          <Ionicons name="heart" size={20} color="#7B2DFF" />
         </TouchableOpacity>
       </View>
 
@@ -46,7 +46,7 @@ export default function Favoritos() {
           <Text style={styles.studio}>Bend Studio</Text>
 
           <View style={styles.ratingRow}>
-            <Ionicons name="star" size={16} color="#b400ff" />
+            <Ionicons name="star" size={16} color="#7B2DFF" />
             <Text style={styles.rating}>4.8</Text>
           </View>
 
@@ -58,7 +58,7 @@ export default function Favoritos() {
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.heartIcon}>
-          <Ionicons name="heart" size={20} color="#b400ff" />
+          <Ionicons name="heart" size={20} color="#7B2DFF" />
         </TouchableOpacity>
       </View>
 
@@ -74,7 +74,7 @@ export default function Favoritos() {
           <Text style={styles.studio}>CD PROJEKT RED</Text>
 
           <View style={styles.ratingRow}>
-            <Ionicons name="star" size={16} color="#b400ff" />
+            <Ionicons name="star" size={16} color="#7B2DFF" />
             <Text style={styles.rating}>4.2</Text>
           </View>
 
@@ -86,7 +86,7 @@ export default function Favoritos() {
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.heartIcon}>
-          <Ionicons name="heart" size={20} color="#b400ff" />
+          <Ionicons name="heart" size={20} color="#7B2DFF" />
         </TouchableOpacity>
       </View>
     </ScrollView>
@@ -95,13 +95,13 @@ export default function Favoritos() {
 
 const styles = StyleSheet.create({
 container: {
-  backgroundColor: "#0e0e0e",
+  backgroundColor: "#15121C",
   flex: 1,
   padding: 20,
 },
 
 card: {
-  backgroundColor: "#181818",
+  backgroundColor: "#1D1A25",
   borderRadius: 12,
   flexDirection: "row",
   padding: 12,
@@ -128,7 +128,7 @@ gameTitle: {
 },
 
 studio: {
-  color: "#9ca3af",
+  color: "#E8DFEF",
   fontSize: 12,
   marginTop: 2,
 },
@@ -153,7 +153,7 @@ price: {
 },
 
 addButton: {
-  backgroundColor: "#222",
+  backgroundColor: "#1D1A25",
   borderWidth: 1,
   borderColor: "#444",
   paddingVertical: 8,

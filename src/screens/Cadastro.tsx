@@ -81,10 +81,10 @@ export default function Cadastro() {
         <Text style={styles.subtitle}>Crie sua conta e inicie sua jornada.</Text>
 
         <View style={styles.inputContainer}>
-          <Ionicons name="mail-outline" size={20} color="#ccc" style={styles.icon} />
+          <Ionicons name="mail-outline" size={20} color="#E8DFEF" style={styles.icon} />
           <TextInput
             placeholder="E-mail"
-            placeholderTextColor="#aaa"
+            placeholderTextColor="#E8DFEF"
             style={styles.input}
             keyboardType="email-address"
             value={email}
@@ -93,11 +93,11 @@ export default function Cadastro() {
         </View>
 
         <View style={styles.inputContainer}>
-          <Ionicons name="lock-closed-outline" size={20} color="#ccc" style={styles.icon} />
+          <Ionicons name="lock-closed-outline" size={20} color="#E8DFEF" style={styles.icon} />
 
           <TextInput
             placeholder="Senha"
-            placeholderTextColor="#aaa"
+            placeholderTextColor="#E8DFEF"
             secureTextEntry={!showPassword}
             style={styles.input}
             value={password}
@@ -109,7 +109,7 @@ export default function Cadastro() {
             <Ionicons
               name={showPassword ? "eye-outline" : "eye-off-outline"}
               size={22}
-              color="#ccc"
+              color="#E8DFEF"
             />
           </TouchableOpacity>
           
@@ -119,7 +119,7 @@ export default function Cadastro() {
           <Ionicons name="lock-closed-outline" size={20} color="#ccc" style={styles.icon} />
           <TextInput
             placeholder="Confirmar senha"
-            placeholderTextColor="#aaa"
+            placeholderTextColor="#E8DFEF"
             secureTextEntry={!showPassword}
             style={styles.input}
             value={confirmPassword}
@@ -131,7 +131,7 @@ export default function Cadastro() {
           <Ionicons
             name={showPassword ? "eye-outline" : "eye-off-outline"}
             size={22}
-            color="#ccc"
+            color="#E8DFEF"
           />
         </TouchableOpacity>
 
@@ -168,12 +168,12 @@ export default function Cadastro() {
 const styles = StyleSheet.create({
 container: {
   flex: 1,
-  backgroundColor: '#000',
+  backgroundColor: '#15121C',
   justifyContent: 'center',
 },
 
 box: {
-  backgroundColor: '#000',
+  backgroundColor: '#15121C',
   margin: 20,
   borderRadius: 12,
   padding: 20,
@@ -200,7 +200,7 @@ title: {
 },
 
 subtitle: {
-  color: '#fff',
+  color: '#E8DFEF',
   fontSize: 15,
   textAlign: 'center',
   marginBottom: 25,
@@ -209,7 +209,7 @@ subtitle: {
 inputContainer: {
   flexDirection: 'row',
   alignItems: 'center',
-  backgroundColor: '#1a1a1a',
+  backgroundColor: '#1D1A25',
   borderRadius: 8,
   paddingHorizontal: 10,
   marginBottom: 15,
@@ -221,12 +221,12 @@ icon: {
 
 input: {
   flex: 1,
-  color: '#fff',
+  color: '#E8DFEF',
   height: 45,
 },
 
 button: {
-  backgroundColor: '#AD00FF',
+  backgroundColor: '#7B2DFF',
   paddingVertical: 12,
   borderRadius: 8,
   marginTop: 10,
@@ -240,13 +240,13 @@ buttonText: {
 },
 
 loginText: {
-  color: '#ccc',
+  color: '#E8DFEF',
   textAlign: 'center',
   marginTop: 15,
 },
 
 linkText: {
-  color: '#AD00FF',
+  color: '#7B2DFF',
   fontWeight: 'bold',
 },
 });

@@ -18,10 +18,10 @@ export default function Biblioteca() {
       {/* Barra Superior */}
       <View style={styles.topBar}>
         <View style={styles.searchContainer}>
-          <Ionicons name="search" size={18} color="#888" style={styles.searchIcon} />
+          <Ionicons name="search" size={18} color="#E8DFEF" style={styles.searchIcon} />
           <TextInput
             placeholder="Buscar na biblioteca..."
-            placeholderTextColor="#666"
+            placeholderTextColor="#E8DFEF"
             style={styles.searchInput}
           />
         </View>
@@ -274,7 +274,7 @@ export default function Biblioteca() {
             style={styles.tabItem}
             onPress={() => navigation.navigate("Biblioteca")}
           >
-            <Ionicons name="library-outline" size={26} color="#b400ff" />
+            <Ionicons name="library-outline" size={26} color="#7B2DFF" />
             <Text style={[styles.tabLabel, styles.activeLabel]}>Biblioteca</Text>
           </TouchableOpacity>
 
@@ -293,7 +293,7 @@ export default function Biblioteca() {
 
 /* ESTILOS */
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#000" },
+  container: { flex: 1, backgroundColor: "#15121C" },
 
 topBar: {
   flexDirection: "row",
@@ -303,15 +303,14 @@ topBar: {
 },
 
 searchContainer: {
-  flexDirection: "row",
-  alignItems: "center",
-  backgroundColor: "#0f0f0f",
+  flexDirection: 'row',
+  alignItems: 'center',
+  backgroundColor: '#1D1A25',
   borderRadius: 22,
   paddingHorizontal: 12,
-  height: 38,
+  height: 42,
   flex: 1,
-  borderWidth: 1,
-  borderColor: "#222",
+  marginRight: 12,
 },
 
 searchIcon: { marginRight: 6 },
@@ -328,11 +327,11 @@ sectionTitle: {
   color: "#fff",
   fontSize: 22,
   fontWeight: "700",
-  marginTop: 10,
+  marginBottom: 4,
 },
 
 storageLabel: {
-  color: "#ccc",
+  color: "#E8DFEF",
   fontSize: 13,
   marginBottom: 6,
 },
@@ -348,7 +347,7 @@ storageBarBg: {
 storageBarFill: {
   width: "36%",
   height: 10,
-  backgroundColor: "#b400ff",
+  backgroundColor: "#BA09A5",
   borderRadius: 10,
 },
 
@@ -389,7 +388,7 @@ gameName: {
 },
 
 installButton: {
-  backgroundColor: "#b400ff",
+  backgroundColor: "#BA09A5",
   borderRadius: 10,
   paddingHorizontal: 10,
   paddingVertical: 6,
@@ -400,7 +399,7 @@ installButton: {
 },
 
 playButton: {
-  backgroundColor: "#6200ff",
+  backgroundColor: "#7B2DFF",
   borderRadius: 10,
   paddingHorizontal: 10,
   paddingVertical: 6,
@@ -412,25 +411,13 @@ playButton: {
 
 installText: { color: "#fff", fontWeight: "600", fontSize: 12 },
 
-priceFree: {
-  color: "#9d4dff",
-  fontWeight: "700",
-  fontSize: 14,
-},
-
-pricePaid: {
-  color: "#ff4ddd",
-  fontWeight: "700",
-  fontSize: 14,
-},
-
 bottomSafeArea: { backgroundColor: "transparent" },
 
 bottomBar: {
   height: 70,
   borderTopWidth: 1,
-  borderTopColor: "#222",
-  backgroundColor: "#000",
+  borderTopColor: "#4A4456",
+  backgroundColor: "#15121C",
   flexDirection: "row",
   justifyContent: "space-around",
   alignItems: "center",
@@ -442,5 +429,5 @@ tabItem: { flex: 1, alignItems: "center" },
 
 tabLabel: { fontSize: 12, color: "#8a8a8a", marginTop: 4 },
 
-activeLabel: { color: "#b400ff", fontWeight: "600" },
+activeLabel: { color: "#7B2DFF", fontWeight: "600" },
 });

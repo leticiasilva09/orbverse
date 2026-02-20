@@ -77,7 +77,7 @@ export default function Informacoes() {
           <Text style={styles.gameStudio}>Rockstar Games</Text>
 
           <View style={styles.ratingRow}>
-            <Ionicons name="star" size={18} color="#d400ff" />
+            <Ionicons name="star" size={18} color="#7B2DFF" />
             <Text style={styles.ratingText}>4.5</Text>
             <Text style={styles.reviewsCount}>(15.432 avaliações)</Text>
           </View>
@@ -137,11 +137,11 @@ export default function Informacoes() {
           <View style={styles.reviewBox}>
             <Text style={styles.reviewUser}>enzogamer2010</Text>
             <View style={styles.starsRow}>
-              <Ionicons name="star" size={14} color="#d400ff" />
-              <Ionicons name="star" size={14} color="#d400ff" />
-              <Ionicons name="star" size={14} color="#d400ff" />
-              <Ionicons name="star" size={14} color="#d400ff" />
-              <Ionicons name="star" size={14} color="#d400ff" />
+              <Ionicons name="star" size={14} color="#7B2DFF" />
+              <Ionicons name="star" size={14} color="#7B2DFF" />
+              <Ionicons name="star" size={14} color="#7B2DFF" />
+              <Ionicons name="star" size={14} color="#7B2DFF" />
+              <Ionicons name="star" size={14} color="#7B2DFF" />
             </View>
             <Text style={styles.reviewText}>
               A melhor narrativa que a Rockstar já fez, simplesmente absurdo.
@@ -152,11 +152,11 @@ export default function Informacoes() {
           <View style={styles.reviewBox}>
             <Text style={styles.reviewUser}>luis_0311</Text>
             <View style={styles.starsRow}>
-              <Ionicons name="star" size={14} color="#d400ff" />
-              <Ionicons name="star" size={14} color="#d400ff" />
-              <Ionicons name="star" size={14} color="#d400ff" />
-              <Ionicons name="star" size={14} color="#d400ff" />
-              <Ionicons name="star" size={14} color="#d400ff" />
+              <Ionicons name="star" size={14} color="#7B2DFF" />
+              <Ionicons name="star" size={14} color="#7B2DFF" />
+              <Ionicons name="star" size={14} color="#7B2DFF" />
+              <Ionicons name="star" size={14} color="#7B2DFF" />
+              <Ionicons name="star" size={14} color="#7B2DFF" />
             </View>
             <Text style={styles.reviewText}>
               Muito detalhe no mapa e narrativa envolvente. Rockstar não
@@ -168,10 +168,10 @@ export default function Informacoes() {
           <View style={styles.reviewBox}>
             <Text style={styles.reviewUser}>joao0710</Text>
             <View style={styles.starsRow}>
-              <Ionicons name="star" size={14} color="#d400ff" />
-              <Ionicons name="star" size={14} color="#d400ff" />
-              <Ionicons name="star" size={14} color="#d400ff" />
-              <Ionicons name="star" size={14} color="#d400ff" />
+              <Ionicons name="star" size={14} color="#7B2DFF" />
+              <Ionicons name="star" size={14} color="#7B2DFF" />
+              <Ionicons name="star" size={14} color="#7B2DFF" />
+              <Ionicons name="star" size={14} color="#7B2DFF" />
             </View>
             <Text style={styles.reviewText}>
               Otimização está ok, mas precisa de uma máquina top pra rodar.
@@ -198,7 +198,7 @@ export default function Informacoes() {
 const styles = StyleSheet.create({
 container: {
   flex: 1,
-  backgroundColor: "#000",
+  backgroundColor: "#15121C",
 },
 
 topBar: {
@@ -258,7 +258,7 @@ gameTitle: {
 },
 
 gameStudio: {
-  color: "#ccc",
+  color: "#E8DFEF",
   marginTop: 4,
 },
 
@@ -276,7 +276,7 @@ ratingText: {
 },
 
 reviewsCount: {
-  color: "#aaa",
+  color: "#E8DFEF",
   marginLeft: 6,
 },
 
@@ -286,13 +286,15 @@ tagsRow: {
 },
 
 tag: {
-  backgroundColor: "#1a1a1a",
-  color: "#d400ff",
+  backgroundColor: "#1D1A25",
+  color: "#7B2DFF",
   paddingHorizontal: 10,
   paddingVertical: 4,
   borderRadius: 6,
   marginRight: 8,
   fontSize: 12,
+  borderWidth: 0.5,
+  borderColor: "#7B2DFF",
 },
 
 /* SESSÕES */
@@ -308,21 +310,21 @@ sectionTitle: {
 },
 
 sectionText: {
-  color: "#ccc",
+  color: "#E8DFEF",
   marginTop: 10,
   lineHeight: 20,
   fontSize: 14,
 },
 
 subTitle: {
-  color: "#d400ff",
+  color: "#7B2DFF",
   fontWeight: "700",
   fontSize: 14,
   marginTop: 10,
 },
 
 reqText: {
-  color: "#ccc",
+  color: "#E8DFEF",
   marginTop: 6,
   fontSize: 13,
 },
@@ -336,13 +338,13 @@ sectionHeader: {
 },
 
 viewAllText: {
-  color: "#d400ff",
+  color: "#7B2DFF",
   fontSize: 13,
   fontWeight: "600",
 },
 
 reviewBox: {
-  backgroundColor: "#111",
+  backgroundColor: "#1D1A25",
   padding: 14,
   borderRadius: 10,
   marginTop: 12,
@@ -359,7 +361,7 @@ starsRow: {
 },
 
 reviewText: {
-  color: "#ccc",
+  color: "#DFD7E7",
   marginTop: 6,
   fontSize: 13,
 },
@@ -374,7 +376,7 @@ footerFixed: {
   paddingVertical: 20,
   borderTopWidth: 1,
   borderColor: "#111",
-  backgroundColor: "#000",
+  backgroundColor: "#15121C",
 },
 
 price: {
@@ -385,7 +387,7 @@ price: {
 },
 
 buyButton: {
-  backgroundColor: "#b400ff",
+  backgroundColor: "#7B2DFF",
   paddingVertical: 14,
   borderRadius: 12,
   alignItems: "center",

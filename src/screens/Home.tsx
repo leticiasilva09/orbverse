@@ -87,7 +87,7 @@ const Home: React.FC = () => {
                   Monte sua equipe de chefs em um jogo cooperativo local ou on-line
                 </Text>
 
-                <TouchableOpacity style={[styles.cardButton, { backgroundColor: '#6200ff' }]}>
+                <TouchableOpacity style={[styles.cardButton, { backgroundColor: '#7B2DFF' }]}>
                   <Ionicons name="cart" size={16} color="#fff" style={{ marginRight: 6 }} />
                   <Text style={styles.buttonText}>R$ 79,90</Text>
                 </TouchableOpacity>
@@ -129,7 +129,7 @@ const Home: React.FC = () => {
                   Jogue do seu jeito com uma experiência de jogabilidade reformulada
                 </Text>
 
-                <TouchableOpacity style={[styles.cardButton, { backgroundColor: '#6200ff' }]}>
+                <TouchableOpacity style={[styles.cardButton, { backgroundColor: '#7B2DFF' }]}>
                   <Ionicons name="cart" size={16} color="#fff" style={{ marginRight: 6 }} />
                   <Text style={styles.buttonText}>R$ 299,00</Text>
                 </TouchableOpacity>
@@ -151,7 +151,7 @@ const Home: React.FC = () => {
                   Project Zomboid é o jogo definitivo de sobrevivência zumbi
                 </Text>
 
-                <TouchableOpacity style={[styles.cardButton, { backgroundColor: '#6200ff' }]}>
+                <TouchableOpacity style={[styles.cardButton, { backgroundColor: '#7B2DFF' }]}>
                   <Ionicons name="cart" size={16} color="#fff" style={{ marginRight: 6 }} />
                   <Text style={styles.buttonText}>R$ 59,99</Text>
                 </TouchableOpacity>
@@ -351,7 +351,7 @@ const Home: React.FC = () => {
             activeOpacity={0.8}
             onPress={() => navigation.navigate("Home")}
           >
-            <Ionicons name="home-outline" size={28} color="#b400ff" />
+            <Ionicons name="home-outline" size={28} color="#7B2DFF" />
             <Text style={[styles.tabLabel, styles.activeLabel]}>Início</Text>
           </TouchableOpacity>
 
@@ -395,7 +395,7 @@ export default Home;
 const styles = StyleSheet.create({
 container: {
   flex: 1,
-  backgroundColor: '#000',
+  backgroundColor: '#15121C',
 },
 
 logo: {
@@ -413,14 +413,12 @@ topBar: {
 searchContainer: {
   flexDirection: 'row',
   alignItems: 'center',
-  backgroundColor: '#0f0f0f',
+  backgroundColor: '#1D1A25',
   borderRadius: 22,
   paddingHorizontal: 12,
   height: 38,
   flex: 1,
   marginRight: 12,
-  borderWidth: 1,
-  borderColor: '#222',
 },
 
 searchIcon: {
@@ -487,13 +485,13 @@ cardTitle: {
 
 cardDescription: {
   marginTop: 4,
-  color: '#ddd',
+  color: '#E8DFEF',
   fontSize: 12,
 },
 
 cardButton: {
   marginTop: 10,
-  backgroundColor: '#b400ff',
+  backgroundColor: '#BA09A5',
   paddingVertical: 8,
   paddingHorizontal: 14,
   borderRadius: 14,
@@ -515,11 +513,11 @@ bottomSafeArea: {
 bottomBar: {
   height: 70,
   borderTopWidth: 1,
-  borderTopColor: '#222',
-  backgroundColor: '#000',
-  flexDirection: 'row',
-  justifyContent: 'space-around',
-  alignItems: 'center',
+  borderTopColor: "#4A4456",
+  backgroundColor: "#15121C",
+  flexDirection: "row",
+  justifyContent: "space-around",
+  alignItems: "center",
   paddingBottom: 8,
   paddingTop: 6,
 },
@@ -537,7 +535,7 @@ tabLabel: {
 },
 
 activeLabel: {
-  color: '#b400ff',
+  color: '#7B2DFF',
   fontWeight: '600',
 },
 
@@ -585,7 +583,7 @@ verticalCardTitle: {
 },
 
 verticalCardOldPrice: {
-  color: '#bbb',
+  color: '#E8DFEF',
   fontSize: 12,
   textDecorationLine: 'line-through',
   marginTop: -2,
@@ -605,7 +603,7 @@ priceRow: {
 },
 
 buyButton: {
-  backgroundColor: '#6200ff',
+  backgroundColor: '#7B2DFF',
   paddingVertical: 8,
   paddingHorizontal: 12,
   borderRadius: 12,
@@ -621,7 +619,7 @@ buyButtonText: {
 },
 
 freeButton: {
-  backgroundColor: '#b400ff',
+  backgroundColor: '#BA09A5',
   paddingVertical: 8,
   paddingHorizontal: 14,
   borderRadius: 12,
