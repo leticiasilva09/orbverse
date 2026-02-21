@@ -1,6 +1,6 @@
 import React from "react";
 import {View, Text, Image, StyleSheet, TouchableOpacity, ScrollView,} from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
 
 export default function Favoritos() {
   return (
@@ -18,7 +18,7 @@ export default function Favoritos() {
           <Text style={styles.studio}>Rockstar Games</Text>
 
           <View style={styles.ratingRow}>
-            <Ionicons name="star" size={16} color="#7B2DFF" />
+            <MaterialIcons name="star" size={16} color="#7B2DFF" />
             <Text style={styles.rating}>4.9</Text>
           </View>
 
@@ -30,7 +30,7 @@ export default function Favoritos() {
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.heartIcon}>
-          <Ionicons name="heart" size={20} color="#7B2DFF" />
+          <MaterialIcons name="favorite" size={20} color="#7B2DFF" />
         </TouchableOpacity>
       </View>
 
@@ -46,7 +46,7 @@ export default function Favoritos() {
           <Text style={styles.studio}>Bend Studio</Text>
 
           <View style={styles.ratingRow}>
-            <Ionicons name="star" size={16} color="#7B2DFF" />
+            <MaterialIcons name="star" size={16} color="#7B2DFF" />
             <Text style={styles.rating}>4.8</Text>
           </View>
 
@@ -58,7 +58,7 @@ export default function Favoritos() {
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.heartIcon}>
-          <Ionicons name="heart" size={20} color="#7B2DFF" />
+          <MaterialIcons name="favorite" size={20} color="#7B2DFF" />
         </TouchableOpacity>
       </View>
 
@@ -74,7 +74,7 @@ export default function Favoritos() {
           <Text style={styles.studio}>CD PROJEKT RED</Text>
 
           <View style={styles.ratingRow}>
-            <Ionicons name="star" size={16} color="#7B2DFF" />
+            <MaterialIcons name="star" size={16} color="#7B2DFF" />
             <Text style={styles.rating}>4.2</Text>
           </View>
 
@@ -86,7 +86,7 @@ export default function Favoritos() {
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.heartIcon}>
-          <Ionicons name="heart" size={20} color="#7B2DFF" />
+          <MaterialIcons name="favorite" size={20} color="#7B2DFF" />
         </TouchableOpacity>
       </View>
     </ScrollView>

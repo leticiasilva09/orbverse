@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Switch, } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Ionicons } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
 
 // Navegação
 import { useNavigation } from "@react-navigation/native";
@@ -30,9 +30,9 @@ export default function Config() {
           <Text style={styles.sectionTitle}>Perfil</Text>
 
           <TouchableOpacity style={styles.item}>
-            <Ionicons name="person-outline" size={22} color="#fff" />
+            <MaterialIcons name="person-outline" size={22} color="#fff" />
             <Text style={styles.itemText}>Editar Perfil</Text>
-            <Ionicons name="chevron-forward" size={20} color="#666" />
+            <MaterialIcons name="chevron-right" size={20} color="#666" />
           </TouchableOpacity>
         </View>
 
@@ -42,12 +42,12 @@ export default function Config() {
           <Text style={styles.sectionTitle}>Preferências</Text>
 
           <TouchableOpacity style={styles.item}>
-            <Ionicons name="language-outline" size={22} color="#fff" />
+            <MaterialIcons name="language" size={22} color="#fff" />
             <Text style={styles.itemText}>Idioma</Text>
 
             <View style={{ flexDirection: "row", alignItems: "center" }}>
               <Text style={styles.optionText}>Português (BR)</Text>
-              <Ionicons name="chevron-forward" size={20} color="#666" />
+              <MaterialIcons name="chevron-right" size={20} color="#666" />
             </View>
           </TouchableOpacity>
         </View>
@@ -58,7 +58,7 @@ export default function Config() {
           <Text style={styles.sectionTitle}>Notificações</Text>
 
           <View style={styles.item}>
-            <Ionicons name="notifications-outline" size={22} color="#fff" />
+            <MaterialIcons name="notifications-none" size={22} color="#fff" />
             <Text style={styles.itemText}>Notificações de jogos</Text>
 
             <Switch
@@ -69,7 +69,7 @@ export default function Config() {
           </View>
 
           <View style={styles.item}>
-            <Ionicons name="pricetag-outline" size={22} color="#fff" />
+            <MaterialIcons name="local-offer" size={22} color="#fff" />
             <Text style={styles.itemText}>Promoções e ofertas</Text>
 
             <Switch
@@ -86,7 +86,7 @@ export default function Config() {
           <Text style={styles.sectionTitle}>Privacidade</Text>
 
           <View style={styles.item}>
-            <Ionicons name="eye-outline" size={22} color="#fff" />
+            <MaterialIcons name="visibility" size={22} color="#fff" />
             <Text style={styles.itemText}>Perfil Público</Text>
 
             <Switch
@@ -97,9 +97,9 @@ export default function Config() {
           </View>
 
           <TouchableOpacity style={styles.item}>
-            <Ionicons name="time-outline" size={22} color="#fff" />
+            <MaterialIcons name="schedule" size={22} color="#fff" />
             <Text style={styles.itemText}>Status de atividade</Text>
-            <Ionicons name="chevron-forward" size={20} color="#666" />
+            <MaterialIcons name="chevron-right" size={20} color="#666" />
           </TouchableOpacity>
         </View>
 
@@ -109,9 +109,9 @@ export default function Config() {
           <Text style={styles.sectionTitle}>Suporte</Text>
 
           <TouchableOpacity style={styles.item}>
-            <Ionicons name="help-circle-outline" size={22} color="#fff" />
+            <MaterialIcons name="help-outline" size={22} color="#fff" />
             <Text style={styles.itemText}>Ajuda</Text>
-            <Ionicons name="chevron-forward" size={20} color="#666" />
+            <MaterialIcons name="chevron-right" size={20} color="#666" />
           </TouchableOpacity>
         </View>
 
@@ -121,24 +121,23 @@ export default function Config() {
           <Text style={styles.sectionTitle}>Sobre</Text>
 
           <TouchableOpacity style={styles.item}>
-            <Ionicons name="information-circle-outline" size={22} color="#fff" />
+            <MaterialIcons name="info-outline" size={22} color="#fff" />
             <Text style={styles.itemText}>Versão do App</Text>
             <Text style={styles.optionText}>1.0.0</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.item}>
-            <Ionicons name="document-text-outline" size={22} color="#fff" />
+            <MaterialIcons name="description" size={22} color="#fff" />
             <Text style={styles.itemText}>Termos de Uso</Text>
-            <Ionicons name="chevron-forward" size={20} color="#666" />
+            <MaterialIcons name="chevron-right" size={20} color="#666" />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.item}>
-            <Ionicons name="shield-checkmark-outline" size={22} color="#fff" />
+            <MaterialIcons name="shield" size={22} color="#fff" />
             <Text style={styles.itemText}>Política de Privacidade</Text>
-            <Ionicons name="chevron-forward" size={20} color="#666" />
+            <MaterialIcons name="chevron-right" size={20} color="#666" />
           </TouchableOpacity>
         </View>
-
 
         <View style={{ height: 40 }} />
 

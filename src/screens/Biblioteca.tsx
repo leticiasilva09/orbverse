@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, TextInput, ScrollView, ImageBackground, TouchableOpacity, } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Ionicons } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
 
 // Navegação tipada
 import { useNavigation } from "@react-navigation/native";
@@ -18,7 +18,7 @@ export default function Biblioteca() {
       {/* Barra Superior */}
       <View style={styles.topBar}>
         <View style={styles.searchContainer}>
-          <Ionicons name="search" size={18} color="#E8DFEF" style={styles.searchIcon} />
+          <MaterialIcons name="search" size={18} color="#E8DFEF" style={styles.searchIcon} />
           <TextInput
             placeholder="Buscar na biblioteca..."
             placeholderTextColor="#E8DFEF"
@@ -50,7 +50,7 @@ export default function Biblioteca() {
               <View style={styles.cardFooter}>
                 <Text style={styles.gameName}>Battlefield 4</Text>
                 <TouchableOpacity style={styles.playButton}>
-                  <Ionicons name="checkmark-circle-outline" size={16} color="#fff" style={{ marginRight: 6 }} />
+                  <MaterialIcons name="check-circle-outline" size={16} color="#fff" style={{ marginRight: 6 }} />
                   <Text style={styles.installText}>Instalado</Text>
                 </TouchableOpacity>
               </View>
@@ -67,7 +67,7 @@ export default function Biblioteca() {
               <View style={styles.cardFooter}>
                 <Text style={styles.gameName}>Mortal Kombat X</Text>
                 <TouchableOpacity style={styles.playButton}>
-                  <Ionicons name="checkmark-circle-outline" size={16} color="#fff" style={{ marginRight: 6 }} />
+                  <MaterialIcons name="check-circle-outline" size={16} color="#fff" style={{ marginRight: 6 }} />
                   <Text style={styles.installText}>Instalado</Text>
                 </TouchableOpacity>
               </View>
@@ -84,7 +84,7 @@ export default function Biblioteca() {
               <View style={styles.cardFooter}>
                 <Text style={styles.gameName}>Counter-Strike 2</Text>
                 <TouchableOpacity style={styles.playButton}>
-                  <Ionicons name="checkmark-circle-outline" size={16} color="#fff" style={{ marginRight: 6 }} />
+                  <MaterialIcons name="check-circle-outline" size={16} color="#fff" style={{ marginRight: 6 }} />
                   <Text style={styles.installText}>Instalado</Text>
                 </TouchableOpacity>
               </View>
@@ -101,7 +101,7 @@ export default function Biblioteca() {
               <View style={styles.cardFooter}>
                 <Text style={styles.gameName}>Dave the Diver</Text>
                 <TouchableOpacity style={styles.playButton}>
-                  <Ionicons name="checkmark-circle-outline" size={16} color="#fff" style={{ marginRight: 6 }} />
+                  <MaterialIcons name="check-circle-outline" size={16} color="#fff" style={{ marginRight: 6 }} />
                   <Text style={styles.installText}>Instalado</Text>
                 </TouchableOpacity>
               </View>
@@ -123,7 +123,7 @@ export default function Biblioteca() {
                   activeOpacity={0.8}
                   onPress={() => navigation.navigate("Instalacao")}
                 >
-                  <Ionicons name="download-outline" size={16} color="#fff" />
+                  <MaterialIcons name="download" size={16} color="#fff" />
                   <Text style={styles.installText}>Instalar</Text>
                 </TouchableOpacity>
               </View>
@@ -140,7 +140,7 @@ export default function Biblioteca() {
               <View style={styles.cardFooter}>
                 <Text style={styles.gameName}>Elden Ring</Text>
                 <TouchableOpacity style={styles.installButton}>
-                  <Ionicons name="download-outline" size={16} color="#fff" />
+                  <MaterialIcons name="download" size={16} color="#fff" />
                   <Text style={styles.installText}>Instalar</Text>
                 </TouchableOpacity>
               </View>
@@ -157,7 +157,7 @@ export default function Biblioteca() {
               <View style={styles.cardFooter}>
                 <Text style={styles.gameName}>The Forest</Text>
                 <TouchableOpacity style={styles.installButton}>
-                  <Ionicons name="download-outline" size={16} color="#fff" />
+                  <MaterialIcons name="download" size={16} color="#fff" />
                   <Text style={styles.installText}>Instalar</Text>
                 </TouchableOpacity>
               </View>
@@ -174,7 +174,7 @@ export default function Biblioteca() {
               <View style={styles.cardFooter}>
                 <Text style={styles.gameName}>Stardew Valley</Text>
                 <TouchableOpacity style={styles.installButton}>
-                  <Ionicons name="download-outline" size={16} color="#fff" />
+                  <MaterialIcons name="download" size={16} color="#fff" />
                   <Text style={styles.installText}>Instalar</Text>
                 </TouchableOpacity>
               </View>
@@ -191,7 +191,7 @@ export default function Biblioteca() {
               <View style={styles.cardFooter}>
                 <Text style={styles.gameName}>The Quarry</Text>
                 <TouchableOpacity style={styles.installButton}>
-                  <Ionicons name="download-outline" size={16} color="#fff" />
+                  <MaterialIcons name="download" size={16} color="#fff" />
                   <Text style={styles.installText}>Instalar</Text>
                 </TouchableOpacity>
               </View>
@@ -208,7 +208,7 @@ export default function Biblioteca() {
               <View style={styles.cardFooter}>
                 <Text style={styles.gameName}>Street Fighter V</Text>
                 <TouchableOpacity style={styles.installButton}>
-                  <Ionicons name="download-outline" size={16} color="#fff" />
+                  <MaterialIcons name="download" size={16} color="#fff" />
                   <Text style={styles.installText}>Instalar</Text>
                 </TouchableOpacity>
               </View>
@@ -225,7 +225,7 @@ export default function Biblioteca() {
               <View style={styles.cardFooter}>
                 <Text style={styles.gameName}>Tekken 7</Text>
                 <TouchableOpacity style={styles.installButton}>
-                  <Ionicons name="download-outline" size={16} color="#fff" />
+                  <MaterialIcons name="download" size={16} color="#fff" />
                   <Text style={styles.installText}>Instalar</Text>
                 </TouchableOpacity>
               </View>
@@ -242,7 +242,7 @@ export default function Biblioteca() {
               <View style={styles.cardFooter}>
                 <Text style={styles.gameName}>Tekken 8</Text>
                 <TouchableOpacity style={styles.installButton}>
-                  <Ionicons name="download-outline" size={16} color="#fff" />
+                  <MaterialIcons name="download" size={16} color="#fff" />
                   <Text style={styles.installText}>Instalar</Text>
                 </TouchableOpacity>
               </View>
@@ -258,7 +258,7 @@ export default function Biblioteca() {
             style={styles.tabItem}
             onPress={() => navigation.navigate("Home")}
           >
-            <Ionicons name="home-outline" size={28} color="#8a8a8a" />
+            <MaterialIcons name="home" size={28} color="#8a8a8a" />
             <Text style={styles.tabLabel}>Início</Text>
           </TouchableOpacity>
 
@@ -266,7 +266,7 @@ export default function Biblioteca() {
             style={styles.tabItem}
             onPress={() => navigation.navigate("Loja")}
           >
-            <Ionicons name="storefront-outline" size={26} color="#8a8a8a" />
+            <MaterialIcons name="storefront" size={26} color="#8a8a8a" />
             <Text style={styles.tabLabel}>Loja</Text>
           </TouchableOpacity>
 
@@ -274,7 +274,7 @@ export default function Biblioteca() {
             style={styles.tabItem}
             onPress={() => navigation.navigate("Biblioteca")}
           >
-            <Ionicons name="library-outline" size={26} color="#7B2DFF" />
+            <MaterialIcons name="menu-book" size={26} color="#7B2DFF" />
             <Text style={[styles.tabLabel, styles.activeLabel]}>Biblioteca</Text>
           </TouchableOpacity>
 
@@ -282,7 +282,7 @@ export default function Biblioteca() {
             style={styles.tabItem}
             onPress={() => navigation.navigate("Perfil")}
           >
-            <Ionicons name="person-circle-outline" size={28} color="#8a8a8a" />
+            <MaterialIcons name="account-circle" size={28} color="#8a8a8a" />
             <Text style={styles.tabLabel}>Perfil</Text>
           </TouchableOpacity>
         </View>

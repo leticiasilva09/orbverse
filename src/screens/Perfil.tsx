@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {View, Text, StyleSheet, ScrollView, TouchableOpacity, } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Ionicons } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import auth from '@react-native-firebase/auth';
 
@@ -79,19 +79,19 @@ export default function Perfil() {
         {/* SEÇÃO DE ESTATÍSTICAS */}
         <View style={styles.statsRow}>
           <View style={styles.statItem}>
-            <Ionicons name="game-controller-outline" size={28} color="#7B2DFF" />
+            <MaterialIcons name="sports-esports" size={28} color="#7B2DFF" />
             <Text style={styles.statNumber}>12</Text>
             <Text style={styles.statLabel}>Jogos</Text>
           </View>
 
           <View style={styles.statItem}>
-            <Ionicons name="time-outline" size={28} color="#4dacff" />
+            <MaterialIcons name="schedule" size={28} color="#4dacff" />
             <Text style={styles.statNumber}>342</Text>
             <Text style={styles.statLabel}>Horas</Text>
           </View>
 
           <View style={styles.statItem}>
-            <Ionicons name="trophy-outline" size={28} color="#ffcc00" />
+            <MaterialIcons name="emoji-events" size={28} color="#ffcc00" />
             <Text style={styles.statNumber}>156</Text>
             <Text style={styles.statLabel}>Conquistas</Text>
           </View>
@@ -124,7 +124,7 @@ export default function Perfil() {
           activeOpacity={0.8}
           onPress={() => navigation.navigate("Lista")}
         >
-          <Ionicons name="heart-outline" size={22} color="#fff" />
+          <MaterialIcons name="favorite-border" size={22} color="#fff" />
           <Text style={styles.settingsText}>Lista de Desejos</Text>
         </TouchableOpacity>
 
@@ -133,7 +133,7 @@ export default function Perfil() {
           activeOpacity={0.8}
           onPress={() => navigation.navigate("Config")}
         >
-          <Ionicons name="settings-outline" size={22} color="#fff" />
+          <MaterialIcons name="settings" size={22} color="#fff" />
           <Text style={styles.settingsText}>Configurações da Conta</Text>
         </TouchableOpacity>
 
@@ -142,7 +142,7 @@ export default function Perfil() {
           activeOpacity={0.8}
           onPress={handleLogout}
         >
-          <Ionicons name="log-out-outline" size={22} color="#ff4d4d" />
+          <MaterialIcons name="logout" size={22} color="#ff4d4d" />
           <Text style={styles.logoutText}>Sair</Text>
         </TouchableOpacity>
 
@@ -158,7 +158,7 @@ export default function Perfil() {
             activeOpacity={0.8}
             onPress={() => navigation.navigate("Home")}
           >
-            <Ionicons name="home-outline" size={28} color="#8a8a8a" />
+            <MaterialIcons name="home" size={28} color="#8a8a8a" />
             <Text style={styles.tabLabel}>Início</Text>
           </TouchableOpacity>
 
@@ -167,7 +167,7 @@ export default function Perfil() {
             activeOpacity={0.8}
             onPress={() => navigation.navigate("Loja")}
           >
-            <Ionicons name="storefront-outline" size={26} color="#8a8a8a" />
+            <MaterialIcons name="storefront" size={26} color="#8a8a8a" />
             <Text style={styles.tabLabel}>Loja</Text>
           </TouchableOpacity>
 
@@ -176,7 +176,7 @@ export default function Perfil() {
             activeOpacity={0.8}
             onPress={() => navigation.navigate("Biblioteca")}
           >
-            <Ionicons name="library-outline" size={26} color="#8a8a8a" />
+            <MaterialIcons name="menu-book" size={26} color="#8a8a8a" />
             <Text style={styles.tabLabel}>Biblioteca</Text>
           </TouchableOpacity>
 
@@ -185,7 +185,7 @@ export default function Perfil() {
             activeOpacity={0.8}
             onPress={() => navigation.navigate("Perfil")}
           >
-            <Ionicons name="person-circle-outline" size={28} color="#7B2DFF" />
+            <MaterialIcons name="account-circle" size={28} color="#7B2DFF" />
             <Text style={[styles.tabLabel, styles.activeLabel]}>Perfil</Text>
           </TouchableOpacity>
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParamList } from "../navigation/StackNavigator";
@@ -17,7 +17,7 @@ export default function Instalacao() {
 
         {/* TOPO DO PC + STATUS */}
         <View style={styles.pcBox}>
-          <Ionicons name="desktop-outline" size={32} color="#fff" />
+          <MaterialIcons name="computer" size={32} color="#fff" />
 
           <View style={{ marginLeft: 12 }}>
             <Text style={styles.pcName}>DESKTOP-EGSVQCT</Text>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, KeyboardAvoidingView, Platform } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import auth from '@react-native-firebase/auth';
@@ -81,7 +81,7 @@ export default function Cadastro() {
         <Text style={styles.subtitle}>Crie sua conta e inicie sua jornada.</Text>
 
         <View style={styles.inputContainer}>
-          <Ionicons name="mail-outline" size={20} color="#E8DFEF" style={styles.icon} />
+          <MaterialIcons name="email" size={20} color="#E8DFEF" style={styles.icon} />
           <TextInput
             placeholder="E-mail"
             placeholderTextColor="#E8DFEF"
@@ -93,7 +93,7 @@ export default function Cadastro() {
         </View>
 
         <View style={styles.inputContainer}>
-          <Ionicons name="lock-closed-outline" size={20} color="#E8DFEF" style={styles.icon} />
+          <MaterialIcons name="lock-outline" size={20} color="#E8DFEF" style={styles.icon} />
 
           <TextInput
             placeholder="Senha"
@@ -106,17 +106,17 @@ export default function Cadastro() {
 
           {/* BOTÃO DE OLHO */}
           <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
-            <Ionicons
-              name={showPassword ? "eye-outline" : "eye-off-outline"}
-              size={22}
-              color="#E8DFEF"
-            />
+          <MaterialIcons
+            name={showPassword ? "visibility" : "visibility-off"}
+            size={22}
+            color="#E8DFEF"
+          />
           </TouchableOpacity>
           
         </View>
 
         <View style={styles.inputContainer}>
-          <Ionicons name="lock-closed-outline" size={20} color="#ccc" style={styles.icon} />
+          <MaterialIcons name="lock-outline" size={20} color="#E8DFEF" style={styles.icon} />
           <TextInput
             placeholder="Confirmar senha"
             placeholderTextColor="#E8DFEF"
@@ -128,8 +128,8 @@ export default function Cadastro() {
 
         {/* BOTÃO DE OLHO */}
         <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
-          <Ionicons
-            name={showPassword ? "eye-outline" : "eye-off-outline"}
+          <MaterialIcons
+            name={showPassword ? "visibility" : "visibility-off"}
             size={22}
             color="#E8DFEF"
           />

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import {View, Text, StyleSheet, Image, ScrollView, TouchableOpacity,} from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
 
 export default function Informacoes() {
 
@@ -43,9 +43,9 @@ export default function Informacoes() {
           />
 
           <View style={styles.topIcons}>
-            <Ionicons name="heart-outline" size={22} color="#fff" />
-            <Ionicons
-              name="share-social-outline"
+            <MaterialIcons name="favorite-border" size={22} color="#fff" />
+            <MaterialIcons
+              name="share"
               size={22}
               color="#fff"
               style={{ marginLeft: 16 }}
@@ -63,11 +63,11 @@ export default function Informacoes() {
 
           {/* SETAS*/}
           <TouchableOpacity style={styles.leftArrow} onPress={prevImage}>
-            <Ionicons name="chevron-back" size={28} color="#fff" />
+            <MaterialIcons name="chevron-left" size={28} color="#fff" />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.rightArrow} onPress={nextImage}>
-            <Ionicons name="chevron-forward" size={28} color="#fff" />
+            <MaterialIcons name="chevron-right" size={28} color="#fff" />
           </TouchableOpacity>
         </View>
 
@@ -77,7 +77,7 @@ export default function Informacoes() {
           <Text style={styles.gameStudio}>Rockstar Games</Text>
 
           <View style={styles.ratingRow}>
-            <Ionicons name="star" size={18} color="#7B2DFF" />
+            <MaterialIcons name="star" size={18} color="#7B2DFF" />
             <Text style={styles.ratingText}>4.5</Text>
             <Text style={styles.reviewsCount}>(15.432 avaliações)</Text>
           </View>
@@ -137,11 +137,11 @@ export default function Informacoes() {
           <View style={styles.reviewBox}>
             <Text style={styles.reviewUser}>enzogamer2010</Text>
             <View style={styles.starsRow}>
-              <Ionicons name="star" size={14} color="#7B2DFF" />
-              <Ionicons name="star" size={14} color="#7B2DFF" />
-              <Ionicons name="star" size={14} color="#7B2DFF" />
-              <Ionicons name="star" size={14} color="#7B2DFF" />
-              <Ionicons name="star" size={14} color="#7B2DFF" />
+              <MaterialIcons name="star" size={18} color="#7B2DFF" />
+              <MaterialIcons name="star" size={18} color="#7B2DFF" />
+              <MaterialIcons name="star" size={18} color="#7B2DFF" />
+              <MaterialIcons name="star" size={18} color="#7B2DFF" />
+              <MaterialIcons name="star" size={18} color="#7B2DFF" />
             </View>
             <Text style={styles.reviewText}>
               A melhor narrativa que a Rockstar já fez, simplesmente absurdo.
@@ -152,11 +152,11 @@ export default function Informacoes() {
           <View style={styles.reviewBox}>
             <Text style={styles.reviewUser}>luis_0311</Text>
             <View style={styles.starsRow}>
-              <Ionicons name="star" size={14} color="#7B2DFF" />
-              <Ionicons name="star" size={14} color="#7B2DFF" />
-              <Ionicons name="star" size={14} color="#7B2DFF" />
-              <Ionicons name="star" size={14} color="#7B2DFF" />
-              <Ionicons name="star" size={14} color="#7B2DFF" />
+              <MaterialIcons name="star" size={18} color="#7B2DFF" />
+              <MaterialIcons name="star" size={18} color="#7B2DFF" />
+              <MaterialIcons name="star" size={18} color="#7B2DFF" />
+              <MaterialIcons name="star" size={18} color="#7B2DFF" />
+              <MaterialIcons name="star" size={18} color="#7B2DFF" />
             </View>
             <Text style={styles.reviewText}>
               Muito detalhe no mapa e narrativa envolvente. Rockstar não
@@ -168,10 +168,10 @@ export default function Informacoes() {
           <View style={styles.reviewBox}>
             <Text style={styles.reviewUser}>joao0710</Text>
             <View style={styles.starsRow}>
-              <Ionicons name="star" size={14} color="#7B2DFF" />
-              <Ionicons name="star" size={14} color="#7B2DFF" />
-              <Ionicons name="star" size={14} color="#7B2DFF" />
-              <Ionicons name="star" size={14} color="#7B2DFF" />
+              <MaterialIcons name="star" size={18} color="#7B2DFF" />
+              <MaterialIcons name="star" size={18} color="#7B2DFF" />
+              <MaterialIcons name="star" size={18} color="#7B2DFF" />
+              <MaterialIcons name="star" size={18} color="#7B2DFF" />
             </View>
             <Text style={styles.reviewText}>
               Otimização está ok, mas precisa de uma máquina top pra rodar.

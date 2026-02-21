@@ -2,7 +2,7 @@ import React from 'react';
 import { Image } from 'react-native';
 import {View, Text, TextInput, StyleSheet, TouchableOpacity, ScrollView, ImageBackground,} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Ionicons } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
 
 // IMPORTS PARA TIPAR A NAVEGAÇÃO
 import { useNavigation } from "@react-navigation/native";
@@ -31,7 +31,7 @@ const Home: React.FC = () => {
 
       {/* BARRA DE PESQUISA */}
       <View style={styles.searchContainer}>
-        <Ionicons name="search" size={18} color="#888" style={styles.searchIcon} />
+        <MaterialIcons name="search" size={18} color="#888" style={styles.searchIcon} />
         <TextInput
           placeholder="Pesquisar..."
           placeholderTextColor="#666"
@@ -41,7 +41,7 @@ const Home: React.FC = () => {
 
       {/* SINO */}
       <TouchableOpacity style={styles.bellButton} activeOpacity={0.7}>
-        <Ionicons name="notifications-outline" size={22} color="#fff" />
+        <MaterialIcons name="notifications-none" size={22} color="#fff" />
       </TouchableOpacity>
 
     </View>
@@ -88,7 +88,7 @@ const Home: React.FC = () => {
                 </Text>
 
                 <TouchableOpacity style={[styles.cardButton, { backgroundColor: '#7B2DFF' }]}>
-                  <Ionicons name="cart" size={16} color="#fff" style={{ marginRight: 6 }} />
+                  <MaterialIcons name="shopping-cart" size={16} color="#fff" style={{ marginRight: 6 }} />
                   <Text style={styles.buttonText}>R$ 79,90</Text>
                 </TouchableOpacity>
               </View>
@@ -130,7 +130,7 @@ const Home: React.FC = () => {
                 </Text>
 
                 <TouchableOpacity style={[styles.cardButton, { backgroundColor: '#7B2DFF' }]}>
-                  <Ionicons name="cart" size={16} color="#fff" style={{ marginRight: 6 }} />
+                  <MaterialIcons name="shopping-cart" size={16} color="#fff" style={{ marginRight: 6 }} />
                   <Text style={styles.buttonText}>R$ 299,00</Text>
                 </TouchableOpacity>
               </View>
@@ -152,7 +152,7 @@ const Home: React.FC = () => {
                 </Text>
 
                 <TouchableOpacity style={[styles.cardButton, { backgroundColor: '#7B2DFF' }]}>
-                  <Ionicons name="cart" size={16} color="#fff" style={{ marginRight: 6 }} />
+                  <MaterialIcons name="shopping-cart" size={16} color="#fff" style={{ marginRight: 6 }} />
                   <Text style={styles.buttonText}>R$ 59,99</Text>
                 </TouchableOpacity>
               </View>
@@ -180,7 +180,7 @@ const Home: React.FC = () => {
 
                 <View style={styles.priceRow}>
                   <TouchableOpacity style={styles.buyButton}>
-                    <Ionicons name="cart" size={14} color="#fff" style={{ marginRight: 6 }} />
+                    <MaterialIcons name="shopping-cart" size={16} color="#fff" style={{ marginRight: 6 }} />
                     <Text style={styles.buyButtonText}>R$ 89,90</Text>
                   </TouchableOpacity>
 
@@ -205,7 +205,7 @@ const Home: React.FC = () => {
                 <Text style={styles.verticalCardTitle}>Grand Theft Auto VI</Text>
 
                 <TouchableOpacity style={styles.buyButton}>
-                  <Ionicons name="cart" size={14} color="#fff" style={{ marginRight: 6 }} />
+                  <MaterialIcons name="shopping-cart" size={16} color="#fff" style={{ marginRight: 6 }} />
                   <Text style={styles.buyButtonText}>R$ 599,90</Text>
                 </TouchableOpacity>
               </View>
@@ -226,7 +226,7 @@ const Home: React.FC = () => {
 
                 <View style={styles.priceRow}>
                   <TouchableOpacity style={styles.buyButton}>
-                    <Ionicons name="cart" size={14} color="#fff" style={{ marginRight: 6 }} />
+                    <MaterialIcons name="shopping-cart" size={16} color="#fff" style={{ marginRight: 6 }} />
                     <Text style={styles.buyButtonText}>R$ 39,90</Text>
                   </TouchableOpacity>
 
@@ -271,7 +271,7 @@ const Home: React.FC = () => {
                 <Text style={styles.verticalCardTitle}>Dead by Daylight</Text>
 
                 <TouchableOpacity style={styles.buyButton}>
-                  <Ionicons name="cart" size={14} color="#fff" style={{ marginRight: 6 }} />
+                  <MaterialIcons name="shopping-cart" size={16} color="#fff" style={{ marginRight: 6 }} />
                   <Text style={styles.buyButtonText}>R$ R$ 62,90</Text>
                 </TouchableOpacity>
               </View>
@@ -292,7 +292,7 @@ const Home: React.FC = () => {
 
                 <View style={styles.priceRow}>
                   <TouchableOpacity style={styles.buyButton}>
-                    <Ionicons name="cart" size={14} color="#fff" style={{ marginRight: 6 }} />
+                    <MaterialIcons name="shopping-cart" size={16} color="#fff" style={{ marginRight: 6 }} />
                     <Text style={styles.buyButtonText}>R$ 99,90</Text>
                   </TouchableOpacity>
 
@@ -313,7 +313,7 @@ const Home: React.FC = () => {
                 <Text style={styles.verticalCardTitle}>Hollow Knight</Text>
 
                 <TouchableOpacity style={styles.buyButton}>
-                  <Ionicons name="cart" size={14} color="#fff" style={{ marginRight: 6 }} />
+                  <MaterialIcons name="shopping-cart" size={16} color="#fff" style={{ marginRight: 6 }} />
                   <Text style={styles.buyButtonText}>R$ 46,90</Text>
                 </TouchableOpacity>
               </View>
@@ -331,7 +331,7 @@ const Home: React.FC = () => {
                 <Text style={styles.verticalCardTitle}>Portal 2</Text>
 
                 <TouchableOpacity style={styles.buyButton}>
-                  <Ionicons name="cart" size={14} color="#fff" style={{ marginRight: 6 }} />
+                  <MaterialIcons name="shopping-cart" size={16} color="#fff" style={{ marginRight: 6 }} />
                   <Text style={styles.buyButtonText}>R$ 32,99</Text>
                 </TouchableOpacity>
               </View>
@@ -351,7 +351,7 @@ const Home: React.FC = () => {
             activeOpacity={0.8}
             onPress={() => navigation.navigate("Home")}
           >
-            <Ionicons name="home-outline" size={28} color="#7B2DFF" />
+            <MaterialIcons name="home" size={28} color="#7B2DFF" />
             <Text style={[styles.tabLabel, styles.activeLabel]}>Início</Text>
           </TouchableOpacity>
 
@@ -360,7 +360,7 @@ const Home: React.FC = () => {
             activeOpacity={0.8}
             onPress={() => navigation.navigate("Loja")}
           >
-            <Ionicons name="storefront-outline" size={26} color="#8a8a8a" />
+            <MaterialIcons name="storefront" size={26} color="#8a8a8a" />
             <Text style={styles.tabLabel}>Loja</Text>
           </TouchableOpacity>
 
@@ -369,7 +369,7 @@ const Home: React.FC = () => {
             activeOpacity={0.8}
             onPress={() => navigation.navigate("Biblioteca")}
           >
-            <Ionicons name="library-outline" size={26} color="#8a8a8a" />
+            <MaterialIcons name="menu-book" size={26} color="#8a8a8a" />
             <Text style={styles.tabLabel}>Biblioteca</Text>
           </TouchableOpacity>
 
@@ -378,7 +378,7 @@ const Home: React.FC = () => {
             activeOpacity={0.8}
             onPress={() => navigation.navigate("Perfil")}
           >
-            <Ionicons name="person-circle-outline" size={28} color="#8a8a8a" />
+            <MaterialIcons name="account-circle" size={28} color="#8a8a8a" />
             <Text style={styles.tabLabel}>Perfil</Text>
           </TouchableOpacity>
 
