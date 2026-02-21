@@ -10,6 +10,10 @@ import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParamList } from "../navigation/StackNavigator";
 
+// IMPORTS DO MODO CLARO/ESCURO
+import { useTheme } from "../context/ThemeContext";
+import { darkColors, lightColors } from "../theme/colors";
+
 // TIPO DA NAVEGAÇÃO PRA ESSA TELA
 type PerfilNavigationProp = NativeStackNavigationProp<RootStackParamList, "Perfil">;
 
@@ -17,6 +21,9 @@ export default function Perfil() {
   const [email, setEmail] = useState<string>(''); // cria um estado para armazenar o email do usuário logado
 
   const navigation = useNavigation<PerfilNavigationProp>();
+
+  const { theme } = useTheme();
+  const colors = theme === "dark" ? darkColors : lightColors;
 
   useEffect(() => {
     // obtém o usuário atualmente autenticado no firebase
@@ -50,95 +57,138 @@ export default function Perfil() {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: colors.background }]}>
 
       <ScrollView
         style={styles.content}
         showsVerticalScrollIndicator={false}
       >
         {/* CARD DO PERFIL */}
-        <View style={styles.profileCard}>
+        <View
+          style={[
+            styles.profileCard,
+            {
+              backgroundColor: colors.card,
+              borderColor: colors.border,
+            },
+          ]}
+        >
           <View style={styles.avatar}>
             <Text style={styles.avatarText}>{email ? email.charAt(0).toUpperCase() : 'U'}</Text>
           </View>
 
           <View>
-            <Text style={styles.profileName}>{email || 'Email'}</Text>
-            <Text style={styles.profileLevel}>Nível 42</Text>
-            <Text style={styles.profileXP}>XP</Text>
+            <Text style={[styles.profileName, { color: colors.text }]}>{email || 'Email'}</Text>
+            <Text style={[styles.profileLevel, { color: colors.subtext }]}>Nível 42</Text>
+            <Text style={[styles.profileXP, { color: colors.subtext }]}>XP</Text>
 
             {/* BARRA DE XP */}
-            <View style={styles.xpBar}>
+            <View
+              style={[
+                styles.xpBar,
+                { backgroundColor: colors.border }
+              ]}
+            >
               <View style={styles.xpFill} />
             </View>
 
-            <Text style={styles.xpNumbers}>7500/10000</Text>
+            <Text style={[styles.xpNumbers, { color: colors.subtext }]}>7500/10000</Text>
           </View>
         </View>
 
         {/* SEÇÃO DE ESTATÍSTICAS */}
         <View style={styles.statsRow}>
-          <View style={styles.statItem}>
+          <View
+            style={[
+              styles.statItem,
+              { backgroundColor: colors.card }
+            ]}
+          >
             <MaterialIcons name="sports-esports" size={28} color="#7B2DFF" />
-            <Text style={styles.statNumber}>12</Text>
+            <Text style={[styles.statNumber, { color: colors.subtext }]}>12</Text>
             <Text style={styles.statLabel}>Jogos</Text>
           </View>
 
-          <View style={styles.statItem}>
+          <View
+            style={[
+              styles.statItem,
+              { backgroundColor: colors.card }
+            ]}
+          >
             <MaterialIcons name="schedule" size={28} color="#4dacff" />
-            <Text style={styles.statNumber}>342</Text>
+            <Text style={[styles.statNumber, { color: colors.subtext }]}>342</Text>
             <Text style={styles.statLabel}>Horas</Text>
           </View>
 
-          <View style={styles.statItem}>
+          <View
+            style={[
+              styles.statItem,
+              { backgroundColor: colors.card }
+            ]}
+          >
             <MaterialIcons name="emoji-events" size={28} color="#ffcc00" />
-            <Text style={styles.statNumber}>156</Text>
+            <Text style={[styles.statNumber, { color: colors.subtext }]}>156</Text>
             <Text style={styles.statLabel}>Conquistas</Text>
           </View>
         </View>
 
         {/* SEÇÃO DE ATIVIDADE RECENTE */}
-        <Text style={styles.sectionTitle}>Atividade Recente</Text>
+        <Text style={[styles.sectionTitle, { color: colors.text }]}>Atividade Recente</Text>
 
-        <View style={styles.activityCard}>
-          <Text style={styles.activityTitle}>Dave the Diver</Text>
-          <Text style={styles.activityDesc}>Jogou por 3h</Text>
+        <View
+          style={[
+            styles.activityCard,
+            { backgroundColor: colors.card }
+          ]}
+        >
+          <Text style={[styles.activityTitle, { color: colors.subtext }]}>Dave the Diver</Text>
+          <Text style={[styles.activityDesc, { color: colors.subtext }]}>Jogou por 3h</Text>
           <Text style={styles.activityTime}>Há 2 dias</Text>
         </View>
 
-        <View style={styles.activityCard}>
-          <Text style={styles.activityTitle}>Counter-Strike 2</Text>
-          <Text style={styles.activityDesc}>Nova conquista desbloqueada</Text>
+        <View
+          style={[
+            styles.activityCard,
+            { backgroundColor: colors.card }
+          ]}
+        >
+          <Text style={[styles.activityTitle, { color: colors.subtext }]}>Counter-Strike 2</Text>
+          <Text style={[styles.activityDesc, { color: colors.subtext }]}>Nova conquista desbloqueada</Text>
           <Text style={styles.activityTime}>Há 5 horas</Text>
         </View>
 
-        <View style={styles.activityCard}>
-          <Text style={styles.activityTitle}>Battlefield 4</Text>
-          <Text style={styles.activityDesc}>Comprou o jogo</Text>
+        <View
+          style={[
+            styles.activityCard,
+            { backgroundColor: colors.card }
+          ]}
+        >
+          <Text style={[styles.activityTitle, { color: colors.subtext }]}>Battlefield 4</Text>
+          <Text style={[styles.activityDesc, { color: colors.subtext }]}>Comprou o jogo</Text>
           <Text style={styles.activityTime}>Ontem</Text>
         </View>
 
         {/* BOTÕES */}
         <TouchableOpacity
-          style={styles.settingsButton}
+          style={[styles.settingsButton, { backgroundColor: colors.card }]}
           activeOpacity={0.8}
           onPress={() => navigation.navigate("Lista")}
         >
-          <MaterialIcons name="favorite-border" size={22} color="#fff" />
-          <Text style={styles.settingsText}>Lista de Desejos</Text>
+          <MaterialIcons name="favorite-border" size={22} color={colors.text} />
+          <Text style={[styles.settingsText, { color: colors.subtext }]}>Lista de Desejos</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
-          style={styles.settingsButton}
+          style={[styles.settingsButton, { backgroundColor: colors.card }]}
           activeOpacity={0.8}
           onPress={() => navigation.navigate("Config")}
         >
-          <MaterialIcons name="settings" size={22} color="#fff" />
-          <Text style={styles.settingsText}>Configurações da Conta</Text>
+          <MaterialIcons name="settings" size={22} color={colors.text} />
+          <Text style={[styles.settingsText, { color: colors.subtext }]}>Configurações da Conta</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
-          style={styles.logoutButton}
+          style={[styles.logoutButton, { backgroundColor: colors.card }]}
           activeOpacity={0.8}
           onPress={handleLogout}
         >
@@ -151,7 +201,15 @@ export default function Perfil() {
 
       {/* BARRA INFERIOR*/}
       <SafeAreaView style={styles.bottomSafeArea}>
-        <View style={styles.bottomBar}>
+        <View
+          style={[
+            styles.bottomBar,
+            {
+              backgroundColor: colors.background,
+              borderTopColor: colors.border,
+            },
+          ]}
+        >
 
           <TouchableOpacity
             style={styles.tabItem}
@@ -159,7 +217,7 @@ export default function Perfil() {
             onPress={() => navigation.navigate("Home")}
           >
             <MaterialIcons name="home" size={28} color="#8a8a8a" />
-            <Text style={styles.tabLabel}>Início</Text>
+            <Text style={[styles.tabLabel, { color: theme === "dark" ? "#8a8a8a" : "#555" }]}>Início</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -168,7 +226,7 @@ export default function Perfil() {
             onPress={() => navigation.navigate("Loja")}
           >
             <MaterialIcons name="storefront" size={26} color="#8a8a8a" />
-            <Text style={styles.tabLabel}>Loja</Text>
+            <Text style={[styles.tabLabel, { color: theme === "dark" ? "#8a8a8a" : "#555" }]}>Loja</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -176,8 +234,8 @@ export default function Perfil() {
             activeOpacity={0.8}
             onPress={() => navigation.navigate("Biblioteca")}
           >
-            <MaterialIcons name="menu-book" size={26} color="#8a8a8a" />
-            <Text style={styles.tabLabel}>Biblioteca</Text>
+            <MaterialIcons name="storage" size={26} color="#8a8a8a" />
+            <Text style={[styles.tabLabel, { color: theme === "dark" ? "#8a8a8a" : "#555" }]}>Biblioteca</Text>
           </TouchableOpacity>
 
           <TouchableOpacity

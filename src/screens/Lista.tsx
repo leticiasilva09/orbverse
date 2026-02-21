@@ -2,31 +2,55 @@ import React from "react";
 import {View, Text, Image, StyleSheet, TouchableOpacity, ScrollView,} from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
+// IMPORTS DO MODO CLARO/ESCURO
+import { useTheme } from "../context/ThemeContext";
+import { darkColors, lightColors } from "../theme/colors";
+
 export default function Favoritos() {
+
+  const { theme } = useTheme();
+  const colors = theme === "dark" ? darkColors : lightColors;
+
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView
+      style={[styles.container, { backgroundColor: colors.background }]}
+    >
 
       {/* ITEM 1 */}
-      <View style={styles.card}>
+      <View
+        style={[
+          styles.card,
+          { backgroundColor: colors.card, borderColor: colors.border, borderWidth: 1 },
+        ]}
+      >
         <Image
           source={require("../../assets/red-dead.jpg")}
           style={styles.image}
         />
 
         <View style={styles.info}>
-          <Text style={styles.gameTitle}>Red Dead Redemption 2</Text>
-          <Text style={styles.studio}>Rockstar Games</Text>
+          <Text style={[styles.gameTitle, { color: colors.text }]}>Red Dead Redemption 2</Text>
+          <Text style={[styles.studio, { color: colors.subtext }]}>Rockstar Games</Text>
 
           <View style={styles.ratingRow}>
             <MaterialIcons name="star" size={16} color="#7B2DFF" />
-            <Text style={styles.rating}>4.9</Text>
+            <Text style={[styles.rating, { color: colors.text }]}>4.9</Text>
           </View>
 
-          <Text style={styles.price}>R$ 299,90</Text>
+          <Text style={[styles.price, { color: colors.text }]}>R$ 299,90</Text>
         </View>
 
-        <TouchableOpacity style={styles.addButton}>
-          <Text style={styles.addText}>Comprar</Text>
+        <TouchableOpacity
+          style={[
+            styles.addButton,
+            {
+              backgroundColor: colors.card,
+              borderColor: colors.border,
+              borderWidth: 1,
+            },
+          ]}
+        >
+          <Text style={[styles.addText, { color: colors.text }]}>Comprar</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.heartIcon}>
@@ -35,26 +59,40 @@ export default function Favoritos() {
       </View>
 
       {/* ITEM 2 */}
-      <View style={styles.card}>
+      <View
+        style={[
+          styles.card,
+          { backgroundColor: colors.card, borderColor: colors.border, borderWidth: 1 },
+        ]}
+      >
         <Image
           source={require("../../assets/days-gone.png")}
           style={styles.image}
         />
 
         <View style={styles.info}>
-          <Text style={styles.gameTitle}>Days Gone</Text>
-          <Text style={styles.studio}>Bend Studio</Text>
+          <Text style={[styles.gameTitle, { color: colors.text }]}>Days Gone</Text>
+          <Text style={[styles.studio, { color: colors.subtext }]}>Bend Studio</Text>
 
           <View style={styles.ratingRow}>
             <MaterialIcons name="star" size={16} color="#7B2DFF" />
-            <Text style={styles.rating}>4.8</Text>
+            <Text style={[styles.rating, { color: colors.text }]}>4.8</Text>
           </View>
 
-          <Text style={styles.price}>R$ 199,50</Text>
+          <Text style={[styles.price, { color: colors.text }]}>R$ 199,50</Text>
         </View>
 
-        <TouchableOpacity style={styles.addButton}>
-          <Text style={styles.addText}>Comprar</Text>
+        <TouchableOpacity
+          style={[
+            styles.addButton,
+            {
+              backgroundColor: colors.card,
+              borderColor: colors.border,
+              borderWidth: 1,
+            },
+          ]}
+        >
+          <Text style={[styles.addText, { color: colors.text }]}>Comprar</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.heartIcon}>
@@ -63,26 +101,40 @@ export default function Favoritos() {
       </View>
 
       {/* ITEM 3 */}
-      <View style={styles.card}>
+      <View
+        style={[
+          styles.card,
+          { backgroundColor: colors.card, borderColor: colors.border, borderWidth: 1 },
+        ]}
+      >
         <Image
           source={require("../../assets/cyberpunk.jpg")}
           style={styles.image}
         />
 
         <View style={styles.info}>
-          <Text style={styles.gameTitle}>Cyberpunk 2077</Text>
-          <Text style={styles.studio}>CD PROJEKT RED</Text>
+          <Text style={[styles.gameTitle, { color: colors.text }]}>Cyberpunk 2077</Text>
+          <Text style={[styles.studio, { color: colors.subtext }]}>CD PROJEKT RED</Text>
 
           <View style={styles.ratingRow}>
             <MaterialIcons name="star" size={16} color="#7B2DFF" />
-            <Text style={styles.rating}>4.2</Text>
+            <Text style={[styles.rating, { color: colors.text }]}>4.2</Text>
           </View>
 
-          <Text style={styles.price}>R$ 199,90</Text>
+          <Text style={[styles.price, { color: colors.text }]}>R$ 199,90</Text>
         </View>
 
-        <TouchableOpacity style={styles.addButton}>
-          <Text style={styles.addText}>Comprar</Text>
+        <TouchableOpacity
+          style={[
+            styles.addButton,
+            {
+              backgroundColor: colors.card,
+              borderColor: colors.border,
+              borderWidth: 1,
+            },
+          ]}
+        >
+          <Text style={[styles.addText, { color: colors.text }]}>Comprar</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.heartIcon}>

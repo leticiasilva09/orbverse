@@ -5,23 +5,43 @@ import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParamList } from "../navigation/StackNavigator";
 
+// IMPORTS DO MODO CLARO/ESCURO
+import { useTheme } from "../context/ThemeContext";
+import { darkColors, lightColors } from "../theme/colors";
+
 type InstalacaoNavigation = NativeStackNavigationProp<RootStackParamList,"Instalacao">;
 
 export default function Instalacao() {
   const navigation = useNavigation<InstalacaoNavigation>();
 
+  const { theme } = useTheme();
+  const colors = theme === "dark" ? darkColors : lightColors;
+
   return (
-    <View style={styles.container}>
+    <View
+      style={[
+        styles.container,
+        { backgroundColor: colors.background }
+      ]}
+    >
 
       <ScrollView showsVerticalScrollIndicator={false}>
 
         {/* TOPO DO PC + STATUS */}
-        <View style={styles.pcBox}>
-          <MaterialIcons name="computer" size={32} color="#fff" />
+        <View
+          style={[
+            styles.pcBox,
+            {
+              backgroundColor: colors.card,
+              borderColor: colors.border,
+            },
+          ]}
+        >
+          <MaterialIcons name="computer" size={32} color={colors.text} />
 
           <View style={{ marginLeft: 12 }}>
-            <Text style={styles.pcName}>DESKTOP-EGSVQCT</Text>
-            <Text style={styles.lastUpdate}>Última atualização: Ontem às 19:47 </Text>
+            <Text style={[styles.pcName, { color: colors.text }]}>DESKTOP-EGSVQCT</Text>
+            <Text style={[styles.lastUpdate, { color: colors.subtext }]}>Última atualização: Ontem às 19:47 </Text>
 
             <View style={styles.onlineTag}>
               <View style={styles.greenDot} />
@@ -30,8 +50,8 @@ export default function Instalacao() {
           </View>
 
           <View style={styles.storageBox}>
-            <Text style={styles.storageTitle}>Armazenamento</Text>
-            <Text style={styles.storageValue}>600 GB livres</Text>
+            <Text style={[styles.storageTitle, { color: colors.subtext }]}>Armazenamento</Text>
+            <Text style={[styles.storageValue, { color: colors.text }]}>600 GB livres</Text>
           </View>
         </View>
 
@@ -42,10 +62,10 @@ export default function Instalacao() {
             style={styles.gameImage}
           />
 
-          <Text style={styles.gameTitle}>Grand Theft Auto VI</Text>
-          <Text style={styles.gameInfo}>160 GB • Rockstar Games</Text>
+          <Text style={[styles.gameTitle, { color: colors.text }]}>Grand Theft Auto VI</Text>
+          <Text style={[styles.gameInfo, { color: colors.subtext }]}>160 GB • Rockstar Games</Text>
 
-          <Text style={styles.gameDescription}>
+          <Text style={[styles.gameDescription, { color: colors.text }]}>
             Grand Theft Auto VI é um jogo de ação em mundo aberto da Rockstar 
             Games que marca o retorno à icônica Vice City, agora totalmente 
             renovada com um clima imersivo, veículos dinâmicos e narrativa 
@@ -112,14 +132,15 @@ lastUpdate: {
 greenDot: {
   width: 6,
   height: 6,
-  backgroundColor: "#00ff66",
+  backgroundColor: "#00a040",
   borderRadius: 50,
   marginRight: 5,
 },
 
 onlineText: {
-  color: "#00ff66",
+  color: "#00a040",
   fontSize: 10,
+  fontWeight: 600,
 },
 
 storageBox: {

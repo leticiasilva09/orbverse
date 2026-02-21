@@ -8,36 +8,46 @@ import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParamList } from "../navigation/StackNavigator";
 
+// IMPORTS DO MODO CLARO/ESCURO
+import { useTheme } from "../context/ThemeContext";
+import { darkColors, lightColors } from "../theme/colors";
+
 type BibliotecaNavProp = NativeStackNavigationProp<RootStackParamList,"Biblioteca">;
 
 export default function Biblioteca() {
   const navigation = useNavigation<BibliotecaNavProp>();
 
+    const { theme } = useTheme();
+    const colors = theme === "dark" ? darkColors : lightColors;
+
   return (
-    <View style={styles.container}>
-      {/* Barra Superior */}
+    <View style={[styles.container, { backgroundColor: colors.background }]}>
+      
+      {/* BARRA SUPERIOR */}
       <View style={styles.topBar}>
-        <View style={styles.searchContainer}>
-          <MaterialIcons name="search" size={18} color="#E8DFEF" style={styles.searchIcon} />
+      <View style={[styles.searchContainer, { backgroundColor: colors.inputBg }]}>
+          <MaterialIcons name="search" size={18} color="#888" style={styles.searchIcon} />
           <TextInput
             placeholder="Buscar na biblioteca..."
-            placeholderTextColor="#E8DFEF"
-            style={styles.searchInput}
+            placeholderTextColor={theme === "dark" ? "#666" : "#999"}
+            style={[styles.searchInput, { color: colors.text }]}
           />
         </View>
       </View>
 
-      {/* Conteúdo */}
       <ScrollView showsVerticalScrollIndicator={false} style={styles.content}>
-        <Text style={styles.sectionTitle}>12 jogos</Text>
-        <Text style={styles.storageLabel}>200 GB usados de 500 GB</Text>
+        <Text style={[styles.sectionTitle, { color: colors.text }]}>12 jogos</Text>
+        <Text style={[styles.storageLabel, { color: colors.subtext }]}>200 GB usados de 500 GB</Text>
 
-        {/* Barra de armazenamento */}
-        <View style={styles.storageBarBg}>
+        <View
+          style={[
+            styles.storageBarBg,
+            { backgroundColor: colors.border }
+          ]}
+        >
           <View style={styles.storageBarFill} />
         </View>
 
-        {/* Grid dos jogos */}
         <View style={styles.grid}>
           
           {/* CARD 1 */}
@@ -253,13 +263,21 @@ export default function Biblioteca() {
 
       {/* Barra inferior */}
       <SafeAreaView style={styles.bottomSafeArea}>
-        <View style={styles.bottomBar}>
+        <View
+          style={[
+            styles.bottomBar,
+            {
+              backgroundColor: colors.background,
+              borderTopColor: colors.border,
+            },
+          ]}
+        >
           <TouchableOpacity
             style={styles.tabItem}
             onPress={() => navigation.navigate("Home")}
           >
             <MaterialIcons name="home" size={28} color="#8a8a8a" />
-            <Text style={styles.tabLabel}>Início</Text>
+            <Text style={[styles.tabLabel, { color: theme === "dark" ? "#8a8a8a" : "#555" }]}>Início</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -267,14 +285,14 @@ export default function Biblioteca() {
             onPress={() => navigation.navigate("Loja")}
           >
             <MaterialIcons name="storefront" size={26} color="#8a8a8a" />
-            <Text style={styles.tabLabel}>Loja</Text>
+            <Text style={[styles.tabLabel, { color: theme === "dark" ? "#8a8a8a" : "#555" }]}>Loja</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.tabItem}
             onPress={() => navigation.navigate("Biblioteca")}
           >
-            <MaterialIcons name="menu-book" size={26} color="#7B2DFF" />
+            <MaterialIcons name="storage" size={26} color="#7B2DFF" />
             <Text style={[styles.tabLabel, styles.activeLabel]}>Biblioteca</Text>
           </TouchableOpacity>
 
@@ -283,7 +301,7 @@ export default function Biblioteca() {
             onPress={() => navigation.navigate("Perfil")}
           >
             <MaterialIcons name="account-circle" size={28} color="#8a8a8a" />
-            <Text style={styles.tabLabel}>Perfil</Text>
+            <Text style={[styles.tabLabel, { color: theme === "dark" ? "#8a8a8a" : "#555" }]}>Perfil</Text>
           </TouchableOpacity>
         </View>
       </SafeAreaView>

@@ -5,7 +5,14 @@ import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import auth from '@react-native-firebase/auth';
 
+// IMPORTS DO MODO CLARO/ESCURO
+import { useTheme } from "../context/ThemeContext";
+import { darkColors, lightColors } from "../theme/colors";
+
 export default function Login() {
+  const { theme } = useTheme();
+  const colors = theme === "dark" ? darkColors : lightColors;
+
   const navigation = useNavigation();
 
   const [email, setEmail] = useState('');
@@ -72,28 +79,41 @@ export default function Login() {
 
   return (
     <KeyboardAvoidingView
-      style={styles.container}
+      style={[styles.container, { backgroundColor: colors.background }]}
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       keyboardVerticalOffset={Platform.OS === 'ios' ? 80 : 0}
     >
-      <View style={styles.loginBox}>
+      <View style={[styles.loginBox, { backgroundColor: colors.background }]}>
 
         {/* LOGO */}
         <Image
           source={require('../../assets/logo-icone.png')}
-          style={styles.logo}
+          style={[
+            styles.logo,
+            theme === "light" && { tintColor: "#000" }
+          ]}
+        resizeMode="contain"
         />
 
-        <Text style={styles.title}>Bem-vindo!</Text>
-        <Text style={styles.p}>Entre e continue sua aventura.</Text>
+        <Text style={[styles.title, { color: colors.text }]}>Bem-vindo!</Text>
+        <Text style={[styles.p, { color: colors.subtext }]}>Entre e continue sua aventura.</Text>
 
         {/* EMAIL */}
-        <View style={styles.inputContainer}>
-          <MaterialIcons name="email" size={20} color="#E8DFEF" style={styles.icon} />
+        <View
+          style={[
+            styles.inputContainer,
+            {
+              backgroundColor: colors.inputBg,
+              borderColor: colors.border,
+              borderWidth: 1,
+            },
+          ]}
+        >
+          <MaterialIcons name="email" size={20} color={colors.subtext} style={styles.icon} />
           <TextInput
             placeholder="E-mail"
-            placeholderTextColor="#E8DFEF"
-            style={styles.input}
+            style={[styles.input, { color: colors.text }]}
+            placeholderTextColor={colors.subtext}
             keyboardType="email-address"
             autoCapitalize="none"
             value={email}
@@ -102,14 +122,23 @@ export default function Login() {
         </View>
 
         {/* SENHA */}
-        <View style={styles.inputContainer}>
-          <MaterialIcons name="lock-outline" size={20} color="#E8DFEF" style={styles.icon} />
+        <View
+          style={[
+            styles.inputContainer,
+            {
+              backgroundColor: colors.inputBg,
+              borderColor: colors.border,
+              borderWidth: 1,
+            },
+          ]}
+        >
+          <MaterialIcons name="lock-outline" size={20} color={colors.subtext} style={styles.icon} />
 
           <TextInput
             placeholder="Senha"
-            placeholderTextColor="#E8DFEF"
+            style={[styles.input, { color: colors.text }]}
+            placeholderTextColor={colors.subtext}
             secureTextEntry={!showPassword}
-            style={styles.input}
             value={senha}
             onChangeText={setSenha}
           />
@@ -119,7 +148,7 @@ export default function Login() {
           <MaterialIcons
             name={showPassword ? "visibility" : "visibility-off"}
             size={22}
-            color="#E8DFEF"
+            color={colors.subtext}
           />
           </TouchableOpacity>
 
@@ -129,7 +158,7 @@ export default function Login() {
         {erro ? <Text style={styles.errorText}>{erro}</Text> : null}
 
         <Text
-          style={styles.forgotPassword}
+          style={[styles.forgotPassword, { color: colors.subtext }]}
           onPress={() => navigation.navigate('Senha' as never)}
         >
           Esqueceu sua senha?
@@ -142,7 +171,7 @@ export default function Login() {
           <Text style={styles.buttonText}>Entrar</Text>
         </TouchableOpacity>
 
-        <Text style={styles.registerText}>
+        <Text style={[styles.registerText, { color: colors.subtext }]}>
           Não possui uma conta?{' '}
           <Text
             style={styles.linkText}

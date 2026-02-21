@@ -9,6 +9,10 @@ import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParamList } from "../navigation/StackNavigator";
 
+// IMPORTS DO MODO CLARO/ESCURO
+import { useTheme } from "../context/ThemeContext";
+import { darkColors, lightColors } from "../theme/colors";
+
 // TIPO DA NAVEGAÇÃO PRA ESSA TELA
 type HomeNavigationProp = NativeStackNavigationProp<RootStackParamList, "Home">;
 
@@ -16,8 +20,11 @@ const Home: React.FC = () => {
 
   const navigation = useNavigation<HomeNavigationProp>();
 
+  const { theme } = useTheme();
+  const colors = theme === "dark" ? darkColors : lightColors;
+
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: colors.background }]}>
 
       {/* BARRA SUPERIOR */}
     <View style={styles.topBar}>
@@ -25,23 +32,26 @@ const Home: React.FC = () => {
       {/* LOGO */}
       <Image
         source={require('../../assets/logo.png')}
-        style={styles.logo}
+        style={[
+          styles.logo,
+          theme === "light" && { tintColor: "#000" }
+        ]}
         resizeMode="contain"
       />
 
       {/* BARRA DE PESQUISA */}
-      <View style={styles.searchContainer}>
+      <View style={[styles.searchContainer, { backgroundColor: colors.inputBg }]}>
         <MaterialIcons name="search" size={18} color="#888" style={styles.searchIcon} />
         <TextInput
           placeholder="Pesquisar..."
-          placeholderTextColor="#666"
-          style={styles.searchInput}
+          placeholderTextColor={theme === "dark" ? "#666" : "#999"}
+          style={[styles.searchInput, { color: colors.text }]}
         />
       </View>
 
       {/* SINO */}
       <TouchableOpacity style={styles.bellButton} activeOpacity={0.7}>
-        <MaterialIcons name="notifications-none" size={22} color="#fff" />
+        <MaterialIcons name="notifications-none" size={22} color={colors.text} />
       </TouchableOpacity>
 
     </View>
@@ -49,7 +59,7 @@ const Home: React.FC = () => {
       <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
 
         {/* SEÇÃO EM DESTAQUE */}
-        <Text style={styles.sectionTitle}>Em Destaque</Text>
+        <Text style={[styles.sectionTitle, { color: colors.text }]}>Em Destaque</Text>
 
         <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.horizontalScroll}>
 
@@ -162,7 +172,7 @@ const Home: React.FC = () => {
         </ScrollView>
 
         {/* SEÇÃO DE LANÇAMENTOS */}
-        <Text style={[styles.sectionTitle, { marginTop: 10 }]}>Lançamentos</Text>
+        <Text style={[styles.sectionTitle, { marginTop: 10, color: colors.text }]}>Lançamentos</Text>
 
         <View style={styles.grid}>
 
@@ -256,7 +266,7 @@ const Home: React.FC = () => {
         </View>
 
         {/* SEÇÃO DE POPULARES */}
-        <Text style={[styles.sectionTitle, { marginTop: -10 }]}>Populares</Text>
+        <Text style={[styles.sectionTitle, { marginTop: -10, color: colors.text }]}>Populares</Text>
 
         <View style={styles.grid}>
 
@@ -344,7 +354,15 @@ const Home: React.FC = () => {
 
       {/* BARRA INFERIOR */}
       <SafeAreaView style={styles.bottomSafeArea}>
-        <View style={styles.bottomBar}>
+        <View
+          style={[
+            styles.bottomBar,
+            {
+              backgroundColor: colors.background,
+              borderTopColor: colors.border,
+            },
+          ]}
+        >
 
           <TouchableOpacity 
             style={styles.tabItem}
@@ -361,7 +379,7 @@ const Home: React.FC = () => {
             onPress={() => navigation.navigate("Loja")}
           >
             <MaterialIcons name="storefront" size={26} color="#8a8a8a" />
-            <Text style={styles.tabLabel}>Loja</Text>
+            <Text style={[styles.tabLabel, { color: theme === "dark" ? "#8a8a8a" : "#555" }]}>Loja</Text>
           </TouchableOpacity>
 
           <TouchableOpacity 
@@ -369,7 +387,7 @@ const Home: React.FC = () => {
             activeOpacity={0.8}
             onPress={() => navigation.navigate("Biblioteca")}
           >
-            <MaterialIcons name="menu-book" size={26} color="#8a8a8a" />
+            <MaterialIcons name="storage" size={26} color="#8a8a8a" />
             <Text style={styles.tabLabel}>Biblioteca</Text>
           </TouchableOpacity>
 

@@ -7,27 +7,34 @@ import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParamList } from "../navigation/StackNavigator";
 
+// IMPORTS DO MODO CLARO/ESCURO
+import { useTheme } from "../context/ThemeContext";
+import { darkColors, lightColors } from "../theme/colors";
+
 type LojaNavigationProp = NativeStackNavigationProp<RootStackParamList, "Loja">;
 
 const Loja: React.FC = () => {
   const navigation = useNavigation<LojaNavigationProp>();
 
+  const { theme } = useTheme();
+  const colors = theme === "dark" ? darkColors : lightColors;
+
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: colors.background }]}>
 
       {/* BARRA SUPERIOR */}
       <View style={styles.topBar}>
-        <View style={styles.searchContainer}>
-          <MaterialIcons name="search" size={18} color="#E8DFEF" style={styles.searchIcon} />
-          <TextInput
-            placeholder="Buscar jogos..."
-            placeholderTextColor="#E8DFEF"
-            style={styles.searchInput}
-          />
+        <View style={[styles.searchContainer, { backgroundColor: colors.inputBg }]}>
+          <MaterialIcons name="search" size={18} color="#888" style={styles.searchIcon} />
+        <TextInput
+          placeholder="Buscar jogos..."
+          placeholderTextColor={theme === "dark" ? "#666" : "#999"}
+          style={[styles.searchInput, { color: colors.text }]}
+        />
         </View>
 
         <TouchableOpacity style={styles.bellButton} activeOpacity={0.7}>
-          <MaterialIcons name="filter-list" size={22} color="#E8DFEF" />
+          <MaterialIcons name="filter-list" size={22} color={colors.text} />
         </TouchableOpacity>
       </View>
 
@@ -47,16 +54,14 @@ const Loja: React.FC = () => {
             key={index}
             style={[
               styles.categoryButton,
-              isSelected && {
-                backgroundColor: "#7B2DFF",
-              }
+              { backgroundColor: isSelected ? "#7B2DFF" : colors.inputBg }
             ]}
           >
             <Text
-              style={[
-                styles.categoryText,
-                isSelected && { color: "#fff" }
-              ]}
+            style={[
+              styles.categoryText,
+              { color: isSelected ? "#fff" : colors.text }
+            ]}
             >
               {cat}
             </Text>
@@ -68,8 +73,8 @@ const Loja: React.FC = () => {
       <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
 
         {/* TEXTO PRINCIPAL */}
-        <Text style={[styles.sectionTitle, { marginTop: 10 }]}>Ofertas Especiais</Text>
-        <Text style={styles.sectionSubtitle}>Economize até 50% nos melhores jogos</Text>
+        <Text style={[styles.sectionTitle, { marginTop: 10, color: colors.text }]}>Ofertas Especiais</Text>
+        <Text style={[styles.sectionSubtitle, { color: colors.subtext }]}>Economize até 50% nos melhores jogos</Text>
 
         <View style={styles.grid}>
 
@@ -367,10 +372,18 @@ const Loja: React.FC = () => {
 
       {/* BARRA INFERIOR */}
       <SafeAreaView style={styles.bottomSafeArea}>
-        <View style={styles.bottomBar}>
+        <View
+          style={[
+            styles.bottomBar,
+            {
+              backgroundColor: colors.background,
+              borderTopColor: colors.border,
+            },
+          ]}
+        >
 
           <TouchableOpacity style={styles.tabItem} activeOpacity={0.8} onPress={() => navigation.navigate("Home")}>
-            <MaterialIcons name="home" size={28} color="#8a8a8a" />
+            <MaterialIcons name="home" size={28} color={theme === "dark" ? "#8a8a8a" : "#555"} />
             <Text style={styles.tabLabel}>Início</Text>
           </TouchableOpacity>
 
@@ -380,13 +393,13 @@ const Loja: React.FC = () => {
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.tabItem} activeOpacity={0.8} onPress={() => navigation.navigate("Biblioteca")}>
-            <MaterialIcons name="menu-book" size={26} color="#8a8a8a" />
+            <MaterialIcons name="storage" size={26} color={theme === "dark" ? "#8a8a8a" : "#555"} />
             <Text style={styles.tabLabel}>Biblioteca</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.tabItem} activeOpacity={0.8} onPress={() => navigation.navigate("Perfil")}>
-            <MaterialIcons name="account-circle" size={28} color="#8a8a8a" />
-            <Text style={styles.tabLabel}>Perfil</Text>
+            <MaterialIcons name="account-circle" size={28} color={theme === "dark" ? "#8a8a8a" : "#555"} />
+            <Text style={[styles.tabLabel, { color: theme === "dark" ? "#8a8a8a" : "#555" }]}>Perfil</Text>
           </TouchableOpacity>
 
         </View>

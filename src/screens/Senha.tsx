@@ -1,45 +1,60 @@
 import React from "react";
 import {View, Text, TextInput, TouchableOpacity, StyleSheet, Image, KeyboardAvoidingView, Platform } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
+// IMPORTS DO MODO CLARO/ESCURO
+import { useTheme } from "../context/ThemeContext";
+import { darkColors, lightColors } from "../theme/colors";
+
 export default function Senha() {
+  const { theme } = useTheme();
+  const colors = theme === "dark" ? darkColors : lightColors;
+
   const navigation = useNavigation();
 
   return (
     <KeyboardAvoidingView
-      style={styles.container}
+      style={[styles.container, { backgroundColor: colors.background }]}
       behavior={Platform.OS === "ios" ? "padding" : "height"}
       keyboardVerticalOffset={Platform.OS === "ios" ? 80 : 0}
     >
 
-      <View style={styles.box}>
+      <View style={[styles.box, { backgroundColor: colors.background }]}>
 
         {/* LOGO */}
         <Image
-          source={require("../../assets/logo-icone.png")}
-          style={styles.logo}
+          source={require('../../assets/logo-icone.png')}
+          style={[
+            styles.logo,
+            theme === "light" && { tintColor: "#000" }
+          ]}
+        resizeMode="contain"
         />
 
-        <Text style={styles.title}>Esqueceu a senha?</Text>
-        <Text style={styles.subText}>
+        <Text style={[styles.title, { color: colors.text }]}>Esqueceu a senha?</Text>
+        <Text style={[styles.subText, { color: colors.subtext }]}>
           Digite seu e-mail vinculado à conta.
         </Text>
 
         {/* INPUT */}
-        <View style={styles.inputContainer}>
-          <Ionicons
-            name="mail-outline"
-            size={20}
-            color="#ccc"
-            style={styles.icon}
-          />
+        <View
+          style={[
+            styles.inputContainer,
+            {
+              backgroundColor: colors.inputBg,
+              borderColor: colors.border,
+              borderWidth: 1,
+            },
+          ]}
+        >
+          <MaterialIcons name="email" size={20} color={colors.subtext} style={styles.icon} />
           <TextInput
             placeholder="exemplo@email.com"
-            placeholderTextColor="#aaa"
             keyboardType="email-address"
             autoCapitalize="none"
-            style={styles.input}
+            style={[styles.input, { color: colors.text }]}
+            placeholderTextColor={colors.subtext}
           />
         </View>
 
@@ -113,7 +128,7 @@ input: {
 },
 
 button: {
-  backgroundColor: "#AD00FF",
+  backgroundColor: '#7B2DFF',
   paddingVertical: 12,
   borderRadius: 8,
   marginTop: 5,

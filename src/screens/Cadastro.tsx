@@ -5,7 +5,14 @@ import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import auth from '@react-native-firebase/auth';
 
+// IMPORTS DO MODO CLARO/ESCURO
+import { useTheme } from "../context/ThemeContext";
+import { darkColors, lightColors } from "../theme/colors";
+
 export default function Cadastro() {
+  const { theme } = useTheme();
+  const colors = theme === "dark" ? darkColors : lightColors;
+
   const navigation = useNavigation();
 
   const [email, setEmail] = useState('');
@@ -67,39 +74,65 @@ export default function Cadastro() {
 
   return (
     <KeyboardAvoidingView
-      style={styles.container}
+      style={[styles.container, { backgroundColor: colors.background }]}
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       keyboardVerticalOffset={Platform.OS === 'ios' ? 80 : 0}
     >
 
-      <View style={styles.box}>
+      <View style={[styles.box, { backgroundColor: colors.background }]}>
 
         {/* LOGO */}
-        <Image source={require('../../assets/logo-icone.png')} style={styles.logo} />
+        <Image
+          source={require('../../assets/logo-icone.png')}
+          style={[
+            styles.logo,
+            theme === "light" && { tintColor: "#000" }
+          ]}
+        resizeMode="contain"
+        />
 
-        <Text style={styles.title}>Cadastro</Text>
-        <Text style={styles.subtitle}>Crie sua conta e inicie sua jornada.</Text>
+        <Text style={[styles.title, { color: colors.text }]}>Cadastro</Text>
+        <Text style={[styles.subtitle, { color: colors.subtext }]}>Crie sua conta e inicie sua jornada.</Text>
 
-        <View style={styles.inputContainer}>
-          <MaterialIcons name="email" size={20} color="#E8DFEF" style={styles.icon} />
+          <View
+            style={[
+              styles.inputContainer,
+              {
+                backgroundColor: colors.inputBg,
+                borderColor: colors.border,
+                borderWidth: 1,
+              },
+            ]}
+          >
+          <MaterialIcons name="email" size={20} color={colors.subtext} style={styles.icon} />
           <TextInput
             placeholder="E-mail"
-            placeholderTextColor="#E8DFEF"
-            style={styles.input}
+            style={[styles.input, { color: colors.text }]}
+            placeholderTextColor={colors.subtext}
             keyboardType="email-address"
+            autoCapitalize="none"
             value={email}
             onChangeText={setEmail}
           />
-        </View>
+          </View>
 
-        <View style={styles.inputContainer}>
-          <MaterialIcons name="lock-outline" size={20} color="#E8DFEF" style={styles.icon} />
+          <View
+            style={[
+              styles.inputContainer,
+              {
+                backgroundColor: colors.inputBg,
+                borderColor: colors.border,
+                borderWidth: 1,
+              },
+            ]}
+          >
+          <MaterialIcons name="lock-outline" size={20} color={colors.subtext} style={styles.icon} />
 
           <TextInput
             placeholder="Senha"
-            placeholderTextColor="#E8DFEF"
+            style={[styles.input, { color: colors.text }]}
+            placeholderTextColor={colors.subtext}
             secureTextEntry={!showPassword}
-            style={styles.input}
             value={password}
             onChangeText={setPassword}
           />
@@ -109,19 +142,28 @@ export default function Cadastro() {
           <MaterialIcons
             name={showPassword ? "visibility" : "visibility-off"}
             size={22}
-            color="#E8DFEF"
+            color={colors.subtext}
           />
           </TouchableOpacity>
           
         </View>
 
-        <View style={styles.inputContainer}>
-          <MaterialIcons name="lock-outline" size={20} color="#E8DFEF" style={styles.icon} />
+          <View
+            style={[
+              styles.inputContainer,
+              {
+                backgroundColor: colors.inputBg,
+                borderColor: colors.border,
+                borderWidth: 1,
+              },
+            ]}
+          >
+          <MaterialIcons name="lock-outline" size={20} color={colors.subtext} style={styles.icon} />
           <TextInput
             placeholder="Confirmar senha"
-            placeholderTextColor="#E8DFEF"
+            style={[styles.input, { color: colors.text }]}
+            placeholderTextColor={colors.subtext}
             secureTextEntry={!showPassword}
-            style={styles.input}
             value={confirmPassword}
             onChangeText={setConfirmPassword}
           />
@@ -131,7 +173,7 @@ export default function Cadastro() {
           <MaterialIcons
             name={showPassword ? "visibility" : "visibility-off"}
             size={22}
-            color="#E8DFEF"
+            color={colors.subtext}
           />
         </TouchableOpacity>
 
@@ -151,7 +193,7 @@ export default function Cadastro() {
           <Text style={styles.buttonText}>Cadastrar</Text>
         </TouchableOpacity>
 
-        <Text style={styles.loginText}>
+        <Text style={[styles.loginText, { color: colors.subtext }]}>
           Já possui uma conta?{' '}
           <Text
             style={styles.linkText}
