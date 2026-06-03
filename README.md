@@ -76,7 +76,7 @@ Siga os passos abaixo para rodar o Orbverse localmente:
 
 * **Status:** 🚧 **Em desenvolvimento**
 * **Páginas Concluídas:** 11 de 11
-* **Foco Atual:** Fazer o backend.
+* **Foco Atual:** Fazer o backend do projeto.
 
 ---
 
