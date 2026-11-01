@@ -55,7 +55,7 @@ Siga os passos abaixo para rodar o Orbverse localmente:
 
 1.  **Clonar o repositório:**
     ```bash
-    git clone [https://github.com/seu-repo/orbverse.git](https://github.com/seu-repo/orbverse.git)
+    git clone https://github.com/leticiasilva09/orbverse.git
     ```
 
 2.  **Instalar dependências:**
